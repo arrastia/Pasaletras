@@ -1,16 +1,22 @@
 import React from 'react';
+
+import styles from './App.module.scss';
+
 import logo from './logo.svg';
-import './App.scss';
+
+import { Layout } from 'interfaces/.components/Layout';
 
 export const App = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+  const layout = children => <Layout>{children}</Layout>;
+
+  return layout(
+    <div className={styles.main}>
+      <header className={styles.header}>
+        <img src={logo} className={styles.logo} alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+        <a className={styles.link} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
       </header>
