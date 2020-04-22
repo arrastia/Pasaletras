@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+:root {
+  --bg: #f9fafb;
+  --black: #000000;
+  --react: #61dafb;
+  --text: #282c34;
+  --white: #ffffff;
+
+  --blue-light: #06a9b1; // Alimentos
+  --blue-dark: #2c429a; // Ropa
+  --purple: #8e4599; // Paises
+  --yellow: #edba1c; // Verbos
+  --orange: #e36a25; // Adjetivos
+  --brown: #9a6a28; // Soluciones
+  --gray: #70604d; // Fichas en blanco
+
+  --card-item-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --card-item-box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.21), 0 6px 6px rgba(0, 0, 0, 0.25);
+}
+
+.dark-mode {
+  --bg: #282c34;
+  --placeholder: #ffffffb3;
+  --text: #f9fafb;
+
+  --card-item-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.6);
+  --card-item-box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.29), 0 6px 6px rgba(0, 0, 0, 0.33);
+}
+
+@font-face {
+  font-family: 'GothamBlack';
+  src: local('GothamBlack'), url(./assets/fonts/Gotham-Black.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'GothamBold';
+  src: local('GothamBold'), url(./assets/fonts/Gotham-Bold.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'GothamLight';
+  src: local('GothamLight'), url(./assets/fonts/Gotham-Light.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'GothamThin';
+  src: local('GothamThin'), url(./assets/fonts/Gotham-Thin.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'GothamThinItalic';
+  src: local('GothamThinItalic'), url(./assets/fonts/Gotham-ThinItalic.otf) format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, GothamLight, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
