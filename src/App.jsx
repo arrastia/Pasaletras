@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './App.module.scss';
 
 import logo from './logo.svg';
+import fondo from 'assets/img/Pasaletras_mockup7.jpg';
 
 import { Layout } from 'interfaces/.components/Layout';
 
