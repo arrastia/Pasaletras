@@ -1,0 +1,33 @@
+.burger {
+  cursor: pointer;
+  // height: 60px;
+  // margin-top: -30px;
+  // position: absolute;
+  // right: 50%;
+  // top: 50%;
+  transition: all 0.2s ease-out;
+  // width: 60px;
+
+  .line {
+    backface-visibility: hidden;
+    background: var(--text);
+    height: 3px;
+    margin: 4px auto;
+    transition: all 0.3s;
+    width: 50%;
+  }
+}
+
+.on {
+  .top {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .middle {
+    opacity: 0;
+  }
+
+  .bottom {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
