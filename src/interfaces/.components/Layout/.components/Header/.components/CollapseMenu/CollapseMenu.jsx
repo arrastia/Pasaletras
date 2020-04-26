@@ -12,6 +12,7 @@ import { DelayUtils } from 'interfaces/.tools/Utils/DelayUtils';
 const items = [
   {
     key: 1,
+    id: 'home',
     content: (
       <span className={styles.home}>
         <GiHouse /> Pasaletras
@@ -20,6 +21,7 @@ const items = [
   },
   {
     key: 2,
+    id: 'compralo',
     content: (
       <span className={styles.home}>
         <GiShoppingCart /> Cómpralo
@@ -28,6 +30,7 @@ const items = [
   },
   {
     key: 3,
+    id: 'muestras',
     content: (
       <span className={styles.home}>
         <GiBookshelf /> Muestras gratuitas
@@ -36,6 +39,7 @@ const items = [
   },
   {
     key: 4,
+    id: 'juego',
     content: (
       <span className={styles.home}>
         <GiTabletopPlayers /> Juego
@@ -44,6 +48,7 @@ const items = [
   },
   {
     key: 5,
+    id: 'autor',
     content: (
       <span className={styles.home}>
         <GiBookshelf /> Sobre el autor
@@ -52,6 +57,7 @@ const items = [
   },
   {
     key: 6,
+    id: 'contacta',
     content: (
       <span className={styles.home}>
         <GiMailbox /> Contacta
@@ -97,6 +103,12 @@ const MenuItems = Keyframes.Trail({
 export const CollapseMenu = ({ navbarState, handleNavbar, top }) => {
   useLockBodyScroll(navbarState);
 
+  const onNavSection = section => {
+    handleNavbar();
+    const offsetTop = document.getElementById(section).offsetTop;
+    window.scrollTo({ top: offsetTop - 100, behavior: 'smooth' });
+  };
+
   return (
     <div className={styles.menuWrap}>
       <Menu config={config.gentle} unique state={navbarState ? 'in' : 'out'}>
@@ -106,7 +118,7 @@ export const CollapseMenu = ({ navbarState, handleNavbar, top }) => {
               <ul className={styles.wrap}>
                 <MenuItems keys={item => item.key} items={items} state={navbarState ? 'in' : 'out'} reverse={!navbarState}>
                   {trailitem => trailprops => (
-                    <li onClick={handleNavbar} style={{ ...trailprops, padding: '10px' }}>
+                    <li onClick={() => onNavSection(trailitem.id)} style={{ ...trailprops, padding: '10px' }}>
                       {trailitem.content}
                     </li>
                   )}
