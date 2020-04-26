@@ -9,6 +9,7 @@ import { Layout } from 'interfaces/.components/Layout';
 
 import { LanguageProvider } from 'interfaces/.tools/Providers/LanguageProvider';
 import { MessagesProvider } from 'interfaces/.tools/Providers/MessagesProvider';
+import { Home } from 'interfaces/views/Home/Home';
 
 export const App = () => {
   const layout = children => (
@@ -31,6 +32,7 @@ export const App = () => {
             Learn React
           </a>
         </header>
+        <Home />
       </div>
     </Fragment>
   );

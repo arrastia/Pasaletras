@@ -1,0 +1,189 @@
+.homeSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 500px;
+  z-index: 0;
+
+  .slider {
+    border: none;
+    z-index: 1;
+    margin-bottom: 0;
+
+    .ul {
+      position: relative;
+      overflow: visible;
+      list-style: none;
+      padding: 0;
+      z-index: 2;
+      margin: 0;
+
+      //   li {
+      //     position: relative;
+      //     background-position: bottom center;
+      //     background-repeat: no-repeat;
+      //     background-size: cover;
+      //     min-height: 400px;
+      //   }
+    }
+  }
+}
+
+/*TODO: flex-control-nav*/
+
+// .sliderText {
+//   display: table;
+//   opacity: 0;
+//   min-height: 500px;
+//   z-index: 9;
+// }
+
+// .sliderText > .sliderTextInner {
+//   position: relative;
+//   display: table-cell;
+//   min-height: 700px;
+//   padding: 2.5em;
+//   vertical-align: middle;
+//   text-align: center;
+// }
+
+// .sliderTextInner {
+// }
+
+// .desc {
+//   z-index: 5;
+// }
+
+// .sliderText > .sliderTextInner h1,
+// .sliderText > .sliderTextInner h2 {
+//   /* font-family: ; */
+//   color: var(--dark-white);
+//   margin: 0;
+//   padding: 0;
+// }
+
+// .sliderText > .sliderTextInner h1 {
+//   /* font-family: ; */
+//   font-size: 30px;
+//   font-weight: 500;
+//   line-height: 1.5;
+//   margin-bottom: 20px;
+//   z-index: 99;
+// }
+// @media screen and (min-width: 768px) {
+//   .sliderText > .sliderTextInner h1 {
+//     font-size: 50px;
+//   }
+// }
+
+// .sliderText > .sliderTextInner h2 {
+//   /* font-family: ; */
+//   font-size: 17px;
+//   font-weight: 300;
+//   line-height: 1.7;
+//   margin-bottom: 30px;
+// }
+// @media screen and (min-width: 768px) {
+//   .sliderText > .sliderTextInner h2 {
+//     font-size: 27px;
+//   }
+// }
+
+// .sliderText > .sliderTextInner h2 a {
+//   color: yellow;
+//   border-bottom: yellow;
+// }
+
+// .sliderText > .sliderTextInner p {
+//   /* font-family: ; */
+//   margin-bottom: 0;
+// }
+
+// .sliderText > .sliderTextInner .btn {
+//   width: 100%;
+//   font-size: 10px;
+//   font-weight: 400;
+//   letter-spacing: 2px;
+//   text-transform: uppercase;
+//   color: var(--dark-space-blue);
+//   border: 2px;
+//   padding: 10px 15px !important;
+// }
+
+// .sliderText > .sliderTextInner .btnDownload {
+//   color: pink;
+//   border: 1px solid lightblue;
+//   background: transparent;
+// }
+
+// .sliderText > .sliderTextInner .btnDownload:hover {
+//   color: lightgreen;
+//   border: 1px solid lightseagreen;
+//   background: transparent;
+// }
+
+// .photo0 {
+//   background-image: url(../../../assets/img/Pasaletras_mockup5.jpg);
+//   /* transition: all 1s ease-in-out; */
+//   height: 100vh;
+//   z-index: 1;
+// }
+// @media screen and (min-width: 768px) {
+//   .photo0 {
+//     background-size: auto;
+//     background-position: center center !important;
+//   }
+// }
+
+// .photo1 {
+//   background-image: url(../../../assets/img/Pasaletras_mockup7.jpg);
+//   /* transition: all 1s ease-in-out; */
+//   height: 100vh;
+// }
+// @media screen and (min-width: 768px) {
+//   .photo1 {
+//     background-size: cover !important;
+//     background-position: center center !important;
+//   }
+// }
+
+// .overlay {
+//   z-index: 0;
+// }
+
+// .btns {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   position: absolute;
+//   top: 85%;
+//   right: 0;
+//   padding: 10px;
+//   z-index: 999;
+// }
+
+// button {
+//   border-radius: 50%;
+//   width: 15px;
+//   height: 15px;
+//   margin-bottom: 10px;
+//   border: 2px solid var(--dark-space-blue);
+//   background: var(--dark-white);
+// }
+
+// .active {
+//   border: 2px solid var(--dark-white);
+//   background: var(--dark-space-blue);
+// }
+
+@media screen and (min-width: 768px) {
+  .homeSection {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-top: 0em;
+    padding-bottom: 9em;
+  }
+}
