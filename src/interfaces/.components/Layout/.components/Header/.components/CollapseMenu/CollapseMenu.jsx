@@ -21,7 +21,7 @@ const items = [
   },
   {
     key: 2,
-    id: 'compralo',
+    id: 'buy',
     content: (
       <span className={styles.home}>
         <GiShoppingCart /> Cómpralo
@@ -81,8 +81,6 @@ const Menu = Keyframes.Spring({
     });
   }
 });
-
-console.log('top', top);
 
 const MenuItems = Keyframes.Trail({
   in: async next => {
