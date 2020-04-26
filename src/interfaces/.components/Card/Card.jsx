@@ -36,16 +36,16 @@ const CardWrap = styled.div`
   grid-template-rows: 70% calc(30% - 1rem);
   height: 150px;
   margin: 0.5rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   position: relative;
   row-gap: 1rem;
   transition: all 0.25s ease-in-out;
-  width: 100%;
 
   &:hover {
     box-shadow: var(--card-item-box-shadow-hover);
     transform: scale(1.02, 1.02);
-    transition: transform 0.2s ease;
+    transition: transform 0.1s ease;
   }
 
   &::before {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import styles from './Buy.module.scss';
 
@@ -8,6 +8,7 @@ import pdf from 'assets/img/pdf.svg';
 import tablet from 'assets/img/tablet.svg';
 
 import { Card } from 'interfaces/.components/Card';
+import { SectionLayout } from 'interfaces/.components/SectionLayout';
 
 const showItems = [
   { title: 'Versión PAPEL', subtitle: 'buy', photo: book, id: 1 },
@@ -17,11 +18,17 @@ const showItems = [
 ];
 
 export const Buy = () => {
-  return (
-    <section id="buy" className={styles.buy} data-section="buy">
+  const layout = children => (
+    <SectionLayout id="buy" title="buy" subtitle="jejej">
+      {children}
+    </SectionLayout>
+  );
+
+  return layout(
+    <div style={{ position: 'relative', width: '100%' }}>
       {showItems.map(card => (
         <Card key={card.id} title={card.title} subtitle={card.subtitle} photo={card.photo} />
       ))}
-    </section>
+    </div>
   );
 };
