@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import styles from './Slider.module.scss';
-
 import { GiBackForth } from 'react-icons/gi';
+
+import styles from './Slider.module.scss';
 
 import { Button } from 'interfaces/.components/Button';
 
@@ -21,18 +21,14 @@ export const Slider = ({ value }) => {
 
   return (
     <li className={`${styles.sliderItem}`} style={{ backgroundImage: `url(${value[activeIndex].photo})` }}>
-      <div className={`${styles.sliderText}`}>
-        <div className={styles.sliderTextInner}>
-          <div className={styles.desc}>
-            <h1>{value[activeIndex].title}</h1>
-            <h2>{value[activeIndex].subtitle}</h2>
-            <Button onClick={value[activeIndex].buttonAction} label={value[activeIndex].buttonLabel}>
-              {value[activeIndex].buttonIcon}
-            </Button>
-          </div>
-        </div>
+      <div className={styles.card}>
+        <h1>{value[activeIndex].title}</h1>
+        <h2>{value[activeIndex].subtitle}</h2>
+        <Button onClick={value[activeIndex].buttonAction} label={value[activeIndex].buttonLabel}>
+          {value[activeIndex].buttonIcon}
+        </Button>
       </div>
-      <div className={styles.btns}>
+      <div className={styles.buttons}>
         <Button onClick={onChangeView}>
           <GiBackForth />
         </Button>

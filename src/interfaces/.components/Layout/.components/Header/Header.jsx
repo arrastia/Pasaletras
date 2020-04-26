@@ -1,14 +1,13 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { useSpring, animated } from 'react-spring';
 import styled, { ThemeProvider } from 'styled-components';
 
-import { CollapseMenu } from './.components/CollapseMenu';
-import { Navbar } from './.components/Navbar';
-
 import { MdWbSunny, MdBrightness3 } from 'react-icons/md';
 
 import { Button } from 'interfaces/.components/Button';
+import { CollapseMenu } from './.components/CollapseMenu';
+import { Navbar } from './.components/Navbar';
 
 import { useDarkMode } from 'interfaces/.tools/Hooks/useDarkMode';
 import { useOnClickOutside } from 'interfaces/.tools/Hooks/useOnClickOutside';
@@ -25,10 +24,7 @@ export const Header = () => {
 
   useOnClickOutside(menuRef, () => setIsMenuOpen(false));
 
-  const barAnimation = useSpring({
-    from: { transform: 'translate3d(0, -10rem, 0)' },
-    transform: 'translate3d(0, 0, 0)'
-  });
+  const barAnimation = useSpring({ from: { transform: 'translate3d(0, -10rem, 0)' }, transform: 'translate3d(0, 0, 0)' });
 
   useEffect(() => {
     window.onscroll = () => handleOpacity();

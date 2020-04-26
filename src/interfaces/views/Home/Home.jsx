@@ -1,13 +1,13 @@
 import React from 'react';
 
-import styles from './Home.module.scss';
-
 import { GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
 
-import { Slider } from './.components/Slider';
+import styles from './Home.module.scss';
 
 import book from 'assets/img/Pasaletras_mockup5.jpg';
 import girl from 'assets/img/Pasaletras_mockup7.jpg';
+
+import { Slider } from './.components/Slider';
 
 export const Home = () => {
   const showItems = [
