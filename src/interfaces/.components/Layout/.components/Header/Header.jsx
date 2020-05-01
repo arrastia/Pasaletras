@@ -44,7 +44,7 @@ export const Header = () => {
   const theme = { main: opacity };
 
   return (
-    <div ref={menuRef}>
+    <span ref={menuRef}>
       <ThemeProvider theme={theme}>
         <HeaderView ref={headerViewRef} style={barAnimation}>
           <Button onClick={() => setDarkMode(!darkMode)}>{darkMode ? <MdWbSunny /> : <MdBrightness3 />}</Button>
@@ -52,20 +52,20 @@ export const Header = () => {
         </HeaderView>
       </ThemeProvider>
       <CollapseMenu navbarState={isMenuOpen} handleNavbar={onToggleMenu} top={headerHeight} />
-    </div>
+    </span>
   );
 };
 
 const HeaderView = styled(animated.nav)`
-  align-items: center;
-  display: flex;
   font-size: 1.4rem;
-  justify-content: space-between;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   &::before {
     background: var(--bg);
@@ -78,6 +78,9 @@ const HeaderView = styled(animated.nav)`
     width: 100%;
     z-index: -1;
     transition: opacity 0.5s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
   }
 `;
 

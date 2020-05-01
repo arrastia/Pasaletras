@@ -13,7 +13,7 @@ export const Slider = ({ value }) => {
 
   useInterval(() => {
     onChangeView();
-  }, 4000);
+  }, 5000);
 
   const onChangeView = () => setActiveIndex(activeIndex === 0 ? 1 : 0);
 

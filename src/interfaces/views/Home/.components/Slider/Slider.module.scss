@@ -1,5 +1,5 @@
 .sliderItem {
-  background-position: bottom center;
+  background-position: 150%;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -40,6 +40,12 @@
     position: absolute;
     right: 0;
     top: 85%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sliderItem {
+    background-position: bottom center;
   }
 }
 

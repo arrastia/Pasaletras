@@ -27,10 +27,9 @@ const NavLinksView = styled(animated.ul)`
   justify-self: end;
   list-style-type: none;
   margin: auto 0;
-  width: 100px;
 
   & a {
-    color: #dfe6e9;
+    color: var(--text);
     text-transform: uppercase;
     font-weight: 600;
     border-bottom: 1px solid transparent;

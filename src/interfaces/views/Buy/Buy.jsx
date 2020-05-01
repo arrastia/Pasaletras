@@ -25,7 +25,7 @@ export const Buy = () => {
   );
 
   return layout(
-    <div style={{ position: 'relative', width: '100%' }}>
+    <div className={styles.buy}>
       {showItems.map(card => (
         <Card key={card.id} title={card.title} subtitle={card.subtitle} photo={card.photo} />
       ))}

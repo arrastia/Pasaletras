@@ -59,8 +59,8 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url('assets/img/Pasaletras_mockup5.jpg'); */
-  background-color: var(--blue-light);
+  background-color: var(--bg);
+  /* background-color: var(--blue-light); */
   /* background: linear-gradient(135deg, var(--blue-light) -10%, var(--blue-dark) 100%); */
   background-attachment: fixed;
   background-position: center center;

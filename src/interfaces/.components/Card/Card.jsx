@@ -36,7 +36,7 @@ const CardWrap = styled.div`
   grid-template-rows: 70% calc(30% - 1rem);
   height: 150px;
   margin: 0.5rem;
-  margin-bottom: 2rem;
+  width: 300px;
   padding: 1rem;
   position: relative;
   row-gap: 1rem;
@@ -49,18 +49,18 @@ const CardWrap = styled.div`
   }
 
   &::before {
-    content: '';
     background-image: url(${props => props.theme.photo}) !important;
-    background-size: 50%;
-    background-repeat: no-repeat;
     background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border-radius: 15px;
     bottom: 0;
+    content: '';
     left: 0;
     opacity: 0.3;
     position: absolute;
     right: 0;
     top: 0;
     width: 100%;
-    border-radius: 15px;
   }
 `;
