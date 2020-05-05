@@ -7,13 +7,20 @@
   --text: #282c34;
   --white: #ffffff;
 
-  --blue-light: #06a9b1; /* // Alimentos */
-  --blue-dark: #2c429a; /* // Ropa */
-  --purple: #8e4599; /* // Paises */
-  --yellow: #edba1c; /* // Verbos */
-  --orange: #e36a25; /* // Adjetivos */
-  --brown: #9a6a28; /* // Soluciones */
-  --gray: #70604d; /* // Fichas en blanco */
+  --blue-light: #06a9b1; /* Alimentos */
+  --blue-dark: #2c429a; /* Ropa */
+  --purple: #8e4599; /* Paises */
+  --yellow: #edba1c; /* Verbos */
+  --orange: #e36a25; /* Adjetivos */
+  --brown: #9a6a28; /* Soluciones */
+  --gray: #70604d; /* Fichas en blanco */
+
+  --a1: #d71967;
+  --a2: #bb1e61;
+  --b1: #991d55;
+  --b2: #82184b;
+  --c1: #660e3c;
+  --c2: #4a0c2e;
 
   --card-item-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.4);
   --card-item-box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.21), 0 6px 6px rgba(0, 0, 0, 0.25);
