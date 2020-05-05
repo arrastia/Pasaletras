@@ -1,0 +1,18 @@
+.pasaletras {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+
+  .brand {
+    background-color: blueviolet;
+    border-radius: 5px;
+    padding: 1rem;
+    position: relative;
+    text-align: center;
+    // top: 100%;
+    // z-index: 9;
+  }
+}
