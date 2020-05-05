@@ -1,0 +1,1 @@
+export { Pasaletras } from './Pasaletras';
