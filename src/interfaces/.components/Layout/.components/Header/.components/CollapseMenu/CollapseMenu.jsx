@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { config, Keyframes } from 'react-spring/renderprops';
 
 import { GiBookshelf, GiHouse, GiMailbox, GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
@@ -70,14 +70,14 @@ const Menu = Keyframes.Spring({
   in: async next => {
     await next({
       position: 'fixed',
-      transform: 'translateX(-70%)'
+      transform: 'translateX(5%)'
     });
   },
   out: async next => {
     await DelayUtils.delay(700);
     await next({
       position: 'relative',
-      transform: 'translateX(-150%)'
+      transform: 'translateX(-100%)'
     });
   }
 });
@@ -107,6 +107,7 @@ export const CollapseMenu = ({ navbarState, handleNavbar, top }) => {
     window.scrollTo({ top: offsetTop - 100, behavior: 'smooth' });
   };
 
+  // return navbarState && DelayUtils.delay(600) ? (
   return (
     <div className={styles.menuWrap}>
       <Menu config={config.gentle} unique state={navbarState ? 'in' : 'out'}>
@@ -128,4 +129,7 @@ export const CollapseMenu = ({ navbarState, handleNavbar, top }) => {
       </Menu>
     </div>
   );
+  // : (
+  //   <Fragment></Fragment>
+  // );
 };

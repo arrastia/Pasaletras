@@ -35,7 +35,7 @@ export const Header = () => {
   }, [headerViewRef.current]);
 
   const handleOpacity = () => {
-    if (document.documentElement.scrollTop > 50) setOpacity(0.5);
+    if (document.documentElement.scrollTop > 50) setOpacity(0.9);
     else setOpacity(0);
   };
 
@@ -47,8 +47,10 @@ export const Header = () => {
     <span ref={menuRef}>
       <ThemeProvider theme={theme}>
         <HeaderView ref={headerViewRef} style={barAnimation}>
-          <Button onClick={() => setDarkMode(!darkMode)}>{darkMode ? <MdWbSunny /> : <MdBrightness3 />}</Button>
           <Navbar navbarState={isMenuOpen} handleNavbar={onToggleMenu} />
+          <Button onClick={() => setDarkMode(!darkMode)} style={{ backgroundColor: 'transparent' }}>
+            {darkMode ? <MdWbSunny /> : <MdBrightness3 />}
+          </Button>
         </HeaderView>
       </ThemeProvider>
       <CollapseMenu navbarState={isMenuOpen} handleNavbar={onToggleMenu} top={headerHeight} />
@@ -57,15 +59,15 @@ export const Header = () => {
 };
 
 const HeaderView = styled(animated.nav)`
-  font-size: 1.4rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   left: 0;
+  padding: 1rem;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: calc(100% - 2rem);
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
   &::before {
     background: var(--bg);
@@ -84,8 +86,4 @@ const HeaderView = styled(animated.nav)`
   }
 `;
 
-HeaderView.defaultProps = {
-  theme: {
-    opactity: 1
-  }
-};
+HeaderView.defaultProps = { theme: { opactity: 1 } };
