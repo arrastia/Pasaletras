@@ -1,10 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import styles from './App.module.scss';
 
 import { Layout } from 'interfaces/.components/Layout';
 
+import { Author } from 'interfaces/views/Author';
 import { Buy } from 'interfaces/views/Buy';
+import { Contact } from 'interfaces/views/Contact';
 import { Free } from 'interfaces/views/Free';
 import { Game } from 'interfaces/views/Game';
 import { Home } from 'interfaces/views/Home';
@@ -22,13 +24,13 @@ export const App = () => {
   );
 
   return layout(
-    <Fragment>
-      <div className={styles.main}>
-        <Home />
-        <Buy />
-        <Free />
-        <Game />
-      </div>
-    </Fragment>
+    <div className={styles.main}>
+      <Home />
+      <Buy />
+      <Free />
+      <Game />
+      <Author />
+      <Contact />
+    </div>
   );
 };
