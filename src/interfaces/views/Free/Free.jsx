@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Card } from 'interfaces/.components/Card';
+import { Download } from './.components/Download';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
 
 export const Free = () => {
@@ -10,5 +11,9 @@ export const Free = () => {
     </SectionLayout>
   );
 
-  return layout(<div></div>);
+  return layout(
+    <div>
+      <Download></Download>
+    </div>
+  );
 };

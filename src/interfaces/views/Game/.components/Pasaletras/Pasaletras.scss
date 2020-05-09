@@ -107,42 +107,42 @@
   height: 100%;
 }
 
-.button {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  background-color: blueviolet;
-  border: 3px solid;
-  border-color: #c58cc4;
-  border-radius: 50%;
-  z-index: 2;
-  -webkit-transform: scale(1.25);
-  transform: scale(1.25);
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.button:hover {
-  cursor: pointer;
-}
-.button:active {
-  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.1s ease-in-out;
-}
+// .button {
+//   position: relative;
+//   width: 60px;
+//   height: 60px;
+//   background-color: blueviolet;
+//   border: 3px solid;
+//   border-color: #c58cc4;
+//   border-radius: 50%;
+//   z-index: 2;
+//   -webkit-transform: scale(1.25);
+//   transform: scale(1.25);
+//   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+//   transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+//   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+//   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+// .button:hover {
+//   cursor: pointer;
+// }
+// .button:active {
+//   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
+//   transition: box-shadow 0.1s ease-in-out;
+// }
 
-.button.active {
-  border-color: yellow;
-  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-}
+// .button.active {
+//   border-color: yellow;
+//   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
+//   -webkit-transform: scale(1);
+//   transform: scale(1);
+//   transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+//   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+//   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+// }
 
 .selectorWrap {
   display: flex;

@@ -1,0 +1,191 @@
+.button {
+  --active: var(--text);
+  --default: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  position: relative;
+  transform: scale(var(--s, 1));
+  transition: transform 0.2s;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    --s: 0.96;
+  }
+
+  svg {
+    display: block;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: var(--sw, 3px);
+  }
+
+  .circle {
+    height: 76px;
+    transform: rotate(-90deg);
+    width: 76px;
+
+    circle {
+      &.default {
+        stroke: var(--default);
+        opacity: 0.2;
+      }
+
+      &.active {
+        stroke-dasharray: 227px;
+        stroke-dashoffset: var(--active-offset, 227px);
+        stroke: var(--active);
+        transition: stroke-dashoffset var(--all-transition, 4s) ease var(--all-delay, 0.8s);
+      }
+    }
+  }
+
+  span {
+    animation: var(--count, none) 0.3s ease forwards var(--all-delay, 4.6s);
+    bottom: 13px;
+    color: var(--active);
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    left: 0;
+    opacity: var(--count-opacity, 0);
+    position: absolute;
+    right: 0;
+    text-align: center;
+    transform: translateY(var(--count-y, 4px));
+    transition: opacity 0.2s ease 0.6s, transform 0.3s ease 0.6s;
+  }
+
+  .icon {
+    --sw: 2px;
+    height: 40px;
+    left: 50%;
+    margin: -20px 0 0 -12px;
+    position: absolute;
+    top: 50%;
+    width: 24px;
+
+    svg {
+      &.line {
+        height: 37px;
+        left: 10px;
+        opacity: var(--line-opacity, 1);
+        position: absolute;
+        stroke-dasharray: 0 33px var(--line-array, 33px) 66px;
+        stroke-dashoffset: var(--line-offset, 33px);
+        stroke: var(--active);
+        top: 0;
+        transform: translateY(var(--line-y, 0));
+        transition: stroke-dasharray 0.2s, stroke-dashoffset 0.2s, transform 0.32s ease var(--all-delay, 0.25s);
+        width: 4px;
+      }
+    }
+
+    div {
+      animation: var(--overflow, none) 0s linear forwards var(--all-delay, 4.8s);
+      bottom: 1px;
+      height: 32px;
+      left: 50%;
+      margin-left: -20px;
+      overflow: hidden;
+      position: absolute;
+      transform: translate(var(--icon-x, 0), var(--icon-y, 0));
+      transition: transform 0.3s ease var(--all-delay, 4.8s);
+      width: 40px;
+
+      &:before,
+      &:after {
+        background: var(--active);
+        border-radius: 1px;
+        content: '';
+        height: 2px;
+        left: var(--l, 0);
+        opacity: var(--tick-opacity, 0);
+        position: absolute;
+        top: 15px;
+        transform-origin: var(--tx, 15px) 1px;
+        transform: rotate(var(--before-rotate, 0deg));
+        transition: transform 0.4s ease var(--all-delay, 4.8s), opacity 0s linear var(--all-delay, 4.8s);
+        width: var(--w, 16px);
+        z-index: 1;
+      }
+
+      &:after {
+        --l: 14px;
+        --tx: 1px;
+        --w: 26px;
+        transform: rotate(var(--after-rotate, 0deg));
+      }
+      svg {
+        stroke: var(--active);
+
+        &.arrow {
+          height: 32px;
+          opacity: var(--arrow-opacity, 1);
+          transition: opacity 0s linear var(--all-delay, 1s);
+          width: 40px;
+        }
+
+        &.progress {
+          animation: var(--hide, none) 0s linear forwards var(--all-delay, 4.8s);
+          height: 10px;
+          left: 0;
+          opacity: var(--progress-opacity, 0);
+          position: absolute;
+          top: 11px;
+          transform: translateX(var(--progress-x, 0));
+          transition: transform var(--all-transition, 4.4s) ease var(--all-delay, 0.4s), opacity 0s linear var(--all-delay, 1s);
+          width: 444px;
+        }
+      }
+    }
+  }
+
+  &.loading:not(.reset) {
+    --active-offset: 0;
+    --after-rotate: -46deg;
+    --arrow-opacity: 0;
+    --before-rotate: 47deg;
+    --count-opacity: 1;
+    --count-y: 0;
+    --count: count;
+    --hide: hide;
+    --icon-x: 2px;
+    --icon-y: 7px;
+    --line-array: 0;
+    --line-offset: 15px;
+    --line-y: -36px;
+    --overflow: overflow;
+    --progress-opacity: 1;
+    --progress-x: -400px;
+    --tick-opacity: 1;
+  }
+
+  &.reset {
+    --all-delay: 0s;
+    --all-transition: 0.3s;
+  }
+}
+
+@keyframes hide {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes count {
+  to {
+    transform: translateY(4px);
+    opacity: 0;
+  }
+}
+
+@keyframes overflow {
+  to {
+    overflow: visible;
+  }
+}
