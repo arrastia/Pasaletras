@@ -4,6 +4,7 @@ import styles from './App.module.scss';
 
 import { Layout } from 'interfaces/.components/Layout';
 
+import { Author } from 'interfaces/views/Author';
 import { Buy } from 'interfaces/views/Buy';
 import { Free } from 'interfaces/views/Free';
 import { Game } from 'interfaces/views/Game';
@@ -28,6 +29,7 @@ export const App = () => {
         <Buy />
         <Free />
         <Game />
+        <Author />
       </div>
     </Fragment>
   );
