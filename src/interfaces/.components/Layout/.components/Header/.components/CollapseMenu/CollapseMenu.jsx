@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
+
 import { config, Keyframes } from 'react-spring/renderprops';
 
 import { GiBookshelf, GiHouse, GiMailbox, GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
@@ -68,33 +69,21 @@ const items = [
 
 const Menu = Keyframes.Spring({
   in: async next => {
-    await next({
-      position: 'fixed',
-      transform: 'translateX(-70%)'
-    });
+    await next({ position: 'fixed', transform: 'translateX(5%)' });
   },
   out: async next => {
     await DelayUtils.delay(700);
-    await next({
-      position: 'relative',
-      transform: 'translateX(-150%)'
-    });
+    await next({ position: 'relative', transform: 'translateX(-100%)' });
   }
 });
 
 const MenuItems = Keyframes.Trail({
   in: async next => {
     await DelayUtils.delay(600);
-    await next({
-      opacity: 1,
-      transform: 'translateX(0px)'
-    });
+    await next({ opacity: 1, transform: 'translateX(0px)' });
   },
   out: async next => {
-    await next({
-      opacity: 0,
-      transform: 'translateX(-40px)'
-    });
+    await next({ opacity: 0, transform: 'translateX(-40px)' });
   }
 });
 

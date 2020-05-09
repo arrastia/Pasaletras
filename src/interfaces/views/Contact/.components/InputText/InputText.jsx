@@ -5,8 +5,8 @@ import classNames from 'classnames';
 
 import './InputText.scss';
 
+import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
 import { InputTextUtils } from './.tools/Utils/InputTextUtils';
-import DomHandler from 'interfaces/.tools/Utils/DomHandler';
 
 export const InputText = forwardRef(({ keyfilter, onInput, onKeyPress, validateOnly, ...rest }, ref) => {
   const onPressKey = event => {
@@ -20,8 +20,8 @@ export const InputText = forwardRef(({ keyfilter, onInput, onKeyPress, validateO
     if (onInput) onInput(event, validatePattern);
 
     if (!rest.onChange) {
-      if (event.target.value.length > 0) DomHandler.addClass(event.target, 'p-filled');
-      else DomHandler.removeClass(event.target, 'p-filled');
+      if (event.target.value.length > 0) DOMUtils.addClass(event.target, 'p-filled');
+      else DOMUtils.removeClass(event.target, 'p-filled');
     }
   };
 

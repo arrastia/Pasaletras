@@ -1,0 +1,13 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+
+  .burgerWrap {
+    margin: auto 0;
+    width: 60px;
+
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+}
