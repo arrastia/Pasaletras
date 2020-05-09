@@ -29,7 +29,7 @@ export const Slider = ({ value }) => {
         </Button>
       </div>
       <div className={styles.buttons}>
-        <Button onClick={onChangeView}>
+        <Button onClick={onChangeView} style={{ backgroundColor: 'transparent' }}>
           <GiBackForth />
         </Button>
       </div>

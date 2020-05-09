@@ -1,4 +1,4 @@
-import DomHandler from 'interfaces/.tools/Utils/DomHandler';
+import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
 
 const DEFAULT_MASKS = {
   alpha: /[a-z_]/i,
@@ -41,12 +41,12 @@ const getCharCode = event => event.charCode || event.keyCode || event.which;
 
 const getKey = event => {
   let keyCode = event.keyCode || event.charCode;
-  return DomHandler.getBrowser().safari ? SAFARI_KEYS[keyCode] || keyCode : keyCode;
+  return DOMUtils.getBrowser().safari ? SAFARI_KEYS[keyCode] || keyCode : keyCode;
 };
 
 const isNavKeyPress = event => {
   let k = event.keyCode;
-  k = DomHandler.getBrowser().safari ? SAFARI_KEYS[k] || k : k;
+  k = DOMUtils.getBrowser().safari ? SAFARI_KEYS[k] || k : k;
 
   return (k >= 33 && k <= 40) || k === KEYS.RETURN || k === KEYS.TAB || k === KEYS.ESC;
 };
@@ -61,7 +61,7 @@ const isSpecialKey = event => {
     keyCode === 16 ||
     keyCode === 17 ||
     (keyCode >= 18 && keyCode <= 20) ||
-    (DomHandler.getBrowser().opera &&
+    (DOMUtils.getBrowser().opera &&
       !event.shiftKey &&
       (keyCode === 8 || (keyCode >= 33 && keyCode <= 35) || (keyCode >= 36 && keyCode <= 39) || (keyCode >= 44 && keyCode <= 45)))
   );
@@ -71,7 +71,7 @@ const onKeyPress = (event, keyfilter, validateOnly) => {
   if (validateOnly) return;
 
   const regex = DEFAULT_MASKS[keyfilter] ? DEFAULT_MASKS[keyfilter] : keyfilter;
-  const browser = DomHandler.getBrowser();
+  const browser = DOMUtils.getBrowser();
 
   if (event.ctrlKey || event.altKey) return;
 
