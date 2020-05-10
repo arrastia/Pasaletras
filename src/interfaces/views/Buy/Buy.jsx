@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import styles from './Buy.module.scss';
 
@@ -11,10 +11,10 @@ import { Card } from 'interfaces/.components/Card';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
 
 const showItems = [
-  { title: 'Versión PAPEL', subtitle: 'Saber más', photo: book, id: 1 },
-  { title: 'Versión EBOOK', subtitle: 'Saber más', photo: tablet, id: 2 },
-  { title: 'Versión PDF', subtitle: 'Saber más', photo: pdf, id: 3 },
-  { title: 'Versión KINDLE', subtitle: 'Saber más', photo: kindle, id: 4 }
+  { title: 'Versión PAPEL', subtitle: 'Saber más', photo: <img src={book} />, id: 1 },
+  { title: 'Versión EBOOK', subtitle: 'Saber más', photo: <img src={tablet} />, id: 2 },
+  { title: 'Versión PDF', subtitle: 'Saber más', photo: <img src={pdf} />, id: 3 },
+  { title: 'Versión KINDLE', subtitle: 'Saber más', photo: <img src={kindle} />, id: 4 }
 ];
 
 export const Buy = () => {
@@ -27,7 +27,7 @@ export const Buy = () => {
   return layout(
     <div className={styles.buy}>
       {showItems.map(card => (
-        <Card key={card.id} title={card.title} subtitle={card.subtitle} photo={card.photo} />
+        <Card key={card.id} title={card.title} subtitle={card.subtitle} toolbar={card.photo} className="buy" />
       ))}
     </div>
   );

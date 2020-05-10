@@ -39,7 +39,7 @@ export const Game = () => {
 
   const onToggle = id => gameDispatch({ type: 'TOGGLE', payload: id });
 
-  const renderBrand = () => <span className={styles.brand}>Página 1</span>;
+  // const renderBrand = () => <span className={styles.brand}>Página 1</span>;
 
   const renderPasaletras = id => (
     <div className={styles.pasaletras}>
@@ -52,10 +52,10 @@ export const Game = () => {
     { title: 'Pagina 2', text: renderPasaletras(888, 'var(--a1)'), id: 888, bgColor: 'var(--a1)' }
   ];
 
-  const pagina2 = [
-    { title: 'Pagina 3', text: renderPasaletras(), id: 777 },
-    { title: 'Pagina 4', text: renderPasaletras(), id: 777 }
-  ];
+  // const pagina2 = [
+  //   { title: 'Pagina 3', text: renderPasaletras(), id: 777 },
+  //   { title: 'Pagina 4', text: renderPasaletras(), id: 777 }
+  // ];
 
   return layout(
     <TabView activeIndex={activeView} onTabChange={event => setActiveView(event.index)}>

@@ -23,7 +23,7 @@ export const Accordion = ({ bgColor, content, id, isOpen, onOpen }) => {
     scY: isOpen ? -1 : 1
   });
 
-  const calcContentMaxHeight = () => ref && setContentMaxHeight(ref.current.scrollHeight);
+  const calcContentMaxHeight = () => ref && ref.current && setContentMaxHeight(ref.current.scrollHeight);
 
   return (
     <Fragment>

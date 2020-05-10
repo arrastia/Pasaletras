@@ -4,6 +4,13 @@ import { Card } from 'interfaces/.components/Card';
 import { Download } from './.components/Download';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
 
+const showItems = [
+  { title: 'TEMA 1', subtitle: 'ESPAÑA, ASPECTOS GENERALES', id: 1, toolbar: <Download /> },
+  { title: 'TRANSCRIPCIONES', subtitle: 'Descarga las transcripciones', id: 2, toolbar: <Download /> },
+  { title: 'SOLUCIONARIO', subtitle: 'Descarga el solucionario', id: 3, toolbar: <Download /> },
+  { title: 'GLOSARIO', subtitle: 'Descarga el glosario', id: 4, toolbar: <Download /> }
+];
+
 export const Free = () => {
   const layout = children => (
     <SectionLayout id="free" title="free" subtitle="MUESTRAS GRATIS">
@@ -12,8 +19,6 @@ export const Free = () => {
   );
 
   return layout(
-    <div>
-      <Download></Download>
-    </div>
+    showItems.map(card => <Card key={card.id} title={card.title} subtitle={card.subtitle} className="download" toolbar={card.toolbar} />)
   );
 };
