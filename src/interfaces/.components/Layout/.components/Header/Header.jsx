@@ -15,7 +15,7 @@ import { useOnClickOutside } from 'interfaces/.tools/Hooks/useOnClickOutside';
 export const Header = () => {
   const [headerHeight, setHeaderHeight] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [opacity, setOpacity] = useState(0);
+  const [opacity, setOpacity] = useState(0.4);
 
   const headerViewRef = useRef(null);
   const menuRef = useRef(null);
@@ -35,8 +35,8 @@ export const Header = () => {
   }, [headerViewRef.current]);
 
   const handleOpacity = () => {
-    if (document.documentElement.scrollTop > 50) setOpacity(0.9);
-    else setOpacity(0);
+    if (document.documentElement.scrollTop > 50) setOpacity(1);
+    else setOpacity(0.4);
   };
 
   const onToggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -80,6 +80,7 @@ const HeaderView = styled(animated.nav)`
     width: 100%;
     z-index: -1;
     transition: opacity 0.5s ease-in-out;
+    box-shadow: var(--card-item-box-shadow);
   }
 
   @media (max-width: 768px) {
