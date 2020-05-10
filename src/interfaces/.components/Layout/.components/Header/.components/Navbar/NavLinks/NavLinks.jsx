@@ -28,15 +28,20 @@ const NavLinksView = styled(animated.ul)`
   list-style-type: none;
   margin: auto 0;
 
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    padding: 0;
+  }
+
   & a {
-    color: var(--text);
-    text-transform: uppercase;
-    font-weight: 600;
     border-bottom: 1px solid transparent;
-    margin: 0 1.5rem;
-    transition: all 300ms linear 0s;
-    text-decoration: none;
+    color: var(--text);
     cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 1.5rem;
+    text-transform: uppercase;
+    transition: all 300ms linear 0s;
 
     &:hover {
       color: #fdcb6e;
@@ -44,7 +49,7 @@ const NavLinksView = styled(animated.ul)`
     }
 
     @media (max-width: 768px) {
-      display: none;
+      margin: 0.5rem;
     }
   }
 `;
