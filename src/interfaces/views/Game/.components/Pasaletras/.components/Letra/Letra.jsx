@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Letra.module.scss';
 
-export const Letra = ({ transformCoordinates, pickerIsActive, pickerClicked, pickerColor, delay }) => {
+export const Letra = ({ transformCoordinates, pickerIsActive, pickerClicked, pickerColor, delay, color }) => {
   const onPickerClicked = () => pickerClicked(pickerColor.bg);
 
   return (
@@ -10,11 +10,18 @@ export const Letra = ({ transformCoordinates, pickerIsActive, pickerClicked, pic
       style={
         pickerIsActive
           ? {
-              backgroundColor: pickerColor.bg,
+              // backgroundColor: pickerColor.bg,
+              backgroundColor: 'transparent',
               transform: 'translate(' + transformCoordinates.x + 'px, ' + transformCoordinates.y + 'px)',
-              transitionDelay: delay + 's'
+              transitionDelay: delay + 's',
+              border: `0.1rem solid ${color}`
             }
-          : { backgroundColor: pickerColor.bg, transform: 'translate(0px,0px)', transitionDelay: delay + 's' }
+          : {
+              backgroundColor: pickerColor.bg,
+              transform: 'translate(0px,0px)',
+              transitionDelay: delay + 's',
+              border: `10px solid ${color}`
+            }
       }
       className="selector"
       // className={styles.selector}

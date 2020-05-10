@@ -11,17 +11,22 @@ import { Free } from 'interfaces/views/Free';
 import { Game } from 'interfaces/views/Game';
 import { Home } from 'interfaces/views/Home';
 
+import { BreakpointProvider } from 'interfaces/.tools/Providers/BreakpointProvider';
 import { LanguageProvider } from 'interfaces/.tools/Providers/LanguageProvider';
 import { MessagesProvider } from 'interfaces/.tools/Providers/MessagesProvider';
 
 export const App = () => {
   const layout = children => (
-    <MessagesProvider>
-      <LanguageProvider>
-        <Layout>{children}</Layout>
-      </LanguageProvider>
-    </MessagesProvider>
+    <BreakpointProvider queries={queries}>
+      <MessagesProvider>
+        <LanguageProvider>
+          <Layout>{children}</Layout>
+        </LanguageProvider>
+      </MessagesProvider>
+    </BreakpointProvider>
   );
+
+  const queries = { mobile: '(min-width: 414px)', tablet: '(min-width: 720px)', pc: '(min-width: 1024px)' };
 
   return layout(
     <div className={styles.main}>

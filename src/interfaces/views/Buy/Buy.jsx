@@ -11,10 +11,10 @@ import { Card } from 'interfaces/.components/Card';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
 
 const showItems = [
-  { title: 'Versión PAPEL', subtitle: 'buy', photo: book, id: 1 },
-  { title: 'Versión EBOOK', subtitle: 'now', photo: tablet, id: 2 },
-  { title: 'Versión PDF', subtitle: 'buy', photo: pdf, id: 3 },
-  { title: 'Versión KINDLE', subtitle: 'buy', photo: kindle, id: 4 }
+  { title: 'Versión PAPEL', subtitle: 'Saber más', photo: book, id: 1 },
+  { title: 'Versión EBOOK', subtitle: 'Saber más', photo: tablet, id: 2 },
+  { title: 'Versión PDF', subtitle: 'Saber más', photo: pdf, id: 3 },
+  { title: 'Versión KINDLE', subtitle: 'Saber más', photo: kindle, id: 4 }
 ];
 
 export const Buy = () => {

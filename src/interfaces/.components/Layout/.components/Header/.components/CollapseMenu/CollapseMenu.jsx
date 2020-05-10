@@ -69,7 +69,7 @@ const items = [
 
 const Menu = Keyframes.Spring({
   in: async next => {
-    await next({ position: 'fixed', transform: 'translateX(5%)' });
+    await next({ position: 'fixed', transform: 'translateX(0%)' });
   },
   out: async next => {
     await DelayUtils.delay(700);

@@ -5,7 +5,7 @@ import './Pasaletras.scss';
 
 import { Letra } from './.components/Letra';
 
-export const Pasaletras = ({ refresh }) => {
+export const Pasaletras = ({ refresh, color }) => {
   const [active, setActive] = useState(false); // refresh ?
 
   const containerRef = useRef(null);
@@ -85,6 +85,7 @@ export const Pasaletras = ({ refresh }) => {
         // pickerClicked={this.setBackgroundColor}
         pickerColor={abc[i]}
         delay={delay}
+        color={color}
       />
     );
   }

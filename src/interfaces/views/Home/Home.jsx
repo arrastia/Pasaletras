@@ -13,6 +13,8 @@ export const Home = () => {
   const showItems = [
     {
       aciveItem: false,
+      className: 'fadeInDown animated',
+      classNameCard: 'visible',
       buttonAction: () => {},
       buttonIcon: <GiTabletopPlayers />,
       buttonLabel: 'juega',
@@ -25,6 +27,8 @@ export const Home = () => {
     },
     {
       aciveItem: false,
+      className: 'fadeInUp animated',
+      classNameCard: 'fadeInUpBig',
       buttonAction: () => {},
       buttonIcon: <GiShoppingCart />,
       buttonLabel: 'compralo',
