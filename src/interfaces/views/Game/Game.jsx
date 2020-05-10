@@ -8,14 +8,10 @@ import { SectionLayout } from 'interfaces/.components/SectionLayout';
 import { TabPanel } from './.components/TabView/_components/TabPanel';
 import { TabView } from './.components/TabView';
 
-// import { AccordionTab } from './.components/Accordion/.components/AccordionTab';
-
 import { gameReducer } from './.tools/Reducers/gameReducer';
 
 export const Game = () => {
   const [activeView, setActiveView] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(0);
-
   const [isVisible, setIsVisible] = useState({});
 
   const [gameState, gameDispatch] = useReducer(gameReducer, { data: [], isVisible });
@@ -24,9 +20,15 @@ export const Game = () => {
     onLoadData();
   }, []);
 
+  const layout = children => (
+    <SectionLayout id="game" title="game" subtitle="JUEGA CONNOSOTROS">
+      {children}
+    </SectionLayout>
+  );
+
   const onLoadData = () => {
     const data = [];
-    pagina.forEach((item, i) => data.push({ [item.id]: item }));
+    pagina.forEach(item => data.push({ [item.id]: item }));
     setIsVisible(
       pagina.forEach(item => {
         isVisible[item.id] = false;
@@ -36,12 +38,6 @@ export const Game = () => {
   };
 
   const onToggle = id => gameDispatch({ type: 'TOGGLE', payload: id });
-
-  const layout = children => (
-    <SectionLayout id="game" title="game" subtitle="JUEGA CONNOSOTROS">
-      {children}
-    </SectionLayout>
-  );
 
   const renderBrand = () => <span className={styles.brand}>Página 1</span>;
 
@@ -64,60 +60,52 @@ export const Game = () => {
   return layout(
     <TabView activeIndex={activeView} onTabChange={event => setActiveView(event.index)}>
       <TabPanel header="Nivel A1">
-        {pagina.map((item, i) => {
-          return (
-            <Accordion
-              bgColor="var(--a1)"
-              content={item}
-              id={item.id}
-              isOpen={gameState.isVisible[item.id]}
-              key={item.id}
-              onOpen={onToggle}
-            />
-          );
-        })}
+        {pagina.map(item => (
+          <Accordion
+            bgColor="var(--a1)"
+            content={item}
+            id={item.id}
+            isOpen={gameState.isVisible[item.id]}
+            key={item.id}
+            onOpen={onToggle}
+          />
+        ))}
       </TabPanel>
       <TabPanel header="Nivel A2">
-        {pagina.map((item, i) => {
-          return (
-            <Accordion
-              bgColor="var(--a2)"
-              content={item}
-              id={item.id}
-              isOpen={gameState.isVisible[item.id]}
-              key={item.id}
-              onOpen={onToggle}
-            />
-          );
-        })}
+        {pagina.map(item => (
+          <Accordion
+            bgColor="var(--a2)"
+            content={item}
+            id={item.id}
+            isOpen={gameState.isVisible[item.id]}
+            key={item.id}
+            onOpen={onToggle}
+          />
+        ))}
       </TabPanel>
       <TabPanel header="Nivel B1">
-        {pagina.map((item, i) => {
-          return (
-            <Accordion
-              bgColor="var(--b1)"
-              content={item}
-              id={item.id}
-              isOpen={gameState.isVisible[item.id]}
-              key={item.id}
-              onOpen={onToggle}
-            />
-          );
-        })}
+        {pagina.map(item => (
+          <Accordion
+            bgColor="var(--b1)"
+            content={item}
+            id={item.id}
+            isOpen={gameState.isVisible[item.id]}
+            key={item.id}
+            onOpen={onToggle}
+          />
+        ))}
       </TabPanel>
       <TabPanel header="Nivel B2">
-        {pagina.map((item, i) => {
-          return (
-            <Accordion
-              bgColor="var(--b2)"
-              content={item}
-              id={item.id}
-              isOpen={gameState.isVisible[item.id]}
-              key={item.id}
-              onOpen={onToggle}
-            />
-          );
-        })}
+        {pagina.map(item => (
+          <Accordion
+            bgColor="var(--b2)"
+            content={item}
+            id={item.id}
+            isOpen={gameState.isVisible[item.id]}
+            key={item.id}
+            onOpen={onToggle}
+          />
+        ))}
       </TabPanel>
       <TabPanel header="Nivel C1">Content V</TabPanel>
       <TabPanel header="Nivel C2">Content VI</TabPanel>
