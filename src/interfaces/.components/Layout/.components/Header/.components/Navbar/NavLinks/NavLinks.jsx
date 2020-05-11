@@ -18,7 +18,7 @@ export const NavLinks = () => {
 
   return (
     <NavLinksView style={linkAnimation}>
-      <span className={styles.menu}>
+      <span className={`${styles.menu} ${styles.active}`}>
         <GiHouse /> <span>Pasaletras</span>
       </span>
       <span className={styles.menu}>
@@ -63,10 +63,10 @@ const NavLinksView = styled(animated.ul)`
     text-transform: uppercase;
     transition: all 300ms linear 0s;
 
-    &:hover {
-      color: #fdcb6e;
-      border-bottom: 1px solid #fdcb6e;
-    }
+    // &:hover {
+    //   color: #fdcb6e;
+    //   border-bottom: 1px solid #fdcb6e;
+    // }
 
     @media (max-width: 768px) {
       margin: 0.5rem;

@@ -18,7 +18,7 @@ import { Brand } from './.components/Brand/Brand';
 export const Header = () => {
   const [headerHeight, setHeaderHeight] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [opacity, setOpacity] = useState(0.4);
+  const [opacity, setOpacity] = useState(0.7);
 
   const headerViewRef = useRef(null);
   const menuRef = useRef(null);
@@ -39,7 +39,7 @@ export const Header = () => {
 
   const handleOpacity = () => {
     if (document.documentElement.scrollTop > 50) setOpacity(1);
-    else setOpacity(0.4);
+    else setOpacity(0.7);
   };
 
   const onToggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -51,6 +51,31 @@ export const Header = () => {
       <Brand className={className} />
     </span>
   );
+
+  // var clickMenu = function () {
+  //   $('#navbar a:not([class="external"])').click(function (event) {
+  //     var section = $(this).data("nav-section"),
+  //       navbar = $("#navbar");
+
+  //     if ($('[data-section="' + section + '"]').length) {
+  //       $("html, body").animate(
+  //         {
+  //           scrollTop: $('[data-section="' + section + '"]').offset().top - 55,
+  //         },
+  //         500
+  //       );
+  //     }
+
+  //     if (navbar.is(":visible")) {
+  //       navbar.removeClass("in");
+  //       navbar.attr("aria-expanded", "false");
+  //       $(".js-nav-button").removeClass("active");
+  //     }
+
+  //     event.preventDefault();
+  //     return false;
+  //   });
+  // };
 
   return (
     <span ref={menuRef}>
