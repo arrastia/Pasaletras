@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { RiMailSendLine } from 'react-icons/ri';
 import { GrPowerReset } from 'react-icons/gr';
+import { MdSubject } from 'react-icons/md';
+import { RiLayoutTop2Line, RiMailLine, RiPencilLine, RiUserLine } from 'react-icons/ri';
+import { FaUser } from 'react-icons/fa';
+import { FiUser } from 'react-icons/fi';
 
 import styles from './Contact.module.scss';
 
@@ -20,20 +24,23 @@ export const Contact = () => {
   );
 
   const data = [
-    { label: 'name', id: ReactUtils.uuid(), type: 'search' },
-    { label: 'email', id: ReactUtils.uuid(), type: 'search' },
-    { label: 'asunto', id: ReactUtils.uuid(), type: 'search' }
+    { label: 'name', id: ReactUtils.uuid(), type: 'search', icon: <FiUser /> },
+    { label: 'email', id: ReactUtils.uuid(), type: 'search', icon: <RiMailLine /> },
+    { label: 'asunto', id: ReactUtils.uuid(), type: 'search', icon: <RiPencilLine /> }
   ];
 
   return layout(
     <div className={styles.contact}>
       {data.map(item => (
-        <span className={`p-float-label`} style={{ marginBottom: '2rem' }}>
-          <InputText id={item.id} type={item.type} />
-          <label htmlFor={item.id}>{item.label}</label>
-        </span>
+        <div className={styles.input}>
+          <span className={styles.icon}>{item.icon}</span>
+          <span className={`p-float-label`}>
+            <InputText id={item.id} type={item.type} />
+            <label htmlFor={item.id}>{item.label}</label>
+          </span>
+        </div>
       ))}
-      <span className={`p-float-label`} style={{ marginBottom: '2rem' }}>
+      <span className={`p-float-label`}>
         <InputTextarea rows={3} cols={30} autoResize={true}></InputTextarea>
         <label htmlFor={777}>Message</label>
       </span>
@@ -41,7 +48,7 @@ export const Contact = () => {
         <Button label="enviar">
           <RiMailSendLine />
         </Button>
-        <Button label="reset">
+        <Button label="reset" style={{ background: 'transparent' }}>
           <GrPowerReset />
         </Button>
       </div>
