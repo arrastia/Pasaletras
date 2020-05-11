@@ -1,0 +1,24 @@
+.menu {
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: 20% auto;
+  width: 100%;
+  text-transform: uppercase;
+
+  > svg {
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  > span {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    font-size: 0.8rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

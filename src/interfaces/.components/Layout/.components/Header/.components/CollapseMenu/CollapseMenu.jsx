@@ -3,6 +3,7 @@ import React from 'react';
 import { config, Keyframes } from 'react-spring/renderprops';
 
 import { GiBookshelf, GiHouse, GiMailbox, GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
+import { RiMailSendLine } from 'react-icons/ri';
 
 import styles from './CollapseMenu.module.scss';
 
@@ -15,8 +16,8 @@ const items = [
     key: 1,
     id: 'home',
     content: (
-      <span className={styles.home}>
-        <GiHouse /> Pasaletras
+      <span className={styles.menu}>
+        <GiHouse /> <span>Pasaletras</span>
       </span>
     )
   },
@@ -24,8 +25,8 @@ const items = [
     key: 2,
     id: 'buy',
     content: (
-      <span className={styles.home}>
-        <GiShoppingCart /> Cómpralo
+      <span className={styles.menu}>
+        <GiShoppingCart /> <span>Cómpralo</span>
       </span>
     )
   },
@@ -33,8 +34,8 @@ const items = [
     key: 3,
     id: 'muestras',
     content: (
-      <span className={styles.home}>
-        <GiBookshelf /> Muestras gratuitas
+      <span className={styles.menu}>
+        <GiBookshelf /> <span>Muestras gratuitas</span>
       </span>
     )
   },
@@ -42,8 +43,8 @@ const items = [
     key: 4,
     id: 'juego',
     content: (
-      <span className={styles.home}>
-        <GiTabletopPlayers /> Juego
+      <span className={styles.menu}>
+        <GiTabletopPlayers /> <span>Juego</span>
       </span>
     )
   },
@@ -51,8 +52,8 @@ const items = [
     key: 5,
     id: 'autor',
     content: (
-      <span className={styles.home}>
-        <GiBookshelf /> Sobre el autor
+      <span className={styles.menu}>
+        <GiBookshelf /> <span>Sobre el autor</span>
       </span>
     )
   },
@@ -60,8 +61,8 @@ const items = [
     key: 6,
     id: 'contacta',
     content: (
-      <span className={styles.home}>
-        <GiMailbox /> Contacta
+      <span className={styles.menu}>
+        <RiMailSendLine /> <span>Contacta</span>
       </span>
     )
   }
@@ -87,7 +88,7 @@ const MenuItems = Keyframes.Trail({
   }
 });
 
-export const CollapseMenu = ({ navbarState, handleNavbar, top }) => {
+export const CollapseMenu = ({ navbarState, handleNavbar, top, brand }) => {
   useLockBodyScroll(navbarState);
 
   const onNavSection = section => {
@@ -103,9 +104,10 @@ export const CollapseMenu = ({ navbarState, handleNavbar, top }) => {
           return (
             <nav style={{ ...props, top, zIndex: 2 }}>
               <ul className={styles.wrap}>
+                {brand('burger')}
                 <MenuItems keys={item => item.key} items={items} state={navbarState ? 'in' : 'out'} reverse={!navbarState}>
                   {trailitem => trailprops => (
-                    <li onClick={() => onNavSection(trailitem.id)} style={{ ...trailprops, padding: '10px' }}>
+                    <li className={styles.content} onClick={() => onNavSection(trailitem.id)} style={{ ...trailprops, padding: '10px' }}>
                       {trailitem.content}
                     </li>
                   )}

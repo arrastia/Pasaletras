@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './Free.module.scss';
+
 import { Card } from 'interfaces/.components/Card';
 import { Download } from './.components/Download';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
@@ -19,6 +21,10 @@ export const Free = () => {
   );
 
   return layout(
-    showItems.map(card => <Card key={card.id} title={card.title} subtitle={card.subtitle} className="download" toolbar={card.toolbar} />)
+    <div className={styles.free}>
+      {showItems.map(card => (
+        <Card key={card.id} title={card.title} subtitle={card.subtitle} className="download" toolbar={card.toolbar} />
+      ))}
+    </div>
   );
 };

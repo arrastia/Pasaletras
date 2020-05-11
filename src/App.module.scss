@@ -26,6 +26,12 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .main {
+    width: 90%;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .logo {
     animation: logo-spin infinite 20s linear;

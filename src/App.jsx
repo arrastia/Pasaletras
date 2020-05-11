@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import styles from './App.module.scss';
 
@@ -29,13 +29,15 @@ export const App = () => {
   const queries = { mobile: '(min-width: 414px)', tablet: '(min-width: 720px)', pc: '(min-width: 1024px)' };
 
   return layout(
-    <div className={styles.main}>
+    <Fragment>
       <Home />
-      <Buy />
-      <Free />
-      <Game />
-      <Author />
-      <Contact />
-    </div>
+      <div className={styles.main}>
+        <Buy />
+        <Free />
+        <Game />
+        <Author />
+        <Contact />
+      </div>
+    </Fragment>
   );
 };

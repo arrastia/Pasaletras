@@ -1,6 +1,5 @@
 .card {
   // background: var(--book3);
-  background: var(--card-item-bg);
   border-radius: 15px;
   box-shadow: var(--card-item-box-shadow);
   cursor: pointer;
@@ -12,6 +11,7 @@
   transition: all 0.25s ease-in-out;
   opacity: 0.9;
   min-height: 100px;
+  background: var(--bg);
 
   &:hover {
     box-shadow: var(--card-item-box-shadow-hover);
@@ -107,4 +107,18 @@
   display: grid;
   grid-template-columns: 70% calc(30% - 1.5rem);
   column-gap: 1.5rem;
+  margin: 1rem;
+  border-bottom: 2px solid var(--book3);
+  box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 768px) {
+  .download,
+  .buy {
+    zoom: 0.9;
+  }
 }

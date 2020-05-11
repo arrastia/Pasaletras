@@ -14,7 +14,7 @@ export const Home = () => {
     {
       aciveItem: false,
       className: 'fadeInDown animated',
-      classNameCard: 'visible',
+      classNameCard: 'fadeInUp animated',
       buttonAction: () => {},
       buttonIcon: <GiTabletopPlayers />,
       buttonLabel: 'juega',
@@ -28,7 +28,7 @@ export const Home = () => {
     {
       aciveItem: false,
       className: 'fadeInUp animated',
-      classNameCard: 'fadeInUpBig',
+      classNameCard: 'fadeInDown animated',
       buttonAction: () => {},
       buttonIcon: <GiShoppingCart />,
       buttonLabel: 'compralo',

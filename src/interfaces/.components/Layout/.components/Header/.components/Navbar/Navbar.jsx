@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import styles from './Navbar.module.scss';
 
@@ -13,7 +13,10 @@ export const Navbar = props => {
   return (
     <div className={styles.wrap}>
       {breakpoints.tablet ? (
-        <NavLinks />
+        <Fragment>
+          {props.brand('navbar')}
+          <NavLinks />
+        </Fragment>
       ) : (
         <div className={styles.burgerWrap}>
           <Burger navbarState={props.navbarState} handleNavbar={props.handleNavbar} />

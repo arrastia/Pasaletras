@@ -1,0 +1,14 @@
+.free {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .free {
+    flex-direction: row;
+  }
+}

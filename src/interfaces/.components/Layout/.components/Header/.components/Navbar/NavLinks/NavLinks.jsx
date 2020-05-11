@@ -4,6 +4,7 @@ import { useSpring, animated, config } from 'react-spring';
 import styled from 'styled-components';
 
 import { GiBookshelf, GiHouse, GiMailbox, GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
+import { RiMailSendLine } from 'react-icons/ri';
 
 import styles from './NavLinks.module.scss';
 
@@ -17,46 +18,48 @@ export const NavLinks = () => {
 
   return (
     <NavLinksView style={linkAnimation}>
-      <span className={styles.home}>
-        <GiHouse /> Pasaletras
+      <span className={styles.menu}>
+        <GiHouse /> <span>Pasaletras</span>
       </span>
-      <span className={styles.home}>
-        <GiShoppingCart /> Cómpralo
+      <span className={styles.menu}>
+        <GiShoppingCart /> <span>Cómpralo</span>
       </span>
-      <span className={styles.home}>
-        <GiBookshelf /> Muestras gratuitas
+      <span className={styles.menu}>
+        <GiBookshelf /> <span>Muestras gratuitas</span>
       </span>
-      <span className={styles.home}>
-        <GiTabletopPlayers /> Juego
+      <span className={styles.menu}>
+        <GiTabletopPlayers /> <span>Juego</span>
       </span>
-      <span className={styles.home}>
-        <GiBookshelf /> Sobre el autor
+      <span className={styles.menu}>
+        <GiBookshelf /> <span>Sobre el autor</span>
       </span>
-      <span className={styles.home}>
-        <GiMailbox /> Contacta
+      <span className={styles.menu}>
+        <RiMailSendLine /> <span>Contacta</span>
       </span>
     </NavLinksView>
   );
 };
 
 const NavLinksView = styled(animated.ul)`
-  justify-self: end;
-  list-style-type: none;
-  margin: auto 0;
-  padding: 0;
+  // margin: auto 0;
+  display: flex;
   font-size: 1rem;
+  justify-content: flex-end;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
 
   @media (max-width: 768px) {
     font-size: 0.8rem;
   }
 
-  & span {
+  > span {
     border-bottom: 1px solid transparent;
     color: var(--text);
     cursor: pointer;
     font-weight: 600;
     text-decoration: none;
-    margin: 1.5rem;
+    margin: 0 1.5rem;
     text-transform: uppercase;
     transition: all 300ms linear 0s;
 

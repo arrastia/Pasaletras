@@ -4,9 +4,10 @@
   background-size: cover;
   min-height: 100vh;
   position: relative;
+  display: flex;
+  justify-content: center;
 
   .card {
-    left: 20%;
     padding: 1rem;
     position: absolute;
     top: 50%;

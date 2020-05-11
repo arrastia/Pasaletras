@@ -5,12 +5,15 @@ import styled, { ThemeProvider } from 'styled-components';
 
 import { MdWbSunny, MdBrightness3 } from 'react-icons/md';
 
+import styles from './Header.module.scss';
+
 import { Button } from 'interfaces/.components/Button';
 import { CollapseMenu } from './.components/CollapseMenu';
 import { Navbar } from './.components/Navbar';
 
 import { useDarkMode } from 'interfaces/.tools/Hooks/useDarkMode';
 import { useOnClickOutside } from 'interfaces/.tools/Hooks/useOnClickOutside';
+import { Brand } from './.components/Brand/Brand';
 
 export const Header = () => {
   const [headerHeight, setHeaderHeight] = useState(null);
@@ -43,17 +46,23 @@ export const Header = () => {
 
   const theme = { main: opacity };
 
+  const renderBrand = className => (
+    <span className={styles.brand}>
+      <Brand className={className} />
+    </span>
+  );
+
   return (
     <span ref={menuRef}>
       <ThemeProvider theme={theme}>
         <HeaderView ref={headerViewRef} style={barAnimation}>
-          <Navbar navbarState={isMenuOpen} handleNavbar={onToggleMenu} />
+          <Navbar navbarState={isMenuOpen} handleNavbar={onToggleMenu} brand={renderBrand} />
           <Button onClick={() => setDarkMode(!darkMode)} style={{ backgroundColor: 'transparent' }}>
             {darkMode ? <MdWbSunny /> : <MdBrightness3 />}
           </Button>
         </HeaderView>
       </ThemeProvider>
-      <CollapseMenu navbarState={isMenuOpen} handleNavbar={onToggleMenu} top={headerHeight} />
+      <CollapseMenu navbarState={isMenuOpen} handleNavbar={onToggleMenu} top={headerHeight} brand={renderBrand} />
     </span>
   );
 };
