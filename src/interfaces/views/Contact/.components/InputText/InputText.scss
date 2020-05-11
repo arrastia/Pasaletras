@@ -26,12 +26,12 @@
     }
 
     &:focus {
-      border-color: blueviolet;
-      box-shadow: 0 0 0 0.1em blueviolet;
+      border-color: var(--book3);
+      box-shadow: 0 0 0 0.1em var(--book3);
       outline-offset: 0;
       outline: 0 none;
-      -moz-box-shadow: 0 0 0 0.1em blueviolet;
-      -webkit-box-shadow: 0 0 0 0.1em blueviolet;
+      -moz-box-shadow: 0 0 0 0.1em var(--book3);
+      -webkit-box-shadow: 0 0 0 0.1em var(--book3);
     }
   }
 
@@ -56,7 +56,27 @@
 
     &:focus,
     &:enabled:focus {
-      box-shadow: 0 0 0 0 blueviolet;
+      box-shadow: 0 0 0 0 var(--book3);
+    }
+
+    &:focus ~ label,
+    &.p-filled ~ label {
+      top: -0.75em;
+      font-size: 12px;
+    }
+
+    &:-webkit-autofill ~ label {
+      top: -0.75em;
+      font-size: 12px;
+    }
+  }
+
+  > textarea {
+    width: 100%;
+
+    &:focus,
+    &:enabled:focus {
+      box-shadow: 0 0 0 0 var(--book3);
     }
 
     &:focus ~ label,

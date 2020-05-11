@@ -6,6 +6,7 @@ import { GrPowerReset } from 'react-icons/gr';
 import styles from './Contact.module.scss';
 
 import { InputText } from './.components/InputText';
+import { InputTextarea } from './.components/InputTextarea';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
 import { Button } from 'interfaces/.components/Button';
 
@@ -21,8 +22,7 @@ export const Contact = () => {
   const data = [
     { label: 'name', id: ReactUtils.uuid(), type: 'search' },
     { label: 'email', id: ReactUtils.uuid(), type: 'search' },
-    { label: 'asunto', id: ReactUtils.uuid(), type: 'search' },
-    { label: 'message', id: ReactUtils.uuid(), type: 'textarea' }
+    { label: 'asunto', id: ReactUtils.uuid(), type: 'search' }
   ];
 
   return layout(
@@ -33,6 +33,10 @@ export const Contact = () => {
           <label htmlFor={item.id}>{item.label}</label>
         </span>
       ))}
+      <span className={`p-float-label`} style={{ marginBottom: '2rem' }}>
+        <InputTextarea rows={3} cols={30} autoResize={true}></InputTextarea>
+        <label htmlFor={777}>Message</label>
+      </span>
       <div className={styles.buttons}>
         <Button label="enviar">
           <RiMailSendLine />

@@ -21,6 +21,8 @@ const getBrowser = browser => {
   return browser;
 };
 
+const isVisible = element => element && element.offsetParent != null;
+
 const removeClass = (element, className) => {
   if (element) {
     if (element.classList) element.classList.remove(className);
@@ -41,4 +43,4 @@ const resolveUserAgent = () => {
   return { browser: match[1] || '', version: match[2] || '0' };
 };
 
-export const DOMUtils = { addClass, getBrowser, removeClass };
+export const DOMUtils = { addClass, getBrowser, isVisible, removeClass };
