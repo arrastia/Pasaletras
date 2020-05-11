@@ -75,6 +75,96 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .author {
+    align-items: center;
+    background: var(--bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    display: grid;
+    grid-column-gap: 2.5rem;
+    grid-template-areas:
+      'photo text'
+      'name text'
+      'link text';
+    justify-items: center;
+    padding: 1.5rem;
+    position: relative;
+
+    .img {
+      width: 200px;
+      border-radius: 50%;
+      height: 200px;
+      grid-area: photo;
+    }
+
+    .title {
+      text-align: center;
+      grid-area: name;
+      margin: 1rem 0 0 0;
+    }
+
+    .text {
+      text-align: justify;
+      text-justify: inter-word;
+      grid-area: text;
+    }
+
+    .btn {
+      background-color: transparent;
+      border-radius: 30%;
+      display: inline-block;
+      grid-area: link;
+      margin: 0 1vmin;
+      opacity: 0.99;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      width: 80px;
+
+      .svg {
+        color: #0e76a8;
+        padding: 1rem;
+        font-size: 50px;
+        transform: scale(0.8);
+        vertical-align: middle;
+        transition: color 1s ease !important;
+      }
+
+      &::before {
+        background-color: #0e76a8;
+        content: '';
+        height: 120%;
+        left: -110%;
+        position: absolute;
+        top: 90%;
+        transform: rotate(45deg);
+        width: 120%;
+      }
+
+      &:focus::before,
+      &:hover::before {
+        left: -10%;
+        top: -10%;
+      }
+
+      &:focus .svg,
+      &:hover .svg {
+        color: var(--bg);
+        transform: scale(1);
+        transition: color 1s ease !important;
+      }
+    }
+
+    .btn,
+    .btn::before,
+    .btn .svg {
+      transition: all 0.35s, color 2s ease, background-color 2s ease;
+      transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    }
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .btn {
     &:hover::before {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 
 import { useSpring, animated, config } from 'react-spring';
 import styled from 'styled-components';
@@ -10,6 +10,8 @@ import styles from './NavLinks.module.scss';
 
 import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
 
+const links = ['homeLink', 'buyLink', 'freeLink', 'gameLink', 'authorLink', 'contactLink'];
+
 export const NavLinks = () => {
   const linkAnimation = useSpring({
     from: { transform: 'translate3d(0, 30px, 0)', opacity: 0 },
@@ -18,13 +20,17 @@ export const NavLinks = () => {
     config: config.wobbly
   });
 
+  const onAnimate = section => {
+    DOMUtils.addClass(document.getElementById(`${section}Link`), styles.active);
+    const rest = links.filter(item => item !== `${section}Link`);
+    rest.forEach((item, i) => DOMUtils.removeClass(document.getElementById(item), styles.active));
+  };
+
   const onNavSection = section => {
     const offsetTop = document.getElementById(section).offsetTop;
     window.scrollTo({ top: offsetTop - 100, behavior: 'smooth' });
 
-    DOMUtils.addClass(document.getElementById(`${section}Link`), styles.active);
-    const rest = ['homeLink', 'buyLink', 'freeLink', 'gameLink', 'authorLink', 'contactLink'].filter(item => item !== `${section}Link`);
-    rest.forEach((item, i) => DOMUtils.removeClass(document.getElementById(item), styles.active));
+    onAnimate(section);
   };
 
   return (
