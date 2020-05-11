@@ -32,7 +32,7 @@ const items = [
   },
   {
     key: 3,
-    id: 'muestras',
+    id: 'free',
     content: (
       <span className={styles.menu}>
         <GiBookshelf /> <span>Muestras gratuitas</span>
@@ -41,7 +41,7 @@ const items = [
   },
   {
     key: 4,
-    id: 'juego',
+    id: 'game',
     content: (
       <span className={styles.menu}>
         <GiTabletopPlayers /> <span>Juego</span>
@@ -50,7 +50,7 @@ const items = [
   },
   {
     key: 5,
-    id: 'autor',
+    id: 'author',
     content: (
       <span className={styles.menu}>
         <GiBookshelf /> <span>Sobre el autor</span>
@@ -59,7 +59,7 @@ const items = [
   },
   {
     key: 6,
-    id: 'contacta',
+    id: 'contact',
     content: (
       <span className={styles.menu}>
         <RiMailSendLine /> <span>Contacta</span>

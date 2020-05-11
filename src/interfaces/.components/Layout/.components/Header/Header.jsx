@@ -52,31 +52,6 @@ export const Header = () => {
     </span>
   );
 
-  // var clickMenu = function () {
-  //   $('#navbar a:not([class="external"])').click(function (event) {
-  //     var section = $(this).data("nav-section"),
-  //       navbar = $("#navbar");
-
-  //     if ($('[data-section="' + section + '"]').length) {
-  //       $("html, body").animate(
-  //         {
-  //           scrollTop: $('[data-section="' + section + '"]').offset().top - 55,
-  //         },
-  //         500
-  //       );
-  //     }
-
-  //     if (navbar.is(":visible")) {
-  //       navbar.removeClass("in");
-  //       navbar.attr("aria-expanded", "false");
-  //       $(".js-nav-button").removeClass("active");
-  //     }
-
-  //     event.preventDefault();
-  //     return false;
-  //   });
-  // };
-
   return (
     <span ref={menuRef}>
       <ThemeProvider theme={theme}>
@@ -97,7 +72,7 @@ const HeaderView = styled(animated.nav)`
   display: flex;
   justify-content: space-between;
   left: 0;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   position: fixed;
   top: 0;
   width: calc(100% - 2rem);

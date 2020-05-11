@@ -8,6 +8,8 @@ import { RiMailSendLine } from 'react-icons/ri';
 
 import styles from './NavLinks.module.scss';
 
+import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
+
 export const NavLinks = () => {
   const linkAnimation = useSpring({
     from: { transform: 'translate3d(0, 30px, 0)', opacity: 0 },
@@ -16,24 +18,33 @@ export const NavLinks = () => {
     config: config.wobbly
   });
 
+  const onNavSection = section => {
+    const offsetTop = document.getElementById(section).offsetTop;
+    window.scrollTo({ top: offsetTop - 100, behavior: 'smooth' });
+
+    DOMUtils.addClass(document.getElementById(`${section}Link`), styles.active);
+    const rest = ['homeLink', 'buyLink', 'freeLink', 'gameLink', 'authorLink', 'contactLink'].filter(item => item !== `${section}Link`);
+    rest.forEach((item, i) => DOMUtils.removeClass(document.getElementById(item), styles.active));
+  };
+
   return (
     <NavLinksView style={linkAnimation}>
-      <span className={`${styles.menu} ${styles.active}`}>
+      <span id="homeLink" className={`${styles.menu} ${styles.active}`} onClick={() => onNavSection('home')}>
         <GiHouse /> <span>Pasaletras</span>
       </span>
-      <span className={styles.menu}>
+      <span id="buyLink" className={styles.menu} onClick={() => onNavSection('buy')}>
         <GiShoppingCart /> <span>Cómpralo</span>
       </span>
-      <span className={styles.menu}>
+      <span id="freeLink" className={styles.menu} onClick={() => onNavSection('free')}>
         <GiBookshelf /> <span>Muestras gratuitas</span>
       </span>
-      <span className={styles.menu}>
+      <span id="gameLink" className={styles.menu} onClick={() => onNavSection('game')}>
         <GiTabletopPlayers /> <span>Juego</span>
       </span>
-      <span className={styles.menu}>
+      <span id="authorLink" className={styles.menu} onClick={() => onNavSection('author')}>
         <GiBookshelf /> <span>Sobre el autor</span>
       </span>
-      <span className={styles.menu}>
+      <span id="contactLink" className={styles.menu} onClick={() => onNavSection('contact')}>
         <RiMailSendLine /> <span>Contacta</span>
       </span>
     </NavLinksView>
