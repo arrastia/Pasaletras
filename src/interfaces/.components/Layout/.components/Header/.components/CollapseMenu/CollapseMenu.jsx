@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { config, Keyframes } from 'react-spring/renderprops';
 
@@ -10,13 +10,16 @@ import styles from './CollapseMenu.module.scss';
 import { useLockBodyScroll } from 'interfaces/.tools/Hooks/useLockBodyScroll';
 
 import { DelayUtils } from 'interfaces/.tools/Utils/DelayUtils';
+import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
+
+const links = ['homeMenu', 'buyMenu', 'freeMenu', 'gameMenu', 'authorMenu', 'contactMenu'];
 
 const items = [
   {
     key: 1,
     id: 'home',
     content: (
-      <span className={styles.menu}>
+      <span id="homeMenu" className={styles.menu}>
         <GiHouse /> <span>Pasaletras</span>
       </span>
     )
@@ -25,7 +28,7 @@ const items = [
     key: 2,
     id: 'buy',
     content: (
-      <span className={styles.menu}>
+      <span id="buyMenu" className={styles.menu}>
         <GiShoppingCart /> <span>Cómpralo</span>
       </span>
     )
@@ -34,7 +37,7 @@ const items = [
     key: 3,
     id: 'free',
     content: (
-      <span className={styles.menu}>
+      <span id="freeMenu" className={styles.menu}>
         <GiBookshelf /> <span>Muestras gratuitas</span>
       </span>
     )
@@ -43,7 +46,7 @@ const items = [
     key: 4,
     id: 'game',
     content: (
-      <span className={styles.menu}>
+      <span id="gameMenu" className={styles.menu}>
         <GiTabletopPlayers /> <span>Juego</span>
       </span>
     )
@@ -52,7 +55,7 @@ const items = [
     key: 5,
     id: 'author',
     content: (
-      <span className={styles.menu}>
+      <span id="authorMenu" className={styles.menu}>
         <GiBookshelf /> <span>Sobre el autor</span>
       </span>
     )
@@ -61,7 +64,7 @@ const items = [
     key: 6,
     id: 'contact',
     content: (
-      <span className={styles.menu}>
+      <span id="contactMenu" className={styles.menu}>
         <RiMailSendLine /> <span>Contacta</span>
       </span>
     )
@@ -88,13 +91,23 @@ const MenuItems = Keyframes.Trail({
   }
 });
 
-export const CollapseMenu = ({ navbarState, handleNavbar, top, brand }) => {
+export const CollapseMenu = ({ brand, handleNavbar, navbarState, selected, top }) => {
+  useEffect(() => {
+    if (selected && navbarState) onAnimate(selected);
+  }, [navbarState, selected]);
+
   useLockBodyScroll(navbarState);
+
+  const onAnimate = section => {
+    DOMUtils.addClass(document.getElementById(`${section}Menu`), styles.active);
+    const rest = links.filter(item => item !== `${section}Menu`);
+    rest.forEach((item, i) => DOMUtils.removeClass(document.getElementById(item), styles.active));
+  };
 
   const onNavSection = section => {
     handleNavbar();
     const offsetTop = document.getElementById(section).offsetTop;
-    window.scrollTo({ top: offsetTop - 100, behavior: 'smooth' });
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
   };
 
   return (

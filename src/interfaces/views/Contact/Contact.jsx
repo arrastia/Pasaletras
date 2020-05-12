@@ -24,33 +24,41 @@ export const Contact = () => {
   );
 
   const data = [
-    { label: 'name', id: ReactUtils.uuid(), type: 'search', icon: <FiUser /> },
-    { label: 'email', id: ReactUtils.uuid(), type: 'search', icon: <RiMailLine /> },
-    { label: 'asunto', id: ReactUtils.uuid(), type: 'search', icon: <RiPencilLine /> }
+    { label: 'Nombre', id: ReactUtils.uuid(), type: 'search', icon: <FiUser /> },
+    { label: 'Email', id: ReactUtils.uuid(), type: 'search', icon: <RiMailLine /> },
+    { label: 'Asunto', id: ReactUtils.uuid(), type: 'search', icon: <RiPencilLine /> }
   ];
 
   return layout(
     <div className={styles.contact}>
-      {data.map(item => (
-        <div className={styles.input}>
-          <span className={styles.icon}>{item.icon}</span>
-          <span className={`p-float-label`}>
-            <InputText id={item.id} type={item.type} />
-            <label htmlFor={item.id}>{item.label}</label>
+      <div className={styles.input}>
+        {data.map(item => (
+          <span>
+            <span className={styles.icon}>{item.icon}</span>
+            <span className={`p-float-label`}>
+              <InputText id={item.id} type={item.type} />
+              <label htmlFor={item.id}>{item.label}</label>
+            </span>
           </span>
-        </div>
-      ))}
-      <span className={`p-float-label`}>
-        <InputTextarea rows={3} cols={30} autoResize={true}></InputTextarea>
-        <label htmlFor={777}>Message</label>
-      </span>
+        ))}
+      </div>
+      <div className={styles.textarea}>
+        <span className={`p-float-label`}>
+          <InputTextarea rows={3} cols={30} autoResize={true}></InputTextarea>
+          <label htmlFor={777}>Message</label>
+        </span>
+      </div>
       <div className={styles.buttons}>
-        <Button label="enviar">
-          <RiMailSendLine />
-        </Button>
-        <Button label="reset" style={{ background: 'transparent' }}>
-          <GrPowerReset />
-        </Button>
+        <span className={styles.submit}>
+          <Button label="enviar">
+            <RiMailSendLine />
+          </Button>
+        </span>
+        <span className={styles.reset}>
+          <Button label="reset" style={{ background: 'transparent' }}>
+            <GrPowerReset />
+          </Button>
+        </span>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useRef, useState } from 'react';
 
 import { useSpring, animated } from 'react-spring';
 import styled, { ThemeProvider } from 'styled-components';
@@ -15,10 +15,13 @@ import { useDarkMode } from 'interfaces/.tools/Hooks/useDarkMode';
 import { useOnClickOutside } from 'interfaces/.tools/Hooks/useOnClickOutside';
 import { Brand } from './.components/Brand/Brand';
 
+const links = ['home', 'buy', 'free', 'game', 'author', 'contact'];
+
 export const Header = () => {
   const [headerHeight, setHeaderHeight] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [opacity, setOpacity] = useState(0.7);
+  const [selectedView, setSelectedView] = useState(null);
 
   const headerViewRef = useRef(null);
   const menuRef = useRef(null);
@@ -34,12 +37,44 @@ export const Header = () => {
   }, []);
 
   useEffect(() => {
-    if (headerViewRef.current) setHeaderHeight(headerViewRef.current.getBoundingClientRect().height);
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [headerViewRef.current]);
+
+  const getDimensions = section => {
+    const { height } = section.getBoundingClientRect();
+    const offsetTop = section.offsetTop;
+    const offsetBottom = offsetTop + height;
+
+    return { height, offsetTop, offsetBottom };
+  };
 
   const handleOpacity = () => {
     if (document.documentElement.scrollTop > 50) setOpacity(1);
     else setOpacity(0.7);
+  };
+
+  const handleScroll = () => {
+    if (headerViewRef.current) {
+      const height = headerViewRef.current.getBoundingClientRect().height;
+      setHeaderHeight(height);
+
+      const scrollPosition = window.scrollY + height;
+
+      const selected = links.find(section => {
+        if (section) {
+          const test = document.getElementById(section);
+          const { offsetBottom, offsetTop } = getDimensions(test);
+          return scrollPosition > offsetTop && scrollPosition < offsetBottom;
+        }
+      });
+
+      if (selected) setSelectedView(selected);
+    }
   };
 
   const onToggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -56,13 +91,13 @@ export const Header = () => {
     <span ref={menuRef}>
       <ThemeProvider theme={theme}>
         <HeaderView ref={headerViewRef} style={barAnimation}>
-          <Navbar navbarState={isMenuOpen} handleNavbar={onToggleMenu} brand={renderBrand} />
+          <Navbar navbarState={isMenuOpen} handleNavbar={onToggleMenu} brand={renderBrand} selected={selectedView} />
           <Button onClick={() => setDarkMode(!darkMode)} style={{ backgroundColor: 'transparent' }}>
             {darkMode ? <MdWbSunny /> : <MdBrightness3 />}
           </Button>
         </HeaderView>
       </ThemeProvider>
-      <CollapseMenu navbarState={isMenuOpen} handleNavbar={onToggleMenu} top={headerHeight} brand={renderBrand} />
+      <CollapseMenu navbarState={isMenuOpen} handleNavbar={onToggleMenu} top={headerHeight} brand={renderBrand} selected={selectedView} />
     </span>
   );
 };

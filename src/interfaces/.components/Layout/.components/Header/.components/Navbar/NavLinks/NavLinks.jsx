@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
 import { useSpring, animated, config } from 'react-spring';
 import styled from 'styled-components';
@@ -12,7 +12,11 @@ import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
 
 const links = ['homeLink', 'buyLink', 'freeLink', 'gameLink', 'authorLink', 'contactLink'];
 
-export const NavLinks = () => {
+export const NavLinks = ({ selected }) => {
+  useEffect(() => {
+    onAnimate(selected);
+  }, [selected]);
+
   const linkAnimation = useSpring({
     from: { transform: 'translate3d(0, 30px, 0)', opacity: 0 },
     to: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
@@ -28,7 +32,7 @@ export const NavLinks = () => {
 
   const onNavSection = section => {
     const offsetTop = document.getElementById(section).offsetTop;
-    window.scrollTo({ top: offsetTop - 100, behavior: 'smooth' });
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
 
     onAnimate(section);
   };

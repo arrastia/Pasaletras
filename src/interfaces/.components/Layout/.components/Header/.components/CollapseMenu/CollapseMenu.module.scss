@@ -17,24 +17,48 @@
       font-size: 1rem;
       margin-bottom: 1rem;
 
-      > span {
-        column-gap: 10px;
-        display: grid;
-        grid-template-columns: 10% auto;
+      .menu {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        position: relative;
         text-transform: uppercase;
 
         > svg {
           align-items: center;
           display: flex;
           font-size: 1.5rem;
-          justify-content: center;
+          justify-content: flex-start;
+          margin-right: 0.5rem;
         }
 
         > span {
           align-items: center;
           display: flex;
+          color: var(--text);
+          font-size: 0.8rem;
           justify-content: flex-start;
         }
+      }
+    }
+
+    .active {
+      color: var(--book3);
+      opacity: 1;
+
+      &::after {
+        margin-top: 1rem;
+        visibility: visible;
+        transform: scaleX(1);
+      }
+
+      > svg {
+        align-items: center;
+        display: flex;
+        font-size: 1.5rem;
+        justify-content: flex-start;
+        color: var(--book3);
       }
     }
   }

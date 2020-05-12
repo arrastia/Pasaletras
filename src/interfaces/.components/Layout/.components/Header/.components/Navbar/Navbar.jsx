@@ -10,37 +10,12 @@ import { useBreakpoint } from 'interfaces/.tools/Hooks/useBreakpoint';
 export const Navbar = props => {
   const breakpoints = useBreakpoint();
 
-  // var clickMenu = function () {
-  //   $('#navbar a:not([class="external"])').click(function (event) {
-  //     var section = $(this).data("nav-section"),
-  //       navbar = $("#navbar");
-
-  //     if ($('[data-section="' + section + '"]').length) {
-  //       $("html, body").animate(
-  //         {
-  //           scrollTop: $('[data-section="' + section + '"]').offset().top - 55,
-  //         },
-  //         500
-  //       );
-  //     }
-
-  //     if (navbar.is(":visible")) {
-  //       navbar.removeClass("in");
-  //       navbar.attr("aria-expanded", "false");
-  //       $(".js-nav-button").removeClass("active");
-  //     }
-
-  //     event.preventDefault();
-  //     return false;
-  //   });
-  // };
-
   return (
     <div className={styles.wrap}>
       {breakpoints.tablet ? (
         <Fragment>
           {props.brand('navbar')}
-          <NavLinks />
+          <NavLinks selected={props.selected} />
         </Fragment>
       ) : (
         <div className={styles.burgerWrap}>
