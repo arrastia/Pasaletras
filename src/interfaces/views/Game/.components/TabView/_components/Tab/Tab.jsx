@@ -274,6 +274,7 @@ const Tab = ({
         role="presentation"
         style={{ ...headerStyle, pointerEvents: 'fill' }}
         ref={tabRef}
+        // style={{ background: 'red' }}
         tabIndex={index}>
         <a
           draggable={designMode ? (!addTab ? true : false) : false}
@@ -315,31 +316,14 @@ const Tab = ({
           onDrop={e => onTabDrop(e)}
           onDoubleClick={onTabDoubleClick}
           role="tab"
-          style={{ pointerEvents: 'fill', display: 'inline-block', height: isNavigationHidden ? '2.6rem' : '2.7rem' }}
+          style={{
+            pointerEvents: 'fill',
+            display: 'inline-block',
+            height: isNavigationHidden ? '2.6rem' : '2.7rem' /* background: 'yellow' */
+          }}
           tabIndex={index}>
           {leftIcon && <span className={classNames('p-tabview-left-icon ', leftIcon)}></span>}
-          {!isUndefined(editingHeader) && editingHeader ? (
-            <InputText
-              autoFocus={true}
-              key={index}
-              className={`${styles.p_tabview_input_design} tabInput`}
-              onBlur={e => {
-                //Check for empty table name
-                if (titleHeader !== '') {
-                  onInputBlur(e.target.value, index, initialTitleHeader);
-                } else {
-                  if (!isUndefined(onTabNameError)) {
-                    onTabAddCancel();
-                  }
-                }
-              }}
-              onChange={e => setTitleHeader(e.target.value)}
-              onKeyDown={e => onKeyChange(e, index)}
-              // placeholder={resources.messages['newTablePlaceHolder']}
-              value={!isUndefined(titleHeader) ? titleHeader : header}></InputText>
-          ) : (
-            <span className="p-tabview-title">{!isUndefined(titleHeader) ? titleHeader : header}</span>
-          )}
+          <span className="p-tabview-title" /* style={{ background: 'blue' }} */>{!isUndefined(titleHeader) ? titleHeader : header}</span>
           {rightIcon && <span className={classNames('p-tabview-right-icon ', rightIcon)}></span>}
           {designMode && !hasPKReferenced ? (
             <div

@@ -16,7 +16,10 @@ export const MagazineView = ({ gameState, onToggle, pagina }) => {
 
   return (
     <TabView activeIndex={activeView} onTabChange={event => setActiveView(event.index)}>
-      <TabPanel header="Nivel A1">
+      <TabPanel
+        header="Nivel A1"
+        color={'var(--a1)'}
+        headerStyle={{ color: activeView === 0 ? 'var(--white)' : '', background: activeView === 0 ? 'var(--a1)' : '' }}>
         <div className={styles.wrap}>
           {pagina.a1.map(item => (
             <div key={item.id} className={styles.pasaletras} onClick={() => onToggle(777)}>
@@ -26,7 +29,9 @@ export const MagazineView = ({ gameState, onToggle, pagina }) => {
           ))}
         </div>
       </TabPanel>
-      <TabPanel header="Nivel A2">
+      <TabPanel
+        header="Nivel A2"
+        headerStyle={{ color: activeView === 1 ? 'var(--white)' : '', background: activeView === 1 ? 'var(--a2)' : '' }}>
         <div className={styles.wrap}>
           {pagina.a2.map(item => (
             <div key={item.id} className={styles.pasaletras} onClick={() => onToggle(777)}>

@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const TabPanel = props => {
-  return <div {...props}>{props.children}</div>;
+  return (
+    <div {...props} style={{ background: 'green' }}>
+      {props.children}
+    </div>
+  );
 };
 
 TabPanel.propTypes = {
