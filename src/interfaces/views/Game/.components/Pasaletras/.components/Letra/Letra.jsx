@@ -11,16 +11,17 @@ export const Letra = ({ transformCoordinates, pickerIsActive, pickerClicked, pic
         pickerIsActive
           ? {
               // backgroundColor: pickerColor.bg,
-              backgroundColor: 'transparent',
+              backgroundColor: 'var(--pasapalabra)',
               transform: 'translate(' + transformCoordinates.x + 'px, ' + transformCoordinates.y + 'px)',
               transitionDelay: delay + 's',
-              border: `0.1rem solid ${color}`
+              color: 'var(--white)',
+              border: `0.1rem solid var(--white)`
             }
           : {
               backgroundColor: pickerColor.bg,
               transform: 'translate(0px,0px)',
-              transitionDelay: delay + 's',
-              border: `10px solid ${color}`
+              transitionDelay: delay + 's'
+              // border: `10px solid ${color}`
             }
       }
       className="selector"

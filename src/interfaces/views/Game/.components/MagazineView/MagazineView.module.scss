@@ -25,11 +25,12 @@
     }
 
     .brand {
-      background-color: blueviolet;
+      // background-color: blueviolet;
       border-radius: 5px;
       padding: 1rem;
       position: relative;
       text-align: center;
+      color: var(--white);
       // top: 100%;
       // z-index: 9;
     }

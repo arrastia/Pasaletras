@@ -12,7 +12,7 @@ export const AccordionView = ({ gameState, onToggle, pagina }) => {
   return (
     <TabView activeIndex={activeView} onTabChange={event => setActiveView(event.index)}>
       <TabPanel header="Nivel A1">
-        {pagina.map(item => (
+        {pagina.a1.map(item => (
           <Accordion
             bgColor="var(--a1)"
             content={item}
@@ -24,7 +24,7 @@ export const AccordionView = ({ gameState, onToggle, pagina }) => {
         ))}
       </TabPanel>
       <TabPanel header="Nivel A2">
-        {pagina.map(item => (
+        {pagina.a2.map(item => (
           <Accordion
             bgColor="var(--a2)"
             content={item}
@@ -35,8 +35,8 @@ export const AccordionView = ({ gameState, onToggle, pagina }) => {
           />
         ))}
       </TabPanel>
-      <TabPanel header="Nivel B1">
-        {pagina.map(item => (
+      {/* <TabPanel header="Nivel B1">
+        {pagina.a1.map(item => (
           <Accordion
             bgColor="var(--b1)"
             content={item}
@@ -48,7 +48,7 @@ export const AccordionView = ({ gameState, onToggle, pagina }) => {
         ))}
       </TabPanel>
       <TabPanel header="Nivel B2">
-        {pagina.map(item => (
+        {pagina.a1.map(item => (
           <Accordion
             bgColor="var(--b2)"
             content={item}
@@ -60,7 +60,7 @@ export const AccordionView = ({ gameState, onToggle, pagina }) => {
         ))}
       </TabPanel>
       <TabPanel header="Nivel C1">Content V</TabPanel>
-      <TabPanel header="Nivel C2">Content VI</TabPanel>
+      <TabPanel header="Nivel C2">Content VI</TabPanel> */}
     </TabView>
   );
 };
