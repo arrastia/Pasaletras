@@ -121,4 +121,13 @@
   .buy {
     zoom: 0.9;
   }
+
+  .subtitle {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    zoom: 0.75;
+  }
 }

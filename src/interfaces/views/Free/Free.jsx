@@ -23,7 +23,14 @@ export const Free = () => {
   return layout(
     <div className={styles.free}>
       {showItems.map(card => (
-        <Card key={card.id} title={card.title} subtitle={card.subtitle} className="download" toolbar={card.toolbar} />
+        <Card
+          key={card.id}
+          title={card.title}
+          subtitle={card.subtitle}
+          className="download"
+          toolbar={card.toolbar}
+          style={{ width: '100%' }}
+        />
       ))}
     </div>
   );

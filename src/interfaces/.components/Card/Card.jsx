@@ -4,9 +4,9 @@ import styled, { ThemeProvider } from 'styled-components';
 
 import styles from './Card.module.scss';
 
-export const Card = ({ date, icon, id, obligation, subtitle, title, className, toolbar }) => {
+export const Card = ({ date, icon, id, style, subtitle, title, className, toolbar }) => {
   return (
-    <div className={`${styles.card} ${styles[className]}`}>
+    <div className={`${styles.card} ${styles[className]}`} style={style}>
       <div className={styles.text}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.subtitle}>{subtitle}</p>
