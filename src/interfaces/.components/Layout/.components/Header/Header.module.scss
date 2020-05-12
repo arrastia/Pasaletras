@@ -2,3 +2,10 @@
   display: flex;
   justify-content: center;
 }
+
+.up {
+  position: fixed;
+  z-index: 3;
+  top: 90vh;
+  right: 1rem;
+}

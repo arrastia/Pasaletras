@@ -1,9 +1,10 @@
-import React, { useLayoutEffect, useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 
 import { useSpring, animated } from 'react-spring';
 import styled, { ThemeProvider } from 'styled-components';
 
 import { MdWbSunny, MdBrightness3 } from 'react-icons/md';
+import { FiArrowUpCircle } from 'react-icons/fi';
 
 import styles from './Header.module.scss';
 
@@ -87,6 +88,11 @@ export const Header = () => {
     </span>
   );
 
+  const onTop = () => {
+    const offsetTop = document.getElementById('root').offsetTop;
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+  };
+
   return (
     <span ref={menuRef}>
       <ThemeProvider theme={theme}>
@@ -98,6 +104,15 @@ export const Header = () => {
         </HeaderView>
       </ThemeProvider>
       <CollapseMenu navbarState={isMenuOpen} handleNavbar={onToggleMenu} top={headerHeight} brand={renderBrand} selected={selectedView} />
+      {document.documentElement.scrollTop > 50 ? (
+        <div className={styles.up}>
+          <Button onClick={() => onTop()}>
+            <FiArrowUpCircle />
+          </Button>
+        </div>
+      ) : (
+        <Fragment />
+      )}
     </span>
   );
 };

@@ -31,7 +31,7 @@ export const Contact = () => {
 
   return layout(
     <div className={styles.contact}>
-      <div className={styles.input}>
+      {/* <div className={styles.input}>
         {data.map(item => (
           <span key={item.id}>
             <span className={styles.icon}>{item.icon}</span>
@@ -59,7 +59,7 @@ export const Contact = () => {
             <GrPowerReset />
           </Button>
         </span>
-      </div>
+      </div> */}
     </div>
   );
 };
