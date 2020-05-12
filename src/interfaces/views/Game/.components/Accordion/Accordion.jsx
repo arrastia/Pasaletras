@@ -27,13 +27,13 @@ export const Accordion = ({ bgColor, content, id, isOpen, onOpen }) => {
 
   return (
     <Fragment>
-      <AccordionHeading onClick={() => onOpen(id)} zIndex={1} style={{ backgroundColor: bgColor }}>
+      <AccordionHeading onClick={() => onOpen(id)} /* zIndex={1} */ style={{ backgroundColor: bgColor }}>
         {content.title}
         <AnimatedBox style={{ transform: scY.interpolate(scY => `scaleY(${scY})`) }} pl={2}>
           <AiFillCaretDown />
         </AnimatedBox>
       </AccordionHeading>
-      <AnimatedBox ref={ref} style={{ overflow: 'hidden', ...props, height: '500px' }} zIndex={0}>
+      <AnimatedBox ref={ref} style={{ overflow: 'hidden', ...props, height: '500px' }} /* zIndex={0} */>
         {content.text}
       </AnimatedBox>
     </Fragment>

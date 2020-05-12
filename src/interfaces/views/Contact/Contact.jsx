@@ -33,7 +33,7 @@ export const Contact = () => {
     <div className={styles.contact}>
       <div className={styles.input}>
         {data.map(item => (
-          <span>
+          <span key={item.id}>
             <span className={styles.icon}>{item.icon}</span>
             <span className={`p-float-label`}>
               <InputText id={item.id} type={item.type} />
