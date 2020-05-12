@@ -28,7 +28,7 @@ export const Game = () => {
   }, [breakpoints]);
 
   const layout = children => (
-    <SectionLayout id="game" title="game" subtitle="JUEGA CONNOSOTROS">
+    <SectionLayout id="game" title="Juego" subtitle="Comienza a jugar">
       {children}
     </SectionLayout>
   );

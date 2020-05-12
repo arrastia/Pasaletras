@@ -19,7 +19,7 @@ export const Free = () => {
   const breakpoints = useBreakpoint();
 
   const layout = children => (
-    <SectionLayout id="free" title="free" subtitle="MUESTRAS GRATIS">
+    <SectionLayout id="free" title="MUESTRAS GRATUITAS" subtitle="MUESTRAS GRATUITAS">
       {children}
     </SectionLayout>
   );

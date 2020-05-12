@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { config, Keyframes } from 'react-spring/renderprops';
 
-import { GiBookshelf, GiHouse, GiMailbox, GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
+import { GiBookshelf, GiHouse, GiTeacher, GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
 import { RiMailSendLine } from 'react-icons/ri';
 
 import styles from './CollapseMenu.module.scss';
@@ -56,7 +56,7 @@ const items = [
     id: 'author',
     content: (
       <span id="authorMenu" className={styles.menu}>
-        <GiBookshelf /> <span>Sobre el autor</span>
+        <GiTeacher /> <span>Sobre el autor</span>
       </span>
     )
   },

@@ -32,7 +32,7 @@ export const Slider = ({ value }) => {
         backgroundImage: `url(${value[activeIndex].photo})`,
         backgroundPosition: !breakpoints.tablet && activeIndex === 0 && '75%'
       }}>
-      <div className={`${styles.card} ${value[activeIndex].classNameCard}`}>
+      {/* <div className={`${styles.card} ${value[activeIndex].classNameCard}`}>
         <h1>{value[activeIndex].title}</h1>
         <h2>{value[activeIndex].subtitle}</h2>
         <Button onClick={value[activeIndex].buttonAction} label={value[activeIndex].buttonLabel}>
@@ -43,7 +43,7 @@ export const Slider = ({ value }) => {
         <Button onClick={onChangeView} style={{ backgroundColor: 'transparent' }}>
           <GiBackForth />
         </Button>
-      </div>
+      </div> */}
     </li>
   );
 };

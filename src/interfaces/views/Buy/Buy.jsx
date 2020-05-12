@@ -19,7 +19,7 @@ const showItems = [
 
 export const Buy = () => {
   const layout = children => (
-    <SectionLayout id="buy" title="buy" subtitle="jejej">
+    <SectionLayout id="buy" title="CÓMPRALO" subtitle="CÓMPRALO">
       {children}
     </SectionLayout>
   );

@@ -18,7 +18,7 @@ import { ReactUtils } from 'interfaces/.tools/Utils/ReactUtils';
 
 export const Contact = () => {
   const layout = children => (
-    <SectionLayout id="contact" title="contact" subtitle="Escribemos bb">
+    <SectionLayout id="contact" title="Contacta" subtitle="Ponte en contacto con nosotros">
       {children}
     </SectionLayout>
   );

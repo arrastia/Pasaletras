@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useSpring, animated, config } from 'react-spring';
 import styled from 'styled-components';
 
-import { GiBookshelf, GiHouse, GiMailbox, GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
+import { GiBookshelf, GiHouse, GiMailbox, GiShoppingCart, GiTabletopPlayers, GiTeacher } from 'react-icons/gi';
 import { RiMailSendLine } from 'react-icons/ri';
 
 import styles from './NavLinks.module.scss';
@@ -52,7 +52,7 @@ export const NavLinks = ({ selected }) => {
         <GiTabletopPlayers /> <span>Juego</span>
       </span>
       <span id="authorLink" className={styles.menu} onClick={() => onNavSection('author')}>
-        <GiBookshelf /> <span>Sobre el autor</span>
+        <GiTeacher /> <span>Sobre el autor</span>
       </span>
       <span id="contactLink" className={styles.menu} onClick={() => onNavSection('contact')}>
         <RiMailSendLine /> <span>Contacta</span>

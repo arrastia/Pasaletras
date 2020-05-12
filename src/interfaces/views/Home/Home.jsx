@@ -31,13 +31,13 @@ export const Home = () => {
       classNameCard: 'fadeInDown animated',
       buttonAction: () => {},
       buttonIcon: <GiShoppingCart />,
-      buttonLabel: 'compralo',
+      buttonLabel: 'Cómpralo',
       content: <span></span>,
       id: 2,
       key: 2,
       photo: book,
-      subtitle: 'sub',
-      title: 'title'
+      // subtitle: 'sub',
+      title: 'Cómpralo'
     }
   ];
 

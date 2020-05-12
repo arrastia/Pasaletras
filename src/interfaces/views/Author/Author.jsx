@@ -10,7 +10,7 @@ import { SectionLayout } from 'interfaces/.components/SectionLayout';
 
 export const Author = () => {
   const layout = children => (
-    <SectionLayout id="author" title="author" subtitle="SOBRE EL author">
+    <SectionLayout id="author" title="sobre el autor" subtitle="SOBRE EL autor">
       {children}
     </SectionLayout>
   );
