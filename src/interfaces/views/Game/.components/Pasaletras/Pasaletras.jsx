@@ -5,7 +5,7 @@ import './Pasaletras.scss';
 
 import { Letra } from './.components/Letra';
 
-export const Pasaletras = ({ refresh, color }) => {
+export const Pasaletras = ({ refresh, color, isAnimate }) => {
   const [active, setActive] = useState(false); // refresh ?
 
   const containerRef = useRef(null);
@@ -29,6 +29,12 @@ export const Pasaletras = ({ refresh, color }) => {
       });
     } else () => setActive(false);
   }, [refresh]);
+
+  useEffect(() => {
+    isAnimateView();
+  }, [isAnimate]);
+
+  const isAnimateView = () => setActive(isAnimate);
 
   const togglePickers = () => setActive(!active);
 
@@ -80,6 +86,7 @@ export const Pasaletras = ({ refresh, color }) => {
 
     pickers.push(
       <Letra
+        key={i}
         transformCoordinates={coordinateObject}
         pickerIsActive={active}
         // pickerClicked={this.setBackgroundColor}
