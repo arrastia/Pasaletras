@@ -2,6 +2,8 @@ import React, { Fragment, useEffect, useRef } from 'react';
 
 import './Download.scss';
 
+import freePDF from 'assets/docs/MuestraGratuita.pdf';
+
 export const Download = () => {
   const arrowRef = useRef(null);
   const buttonRef = useRef(null);
@@ -83,9 +85,20 @@ export const Download = () => {
     return `<path d="${d}" />`;
   };
 
+  const onDownload = () => {
+    setTimeout(() => {
+      const link = document.createElement('a');
+      link.href = freePDF;
+      link.setAttribute('download', '');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }, 1000);
+  };
+
   return (
     <Fragment>
-      <button className="button" ref={buttonRef}>
+      <button className="button" ref={buttonRef} onClick={() => onDownload()}>
         <svg className="circle" viewBox="0 0 76 76">
           <circle className="default" cx="38" cy="38" r="36"></circle>
           <circle className="active" cx="38" cy="38" r="36"></circle>
