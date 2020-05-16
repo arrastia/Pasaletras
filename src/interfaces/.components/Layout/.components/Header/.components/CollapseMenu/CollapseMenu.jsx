@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 
 import { config, Keyframes } from 'react-spring/renderprops';
 
-import { GiBookshelf, GiHouse, GiTeacher, GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
+import { FaChalkboardTeacher } from 'react-icons/fa';
+import { GiBookshelf, GiHouse, GiShoppingCart, GiTeacher } from 'react-icons/gi';
 import { RiMailSendLine } from 'react-icons/ri';
 
 import styles from './CollapseMenu.module.scss';
@@ -47,7 +48,7 @@ const items = [
     id: 'game',
     content: (
       <span id="gameMenu" className={styles.menu}>
-        <GiTabletopPlayers /> <span>Juego</span>
+        <FaChalkboardTeacher /> <span>Juego</span>
       </span>
     )
   },
