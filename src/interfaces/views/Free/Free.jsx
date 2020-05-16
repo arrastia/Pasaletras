@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import styles from './Free.module.scss';
 
 import { Card } from 'interfaces/.components/Card';
 import { Download } from './.components/Download';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
+
+import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
 
 import { useBreakpoint } from 'interfaces/.tools/Hooks/useBreakpoint';
 
@@ -16,15 +18,17 @@ const showItems = [
 ];
 
 export const Free = () => {
+  const messages = useContext(MessagesContext);
+
   const breakpoints = useBreakpoint();
 
-  const layout = children => (
-    <SectionLayout id="free" title="MUESTRAS GRATUITAS" subtitle="MUESTRAS GRATUITAS">
+  const renderLayout = children => (
+    <SectionLayout id="free" title={messages.es['freeSample']} subtitle={messages.es['freeSample']}>
       {children}
     </SectionLayout>
   );
 
-  return layout(
+  return renderLayout(
     <div className={styles.free}>
       {showItems.map(card => (
         <Card

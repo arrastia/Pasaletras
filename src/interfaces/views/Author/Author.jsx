@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import styles from './Author.module.scss';
 
@@ -8,26 +8,22 @@ import author from 'assets/img/author/author.jpg';
 
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
 
+import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
+
 export const Author = () => {
-  const layout = children => (
-    <SectionLayout id="author" title="sobre el autor" subtitle="SOBRE EL autor">
+  const messages = useContext(MessagesContext);
+
+  const renderLayout = children => (
+    <SectionLayout id="author" title={messages.es['aboutAuthor']} subtitle={messages.es['aboutAuthor']}>
       {children}
     </SectionLayout>
   );
 
-  return layout(
+  return renderLayout(
     <div className={styles.author}>
       <img className={styles.img} src={author} alt="" />
       <h3 className={styles.title}>José Luis Sánchez Melgarejo</h3>
-      <div className={styles.text}>
-        <p>Trabaja como profesor de español en la Universidad de Seattle en Bratislava.</p>
-        <p>Colabora esporádicamente con el Aula Cervantes de Bratislava y es examinador oficial de los exámenes DELE.</p>
-        <p>
-          Aunque durante sus estudios universitarios se especializó en formación de profesorado de español como lengua extranjera y en
-          lingüística aplicada a la enseñanza de español como lengua extranjera, su verdadera pasión y donde centra actualmente la mayoría
-          de sus investigaciones es en la enseñanza del español en línea.
-        </p>
-      </div>
+      <div className={styles.text}>{messages.es['authorParagraph']}</div>
       <a className={styles.btn} href={'item.url'} rel="noopener noreferrer" target="_blank" title={'item.name'}>
         <GrLinkedinOption className={styles.svg} />
       </a>

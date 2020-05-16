@@ -12,16 +12,13 @@ import { Game } from 'interfaces/views/Game';
 import { Home } from 'interfaces/views/Home';
 
 import { BreakpointProvider } from 'interfaces/.tools/Providers/BreakpointProvider';
-import { LanguageProvider } from 'interfaces/.tools/Providers/LanguageProvider';
 import { MessagesProvider } from 'interfaces/.tools/Providers/MessagesProvider';
 
 export const App = () => {
   const layout = children => (
     <BreakpointProvider queries={queries}>
       <MessagesProvider>
-        <LanguageProvider>
-          <Layout>{children}</Layout>
-        </LanguageProvider>
+        <Layout>{children}</Layout>
       </MessagesProvider>
     </BreakpointProvider>
   );

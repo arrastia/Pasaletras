@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import styles from './MagazineView.module.scss';
 
 import { TabPanel } from '../TabView/_components/TabPanel';
 import { TabView } from '../TabView';
 
+import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
+
 export const MagazineView = ({ gameState, onToggle, pagina }) => {
+  const messages = useContext(MessagesContext);
+
   const [activeView, setActiveView] = useState(0);
 
   const renderBrand = (bgColor, page) => (
@@ -17,7 +21,7 @@ export const MagazineView = ({ gameState, onToggle, pagina }) => {
   return (
     <TabView activeIndex={activeView} onTabChange={event => setActiveView(event.index)}>
       <TabPanel
-        header="Nivel A1"
+        header={`${messages.es['level']} ${messages.es['a1']}`}
         color={'var(--a1)'}
         headerStyle={{ color: activeView === 0 ? 'var(--white)' : '', background: activeView === 0 ? 'var(--a1)' : '' }}>
         <div className={styles.wrap}>
@@ -30,7 +34,7 @@ export const MagazineView = ({ gameState, onToggle, pagina }) => {
         </div>
       </TabPanel>
       <TabPanel
-        header="Nivel A2"
+        header={`${messages.es['level']} ${messages.es['a2']}`}
         headerStyle={{ color: activeView === 1 ? 'var(--white)' : '', background: activeView === 1 ? 'var(--a2)' : '' }}>
         <div className={styles.wrap}>
           {pagina.a2.map(item => (
@@ -41,10 +45,10 @@ export const MagazineView = ({ gameState, onToggle, pagina }) => {
           ))}
         </div>
       </TabPanel>
-      {/* <TabPanel header="Nivel B1"></TabPanel>
-      <TabPanel header="Nivel B2"></TabPanel>
-      <TabPanel header="Nivel C1">Content V</TabPanel>
-      <TabPanel header="Nivel C2">Content VI</TabPanel> */}
+      {/* <TabPanel header= {`${messages.es['level']} ${messages.es['B1']}`}></TabPanel>
+      <TabPanel header= {`${messages.es['level']} ${messages.es['B2']}`}></TabPanel>
+      <TabPanel header= {`${messages.es['level']} ${messages.es['C1']}`}>Content V</TabPanel>
+      <TabPanel header= {`${messages.es['level']} ${messages.es['C2']}`}>Content VI</TabPanel> */}
     </TabView>
   );
 };

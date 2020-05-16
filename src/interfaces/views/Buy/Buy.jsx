@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import styles from './Buy.module.scss';
 
@@ -10,21 +10,25 @@ import tablet from 'assets/img/svg/tablet.svg';
 import { Card } from 'interfaces/.components/Card';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
 
-const showItems = [
-  { title: 'Versión PAPEL', subtitle: 'Saber más', photo: <img src={book} />, id: 1 },
-  { title: 'Versión EBOOK', subtitle: 'Saber más', photo: <img src={tablet} />, id: 2 },
-  { title: 'Versión PDF', subtitle: 'Saber más', photo: <img src={pdf} />, id: 3 },
-  { title: 'Versión KINDLE', subtitle: 'Saber más', photo: <img src={kindle} />, id: 4 }
-];
+import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
 
 export const Buy = () => {
-  const layout = children => (
-    <SectionLayout id="buy" title="CÓMPRALO" subtitle="CÓMPRALO">
+  const messages = useContext(MessagesContext);
+
+  const showItems = [
+    { title: messages.es['optionPaper'], subtitle: messages.es['more'], photo: <img src={book} />, id: 1 },
+    { title: 'Versión EBOOK', subtitle: 'Saber más', photo: <img src={tablet} />, id: 2 },
+    { title: messages.es['optionPdf'], subtitle: messages.es['more'], photo: <img src={pdf} />, id: 3 },
+    { title: messages.es['optionKindle'], subtitle: messages.es['more'], photo: <img src={kindle} />, id: 4 }
+  ];
+
+  const renderLayout = children => (
+    <SectionLayout id="buy" title={messages.es['buyIt']} subtitle={messages.es['buyIt']}>
       {children}
     </SectionLayout>
   );
 
-  return layout(
+  return renderLayout(
     <div className={styles.buy}>
       {showItems.map(card => (
         <Card key={card.id} title={card.title} subtitle={card.subtitle} toolbar={card.photo} className="buy" />

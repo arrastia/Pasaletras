@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
 
@@ -9,7 +9,11 @@ import girl from 'assets/img/gallery/background-girl.jpg';
 
 import { Slider } from './.components/Slider';
 
+import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
+
 export const Home = () => {
+  const messages = useContext(MessagesContext);
+
   const showItems = [
     {
       aciveItem: false,

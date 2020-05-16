@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import styles from './AccordionView.module.scss';
 
@@ -6,12 +6,16 @@ import { Accordion } from '../Accordion';
 import { TabPanel } from '../TabView/_components/TabPanel';
 import { TabView } from '../TabView';
 
+import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
+
 export const AccordionView = ({ gameState, onToggle, pagina }) => {
+  const messages = useContext(MessagesContext);
+
   const [activeView, setActiveView] = useState(0);
 
   return (
     <TabView activeIndex={activeView} onTabChange={event => setActiveView(event.index)}>
-      <TabPanel header="Nivel A1">
+      <TabPanel header={`${messages.es['level']} ${messages.es['a1']}`}>
         {pagina.a1.map(item => (
           <Accordion
             bgColor="var(--a1)"
@@ -23,7 +27,7 @@ export const AccordionView = ({ gameState, onToggle, pagina }) => {
           />
         ))}
       </TabPanel>
-      <TabPanel header="Nivel A2">
+      <TabPanel header={`${messages.es['level']} ${messages.es['a2']}`}>
         {pagina.a2.map(item => (
           <Accordion
             bgColor="var(--a2)"
@@ -35,7 +39,7 @@ export const AccordionView = ({ gameState, onToggle, pagina }) => {
           />
         ))}
       </TabPanel>
-      {/* <TabPanel header="Nivel B1">
+      {/* <TabPanel header= {`${messages.es['level']} ${messages.es['B1']}`}>
         {pagina.a1.map(item => (
           <Accordion
             bgColor="var(--b1)"
@@ -47,7 +51,7 @@ export const AccordionView = ({ gameState, onToggle, pagina }) => {
           />
         ))}
       </TabPanel>
-      <TabPanel header="Nivel B2">
+      <TabPanel header= {`${messages.es['level']} ${messages.es['B2']}`}>
         {pagina.a1.map(item => (
           <Accordion
             bgColor="var(--b2)"
@@ -59,8 +63,8 @@ export const AccordionView = ({ gameState, onToggle, pagina }) => {
           />
         ))}
       </TabPanel>
-      <TabPanel header="Nivel C1">Content V</TabPanel>
-      <TabPanel header="Nivel C2">Content VI</TabPanel> */}
+      <TabPanel header= {`${messages.es['level']} ${messages.es['C1']}`}>Content V</TabPanel>
+      <TabPanel header= {`${messages.es['level']} ${messages.es['C2']}`}>Content VI</TabPanel> */}
     </TabView>
   );
 };
