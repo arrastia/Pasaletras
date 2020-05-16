@@ -4,7 +4,7 @@ import styles from './Author.module.scss';
 
 import { GrLinkedin, GrLinkedinOption } from 'react-icons/gr';
 
-import author from 'assets/img/author2.jpg';
+import author from 'assets/img/author/author.jpg';
 
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
 

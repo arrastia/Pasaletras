@@ -2,10 +2,10 @@ import React from 'react';
 
 import styles from './Buy.module.scss';
 
-import book from 'assets/img/book.svg';
-import kindle from 'assets/img/kindle.svg';
-import pdf from 'assets/img/pdf.svg';
-import tablet from 'assets/img/tablet.svg';
+import book from 'assets/img/svg/book.svg';
+import kindle from 'assets/img/svg/kindle.svg';
+import pdf from 'assets/img/svg/pdf.svg';
+import tablet from 'assets/img/svg/tablet.svg';
 
 import { Card } from 'interfaces/.components/Card';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';

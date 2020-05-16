@@ -4,8 +4,8 @@ import { GiShoppingCart, GiTabletopPlayers } from 'react-icons/gi';
 
 import styles from './Home.module.scss';
 
-import book from 'assets/img/fondo1.jpg';
-import girl from 'assets/img/fondo2.jpg';
+import book from 'assets/img/gallery/background-book.jpg';
+import girl from 'assets/img/gallery/background-girl.jpg';
 
 import { Slider } from './.components/Slider';
 
