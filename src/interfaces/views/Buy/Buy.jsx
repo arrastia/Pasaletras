@@ -16,10 +16,17 @@ export const Buy = () => {
   const messages = useContext(MessagesContext);
 
   const showItems = [
-    { className: 'downloadLink', title: 'PRUEBA GRATUITA', subtitle: 'Descarga una prueba gratuita', photo: <Download />, id: 0 },
-    { className: '', title: messages.es['optionPaper'], subtitle: messages.es['more'], photo: <img src={book} />, id: 1 },
-    { className: '', title: messages.es['optionPdf'], subtitle: messages.es['more'], photo: <img src={pdf} />, id: 2 },
-    { className: '', title: messages.es['optionKindle'], subtitle: messages.es['more'], photo: <img src={kindle} />, id: 3 }
+    {
+      className: 'download',
+      iconClassName: 'downloadLink',
+      id: 0,
+      photo: <Download />,
+      subtitle: messages.es['downloadNow'],
+      title: messages.es['freeSample']
+    },
+    { title: messages.es['optionPaper'], subtitle: messages.es['more'], photo: <img src={book} />, id: 1 },
+    { title: messages.es['optionPdf'], subtitle: messages.es['more'], photo: <img src={pdf} />, id: 2 },
+    { title: messages.es['optionKindle'], subtitle: messages.es['more'], photo: <img src={kindle} />, id: 3 }
   ];
 
   const renderLayout = children => (
@@ -32,8 +39,8 @@ export const Buy = () => {
     <div className={styles.buy}>
       {showItems.map(card => (
         <Card
-          className={'download'}
-          iconClassName={card.className}
+          className={card.className}
+          iconClassName={card.iconClassName}
           key={card.id}
           subtitle={card.subtitle}
           title={card.title}
