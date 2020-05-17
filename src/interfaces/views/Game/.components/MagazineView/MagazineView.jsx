@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, Fragment } from 'react';
 
 import styles from './MagazineView.module.scss';
 
@@ -18,37 +18,30 @@ export const MagazineView = ({ gameState, onToggle, pagina }) => {
     </span>
   );
 
+  const renderTabPanels = () => {
+    const data = [];
+    for (const key in pagina) {
+      data.push(
+        <TabPanel header={messages.es[key]} color={'var(--a1)'} id={key}>
+          <div className={styles.wrap}>
+            {pagina[key].map(item => (
+              <div key={item.id} className={styles.pasaletras} onClick={() => onToggle(777)}>
+                <span className={styles.ball}>{item.text}</span>
+                {renderBrand(item.bgColor, item.title)}
+              </div>
+            ))}
+          </div>
+        </TabPanel>
+      );
+    }
+    return data;
+  };
+
   return (
-    <TabView activeIndex={activeView} onTabChange={event => setActiveView(event.index)}>
-      <TabPanel
-        header={`${messages.es['level']} ${messages.es['a1']}`}
-        color={'var(--a1)'}
-        headerStyle={{ color: activeView === 0 ? 'var(--white)' : '', background: activeView === 0 ? 'var(--a1)' : '' }}>
-        <div className={styles.wrap}>
-          {pagina.a1.map(item => (
-            <div key={item.id} className={styles.pasaletras} onClick={() => onToggle(777)}>
-              <span className={styles.ball}>{item.text}</span>
-              {renderBrand(item.bgColor, item.title)}
-            </div>
-          ))}
-        </div>
-      </TabPanel>
-      <TabPanel
-        header={`${messages.es['level']} ${messages.es['a2']}`}
-        headerStyle={{ color: activeView === 1 ? 'var(--white)' : '', background: activeView === 1 ? 'var(--a2)' : '' }}>
-        <div className={styles.wrap}>
-          {pagina.a2.map(item => (
-            <div key={item.id} className={styles.pasaletras} onClick={() => onToggle(777)}>
-              <span className={styles.ball}>{item.text}</span>
-              {renderBrand(item.bgColor, item.title)}
-            </div>
-          ))}
-        </div>
-      </TabPanel>
-      {/* <TabPanel header= {`${messages.es['level']} ${messages.es['B1']}`}></TabPanel>
-      <TabPanel header= {`${messages.es['level']} ${messages.es['B2']}`}></TabPanel>
-      <TabPanel header= {`${messages.es['level']} ${messages.es['C1']}`}>Content V</TabPanel>
-      <TabPanel header= {`${messages.es['level']} ${messages.es['C2']}`}>Content VI</TabPanel> */}
-    </TabView>
+    <Fragment>
+      <TabView activeIndex={activeView} onTabChange={event => setActiveView(event.index)}>
+        {renderTabPanels()}
+      </TabView>
+    </Fragment>
   );
 };

@@ -98,7 +98,7 @@ export const TabView = ({ activeIndex, children, className, id, onTabChange, onT
           onClick={() => scrollTo(divTabsRef.current.scrollLeft - divTabsRef.current.clientWidth * 0.75, 0)}>
           <AiFillStepBackward />
         </span>
-        <div className={styles.scrollTab} ref={divTabsRef} style={{ marginBottom: totalTabs === 1 ? '-5px' : '-1px' }}>
+        <div className={styles.scrollTab} ref={divTabsRef} /* style={{ marginBottom: totalTabs === 1 ? '-5px' : '-1px' }} */>
           <ul className="p-tabview-nav p-reset" role="tablist" style={{ display: 'inline-flex' }} ref={ulTabsRef}>
             {headers}
           </ul>

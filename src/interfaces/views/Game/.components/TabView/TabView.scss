@@ -3,6 +3,8 @@ body .p-tabview.p-tabview-bottom,
 body .p-tabview.p-tabview-left,
 body .p-tabview.p-tabview-right {
   border: 0 none;
+  position: relative;
+  width: 100%;
 }
 body .p-tabview.p-tabview-top .p-tabview-nav,
 body .p-tabview.p-tabview-bottom .p-tabview-nav,
@@ -140,7 +142,11 @@ body .p-tabview .p-tabview-nav li.p-state-processing a {
 }
 
 body .p-tabview.p-tabview-top .p-tabview-nav {
-  margin-bottom: -1px;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 1rem;
+  }
 }
 body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li a {
   border-top-left-radius: 3px;
@@ -218,6 +224,7 @@ body .p-tabview .p-tabview-panels {
   color: var(--main-font-color);
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin: 0;
   padding: 0;
   position: relative;

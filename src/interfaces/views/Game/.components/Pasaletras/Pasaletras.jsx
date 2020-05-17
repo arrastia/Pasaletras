@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import { FaChalkboardTeacher } from 'react-icons/fa';
+
 // import styles from './Pasaletras.module.scss';
 import './Pasaletras.scss';
 
+import { Button } from 'interfaces/.components/Button';
 import { Letra } from './.components/Letra';
 
 export const Pasaletras = ({ refresh, color, isAnimate }) => {
@@ -97,13 +100,15 @@ export const Pasaletras = ({ refresh, color, isAnimate }) => {
     );
   }
 
+  const buttonStyles = { background: color, borderRadius: '50%', color: 'var(--bg)', height: '4rem', opacity: 1, width: '4rem', zIndex: 2 };
+
   return (
     <div /* style={{ backgroundColor: '#61dafb', height: '3000' }}  */ className="wrap" ref={containerRef}>
-      {/* <div className="play">
-        <div className={'button' + (active === true ? ' active' : '')} onClick={() => togglePickers()}>
-          PLAY
-        </div>
-      </div> */}
+      <div className="play">
+        <Button style={buttonStyles}>
+          <FaChalkboardTeacher />
+        </Button>
+      </div>
       <div className="selectorWrap">
         <div ref={selectorsRef} className="selectors">
           {pickers}

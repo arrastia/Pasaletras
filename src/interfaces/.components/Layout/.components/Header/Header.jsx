@@ -126,7 +126,7 @@ const HeaderView = styled(animated.nav)`
   position: fixed;
   top: 0;
   width: calc(100% - 2rem);
-  z-index: 2;
+  z-index: 3;
 
   &::before {
     background: var(--bg);
