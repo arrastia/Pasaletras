@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 
 import styles from './Author.module.scss';
 
-import { GrLinkedin, GrLinkedinOption } from 'react-icons/gr';
-
 import author from 'assets/img/author/author.jpg';
 
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
@@ -24,9 +22,6 @@ export const Author = () => {
       <img className={styles.img} src={author} alt="" />
       <h3 className={styles.title}>José Luis Sánchez Melgarejo</h3>
       <div className={styles.text}>{messages.es['authorParagraph']}</div>
-      <a className={styles.btn} href={'item.url'} rel="noopener noreferrer" target="_blank" title={'item.name'}>
-        <GrLinkedinOption className={styles.svg} />
-      </a>
     </div>
   );
 };
