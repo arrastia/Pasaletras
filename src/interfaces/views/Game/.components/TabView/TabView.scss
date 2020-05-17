@@ -211,10 +211,10 @@ body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li:not(:last-chi
 }
 
 body .p-tabview .p-tabview-panels {
-  background-color: var(--bg);
+  // background-color: var(--bg);
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  border: 1px solid gray;
+  // border: 1px solid gray;
   color: var(--main-font-color);
   display: flex;
   flex-direction: column;

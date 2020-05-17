@@ -18,7 +18,7 @@ export const Accordion = ({ bgColor, content, id, isOpen, onOpen }) => {
 
   const { scY, y, ...props } = useSpring({
     config: { duration: 300 },
-    maxHeight: isOpen ? `500px` : '0px',
+    maxHeight: isOpen ? `400px` : '0px',
     opacity: isOpen ? 1 : 0,
     scY: isOpen ? -1 : 1
   });
@@ -27,13 +27,13 @@ export const Accordion = ({ bgColor, content, id, isOpen, onOpen }) => {
 
   return (
     <Fragment>
-      <AccordionHeading onClick={() => onOpen(id)} /* zIndex={1} */ style={{ backgroundColor: bgColor }}>
+      <AccordionHeading onClick={() => onOpen(id)} /* zIndex={1} */ /*  style={{ backgroundColor: bgColor }} */>
         {content.title}
         <AnimatedBox style={{ transform: scY.interpolate(scY => `scaleY(${scY})`) }} pl={2}>
           <AiFillCaretDown />
         </AnimatedBox>
       </AccordionHeading>
-      <AnimatedBox ref={ref} style={{ overflow: 'hidden', ...props, height: '500px' }} /* zIndex={0} */>
+      <AnimatedBox ref={ref} style={{ overflow: 'hidden', ...props, height: '400px' }} /* zIndex={0} */>
         {content.text}
       </AnimatedBox>
     </Fragment>
@@ -41,13 +41,15 @@ export const Accordion = ({ bgColor, content, id, isOpen, onOpen }) => {
 };
 
 const AccordionHeading = styled.div`
-  background-color: blueviolet;
-  border-bottom: 1px solid var(--white);
-  color: var(--white);
+  background-color: var(--bg);
+  border-radius: 15px;
+  box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.1);
+  color: var(--text);
   cursor: pointer;
   display: flex;
-  padding: 1rem;
   justify-content: space-between;
+  margin: 0.5rem 0;
+  padding: 1rem;
 `;
 
 const AnimatedBox = styled(animated.div)``;
