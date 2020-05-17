@@ -35,15 +35,6 @@ const items = [
     )
   },
   {
-    key: 3,
-    id: 'free',
-    content: (
-      <span id="freeMenu" className={styles.menu}>
-        <GiBookshelf /> <span>Muestras gratuitas</span>
-      </span>
-    )
-  },
-  {
     key: 4,
     id: 'game',
     content: (

@@ -11,7 +11,7 @@ import styles from './NavLinks.module.scss';
 
 import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
 
-const links = ['homeLink', 'buyLink', 'freeLink', 'gameLink', 'authorLink', 'contactLink'];
+const links = ['homeLink', 'buyLink', 'gameLink', 'authorLink', 'contactLink'];
 
 export const NavLinks = ({ selected }) => {
   useEffect(() => {
@@ -45,9 +45,6 @@ export const NavLinks = ({ selected }) => {
       </span>
       <span id="buyLink" className={styles.menu} onClick={() => onNavSection('buy')}>
         <GiShoppingCart /> <span>Cómpralo</span>
-      </span>
-      <span id="freeLink" className={styles.menu} onClick={() => onNavSection('free')}>
-        <GiBookshelf /> <span>Muestras gratuitas</span>
       </span>
       <span id="gameLink" className={styles.menu} onClick={() => onNavSection('game')}>
         <FaChalkboardTeacher /> <span>Juego</span>

@@ -7,7 +7,6 @@ import { Layout } from 'interfaces/.components/Layout';
 import { Author } from 'interfaces/views/Author';
 import { Buy } from 'interfaces/views/Buy';
 import { Contact } from 'interfaces/views/Contact';
-import { Free } from 'interfaces/views/Free';
 import { Game } from 'interfaces/views/Game';
 import { Home } from 'interfaces/views/Home';
 
@@ -30,7 +29,6 @@ export const App = () => {
       <Home />
       <div className={styles.main}>
         <Buy />
-        <Free />
         <Game />
         <Author />
         <Contact />

@@ -16,7 +16,7 @@ import { useDarkMode } from 'interfaces/.tools/Hooks/useDarkMode';
 import { useOnClickOutside } from 'interfaces/.tools/Hooks/useOnClickOutside';
 import { Brand } from './.components/Brand/Brand';
 
-const links = ['home', 'buy', 'free', 'game', 'author', 'contact'];
+const links = ['home', 'buy', 'game', 'author', 'contact'];
 
 export const Header = () => {
   const [headerHeight, setHeaderHeight] = useState(null);
