@@ -1,18 +1,20 @@
 .homeSection {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 500px;
-  z-index: 0;
+  height: 100vh;
   justify-content: center;
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 0;
 
   .slider {
     border: none;
     z-index: 1;
     margin-bottom: 0;
+    position: relative;
+    height: 100%;
 
     .ul {
       position: relative;
@@ -22,15 +24,5 @@
       z-index: 2;
       margin: 0;
     }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .homeSection {
-    float: left;
-    padding-bottom: 2em;
-    padding-top: 0em;
-    position: relative;
-    width: 100%;
   }
 }

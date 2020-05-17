@@ -96,7 +96,7 @@ export const Header = () => {
   return (
     <span ref={menuRef}>
       <ThemeProvider theme={theme}>
-        <HeaderView ref={headerViewRef} style={barAnimation}>
+        <HeaderView id={'headerView'} ref={headerViewRef} style={barAnimation}>
           <Navbar navbarState={isMenuOpen} handleNavbar={onToggleMenu} brand={renderBrand} selected={selectedView} />
           <Button onClick={() => setDarkMode(!darkMode)} style={{ backgroundColor: 'transparent' }}>
             {darkMode ? <MdWbSunny /> : <MdBrightness3 />}
