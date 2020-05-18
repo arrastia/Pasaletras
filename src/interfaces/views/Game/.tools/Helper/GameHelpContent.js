@@ -12,7 +12,7 @@ const getPageContent = (key, data, messages, pasaletras) => {
   const { bgColor, pages } = data[key][0];
   content.push(
     pages.map(item => {
-      return { title: `${messages['page']} ${item}`, text: pasaletras(item), id: item, bgColor: bgColor[0] };
+      return { title: `${messages['page']} ${item}`, text: pasaletras(item, bgColor[0]), id: item, bgColor: bgColor[0] };
     })
   );
   return content.flat();

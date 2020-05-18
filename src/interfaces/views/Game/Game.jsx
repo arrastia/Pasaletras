@@ -55,9 +55,9 @@ export const Game = () => {
     </SectionLayout>
   );
 
-  const renderPasaletras = id => (
+  const renderPasaletras = (id, bgColor) => (
     <div className={styles.pasaletras}>
-      <Pasaletras refresh={gameState.isVisible[id]} color={'var(--a1)'} isAnimate={gameState.isAnimate} />
+      <Pasaletras refresh={gameState.isVisible[id]} color={bgColor} isAnimate={gameState.isAnimate} />
     </div>
   );
 
