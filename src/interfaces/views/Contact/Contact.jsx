@@ -7,6 +7,9 @@ import { RiLayoutTop2Line, RiMailLine, RiPencilLine, RiUserLine } from 'react-ic
 import { FaUser } from 'react-icons/fa';
 import { FiUser } from 'react-icons/fi';
 
+import illustration from 'assets/img/svg/estudiante.svg';
+import tablet from 'assets/img/svg/tablet.svg';
+
 import styles from './Contact.module.scss';
 
 import { InputText } from './.components/InputText';
@@ -28,41 +31,44 @@ export const Contact = () => {
   ];
 
   const renderLayout = children => (
-    <SectionLayout id="contact" title={messages.es['contactUs']} subtitle={messages.es['contactWithUs']}>
+    <SectionLayout className="contact" id="contact" title={messages.es['contactUs']} subtitle={messages.es['contactWithUs']}>
       {children}
     </SectionLayout>
   );
 
   return renderLayout(
-    <div className={styles.contact}>
-      <div className={styles.input}>
-        {data.map(item => (
-          <span key={item.id}>
-            <span className={styles.icon}>{item.icon}</span>
-            <span className={`p-float-label`}>
-              <InputText id={item.id} type={item.type} />
-              <label htmlFor={item.id}>{item.label}</label>
+    <div className={styles.contactWrap}>
+      <img src={tablet} alt="" />
+      <div className={styles.contact}>
+        <div className={styles.input}>
+          {data.map(item => (
+            <span key={item.id}>
+              <span className={styles.icon}>{item.icon}</span>
+              <span className={`p-float-label`}>
+                <InputText id={item.id} type={item.type} />
+                <label htmlFor={item.id}>{item.label}</label>
+              </span>
             </span>
+          ))}
+        </div>
+        <div className={styles.textarea}>
+          <span className={`p-float-label`}>
+            <InputTextarea rows={3} cols={30} autoResize={true}></InputTextarea>
+            <label htmlFor={777}>{messages.es['writeYourMessage']}</label>
           </span>
-        ))}
-      </div>
-      <div className={styles.textarea}>
-        <span className={`p-float-label`}>
-          <InputTextarea rows={3} cols={30} autoResize={true}></InputTextarea>
-          <label htmlFor={777}>{messages.es['writeYourMessage']}</label>
-        </span>
-      </div>
-      <div className={styles.buttons}>
-        <span className={styles.submit}>
-          <Button label={messages.es['send']}>
-            <RiMailSendLine />
-          </Button>
-        </span>
-        <span className={styles.reset}>
-          <Button label={messages.es['reset']} style={{ background: 'transparent' }}>
-            <GrPowerReset />
-          </Button>
-        </span>
+        </div>
+        <div className={styles.buttons}>
+          <span className={styles.submit}>
+            <Button label={messages.es['send']}>
+              <RiMailSendLine />
+            </Button>
+          </span>
+          <span className={styles.reset}>
+            <Button label={messages.es['reset']} style={{ background: 'transparent' }}>
+              <GrPowerReset />
+            </Button>
+          </span>
+        </div>
       </div>
     </div>
   );

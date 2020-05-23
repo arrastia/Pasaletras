@@ -1,18 +1,27 @@
-.footer {
-  align-items: center;
+.footerWrap {
+  // background-color: var(--book3);
   bottom: 0;
-  color: var(--text);
-  display: flex;
-  font-size: 3vmin;
-  font-weight: 100;
-  height: 5rem;
-  justify-content: center;
-  margin: 1rem;
   position: relative;
-  width: calc(100vw - 2rem);
+  margin-top: 4rem;
 
-  .link {
-    color: var(--random-color);
-    transition: color 2s ease;
+  .footer {
+    align-items: center;
+    color: var(--text);
+    display: flex;
+    flex-direction: column-reverse;
+    font-weight: 100;
+    height: 5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    width: calc(100vw);
+  }
+}
+@media screen and (min-width: 768px) {
+  .footerWrap {
+    // background: linear-gradient(120deg, var(--book3), var(--book3) 40%, var(--bg) 40%, var(--bg));
+
+    .illustration {
+      width: 500px;
+    }
   }
 }

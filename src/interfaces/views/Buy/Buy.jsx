@@ -5,6 +5,7 @@ import styles from './Buy.module.scss';
 import book from 'assets/img/svg/icons/book.svg';
 import kindle from 'assets/img/svg/icons/kindle.svg';
 import pdf from 'assets/img/svg/icons/pdf.svg';
+import profesora from 'assets/img/svg/profesora.svg';
 
 import { Card } from './.components/Card';
 import { Download } from './.components/Download';
@@ -36,17 +37,20 @@ export const Buy = () => {
   );
 
   return renderLayout(
-    <div className={styles.buy}>
-      {showItems.map(card => (
-        <Card
-          className={card.className}
-          iconClassName={card.iconClassName}
-          key={card.id}
-          subtitle={card.subtitle}
-          title={card.title}
-          toolbar={card.photo}
-        />
-      ))}
+    <div className={styles.buyWrap}>
+      <div className={styles.buy}>
+        {showItems.map(card => (
+          <Card
+            className={card.className}
+            iconClassName={card.iconClassName}
+            key={card.id}
+            subtitle={card.subtitle}
+            title={card.title}
+            toolbar={card.photo}
+          />
+        ))}
+      </div>
+      <img src={profesora} alt="ilustración" />
     </div>
   );
 };

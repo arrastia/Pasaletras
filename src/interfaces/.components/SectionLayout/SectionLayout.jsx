@@ -21,7 +21,7 @@ export const SectionLayout = ({ children, className, id, subtitle, title }) => {
   }, []);
 
   return (
-    <section className={`${styles.section} ${className}`} data-section={id} id={id} ref={sectionRef}>
+    <section className={`${styles.section} ${styles[className]}`} data-section={id} id={id} ref={sectionRef}>
       <span className={`${styles.title} animated ${animate ? 'fadeInLeft' : ''}`}>{title}</span>
       <h2 className={`${styles.subtitle} animated ${animate ? 'fadeInLeftBig' : ''}`}>{subtitle}</h2>
       {children}

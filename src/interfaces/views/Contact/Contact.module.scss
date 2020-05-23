@@ -1,80 +1,92 @@
-.contact {
-  align-items: center;
-  background-color: var(--bg);
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  position: relative;
-  margin-bottom: 2rem;
-
-  .input {
-    align-items: flex-end;
+.contactWrap {
+  .contact {
+    align-items: center;
+    background: var(--bg);
+    border-bottom: 2px solid var(--book3);
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 2rem;
     flex-direction: column;
-    width: 100%;
+    padding: 1.5rem;
+    position: relative;
+    margin-bottom: 2rem;
+    -webkit-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
 
-    > span {
+    .input {
       align-items: flex-end;
       display: flex;
       justify-content: space-evenly;
       margin-bottom: 2rem;
+      flex-direction: column;
       width: 100%;
+
+      > span {
+        align-items: flex-end;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+
+      .icon {
+        // font-size: 3rem;
+        // border: 0.05rem solid black;
+        color: var(--text);
+        padding: 0.5rem;
+        background-color: var(--book3);
+      }
     }
 
-    .icon {
-      // font-size: 3rem;
-      // border: 0.05rem solid black;
-      color: var(--text);
-      padding: 0.5rem;
-      background-color: var(--book3);
+    .textarea {
+      margin-bottom: 2rem;
     }
-  }
 
-  .textarea {
-    margin-bottom: 2rem;
-  }
-
-  .buttons {
-    display: flex;
+    .buttons {
+      display: flex;
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
-  .contact {
+  .contactWrap {
     display: grid;
-    grid-column-gap: 2.5rem;
-    grid-template-areas:
-      'input textarea'
-      'button button';
-    justify-items: center;
-  }
+    grid-template-columns: 35% 65%;
 
-  .input {
-    grid-area: input;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-evenly;
-  }
-
-  .textarea {
-    grid-area: textarea;
-  }
-
-  .buttons {
-    display: flex;
-    grid-area: button;
-    width: 50%;
-    justify-content: space-evenly;
-
-    .submit {
+    .contact {
+      display: grid;
+      grid-column-gap: 2.5rem;
+      grid-template-areas:
+        'input textarea'
+        'button button';
+      justify-items: center;
     }
 
-    .reset {
+    .input {
+      grid-area: input;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-evenly;
+    }
+
+    .textarea {
+      grid-area: textarea;
+    }
+
+    .buttons {
+      display: flex;
+      grid-area: button;
+      width: 50%;
+      justify-content: space-evenly;
+
+      .submit {
+      }
+
+      .reset {
+      }
     }
   }
 }

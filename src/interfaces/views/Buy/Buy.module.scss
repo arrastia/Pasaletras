@@ -1,14 +1,33 @@
-.buy {
+.buyWrap {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
-  position: relative;
+  flex-direction: column;
   width: 100%;
+
+  .buy {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+  }
 }
 
-@media screen and (max-width: 414px) {
-  .buy {
-    justify-content: center;
+@media screen and (min-width: 414px) {
+  .buyWrap {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 60% 30%;
+    justify-content: space-between;
+
+    .buy {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: relative;
+      width: 100%;
+    }
   }
 }

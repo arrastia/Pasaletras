@@ -31,6 +31,14 @@
   }
 }
 
+.contact {
+  background: linear-gradient(120deg, var(--book3), var(--book3) 40%, var(--bg) 40%, var(--bg));
+  // width: 110%;
+  // left: calc(-5% - 1rem);
+  border-radius: 15px;
+  padding: 1rem;
+}
+
 @media screen and (max-width: 768px) {
   .subtitle {
     margin-bottom: 3em;
