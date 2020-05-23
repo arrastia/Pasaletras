@@ -21,8 +21,9 @@ export const MagazineView = ({ gameState, onToggle, pagina }) => {
   const renderTabPanels = () => {
     const data = [];
     for (const key in pagina) {
+      const index = Object.keys(pagina).indexOf(key);
       data.push(
-        <TabPanel header={messages.es[key]} color={'var(--a1)'} id={key}>
+        <TabPanel header={messages.es[key]} headerStyle={tabStyles(index, key)} id={key}>
           <div className={styles.wrap}>
             {pagina[key].map(item => (
               <div key={item.id} className={styles.pasaletras} onClick={() => onToggle(777)}>
@@ -35,6 +36,15 @@ export const MagazineView = ({ gameState, onToggle, pagina }) => {
       );
     }
     return data;
+  };
+
+  const tabStyles = (index, key) => {
+    const isSelected = index === activeView;
+    return {
+      color: isSelected ? `var(--${key})` : '',
+      borderBottom: isSelected ? `0.2rem solid var(--${key})` : '',
+      margin: '0 1.5rem'
+    };
   };
 
   return (

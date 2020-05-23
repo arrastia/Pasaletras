@@ -33,6 +33,7 @@
   scrollbar-width: thin;
 }
 .scrollTab::-webkit-scrollbar {
+  display: none;
   width: 10px;
   height: 8px;
 }
@@ -49,4 +50,31 @@
 
 .scrollTab::-webkit-scrollbar-thumb:hover {
   background: var(--gray-50);
+}
+
+@media screen and (min-width: 768px) {
+  .headersWrapper {
+    padding: 1rem;
+  }
+
+  .scrollTab {
+    margin: 0 1.5rem;
+  }
+
+  .scrollTab::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  .scrollTab::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .scrollTab::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  .scrollTab::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }

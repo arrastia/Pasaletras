@@ -6,12 +6,15 @@ import isNil from 'lodash/isNil';
 import isNull from 'lodash/isNull';
 import isUndefined from 'lodash/isUndefined';
 
-import { AiFillBackward, AiFillForward, AiFillStepBackward, AiFillStepForward } from 'react-icons/ai';
+import { BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 
 import './TabView.scss';
 import styles from './TabView.module.css';
 
+import { Button } from 'interfaces/.components/Button';
 import { Tab } from './_components/Tab';
+
+import { useBreakpoint } from 'interfaces/.tools/Hooks/useBreakpoint';
 
 export const TabView = ({ activeIndex, children, className, id, onTabChange, onTabClick, renderActiveOnly, style, totalTabs }) => {
   const [activeIdx, setActiveIdx] = useState(activeIndex);
@@ -21,13 +24,17 @@ export const TabView = ({ activeIndex, children, className, id, onTabChange, onT
   const divTabsRef = useRef();
   const ulTabsRef = useRef();
 
+  const breakpoints = useBreakpoint();
+
   const classNamed = classNames('p-tabview p-component p-tabview-top', className);
 
   useEffect(() => {
     setTimeout(() => {
-      if (!isNil(ulTabsRef.current) && !isNil(divTabsRef.current)) {
-        if (ulTabsRef.current.clientWidth > divTabsRef.current.clientWidth) setIsNavigationHidden(true);
-        else setIsNavigationHidden(true);
+      if (breakpoints.tablet) {
+        if (!isNil(ulTabsRef.current) && !isNil(divTabsRef.current)) {
+          if (ulTabsRef.current.clientWidth > divTabsRef.current.clientWidth) setIsNavigationHidden(false);
+          else setIsNavigationHidden(true);
+        }
       }
     }, 100);
   }, [children]);
@@ -85,9 +92,27 @@ export const TabView = ({ activeIndex, children, className, id, onTabChange, onT
 
   const renderNavigator = () => {
     const headers = renderTabHeaders();
+    const buttonStyles = { borderRadius: '50%', display: isNavigationHidden ? 'none' : '' };
     return (
       <div className={styles.headersWrapper}>
-        <span>
+        <Button
+          onClick={() => scrollTo(divTabsRef.current.scrollLeft - divTabsRef.current.clientWidth * 0.25, 0)}
+          onDoubleClick={() => scrollTo(0, 0)}
+          style={buttonStyles}>
+          <BsArrowLeftShort />
+        </Button>
+        <div className={styles.scrollTab} ref={divTabsRef} style={{ marginBottom: totalTabs === 1 ? '-5px' : '-1px' }}>
+          <ul className="p-tabview-nav p-reset" role="tablist" style={{ display: 'inline-flex' }} ref={ulTabsRef}>
+            {headers}
+          </ul>
+        </div>
+        <Button
+          onClick={() => scrollTo(divTabsRef.current.scrollLeft + divTabsRef.current.clientWidth * 0.25, 0)}
+          onDoubleClick={() => scrollTo(ulTabsRef.current.clientWidth + 100, 0)}
+          style={buttonStyles}>
+          <BsArrowRightShort />
+        </Button>
+        {/* <span>
           <AiFillBackward
             className={`${styles.navigationTabIcons} ${isNavigationHidden ? styles.iconHidden : null}`}
             onClick={() => scrollTo(0, 0)}
@@ -95,10 +120,10 @@ export const TabView = ({ activeIndex, children, className, id, onTabChange, onT
         </span>
         <span
           className={`${styles.navigationTabIcons} ${isNavigationHidden ? styles.iconHidden : null}`}
-          onClick={() => scrollTo(divTabsRef.current.scrollLeft - divTabsRef.current.clientWidth * 0.75, 0)}>
+          onClick={() => scrollTo(divTabsRef.current.scrollLeft - divTabsRef.current.clientWidth * 0.25, 0)}>
           <AiFillStepBackward />
         </span>
-        <div className={styles.scrollTab} ref={divTabsRef} /* style={{ marginBottom: totalTabs === 1 ? '-5px' : '-1px' }} */>
+        <div className={styles.scrollTab} ref={divTabsRef} style={{ marginBottom: totalTabs === 1 ? '-5px' : '-1px' }}>
           <ul className="p-tabview-nav p-reset" role="tablist" style={{ display: 'inline-flex' }} ref={ulTabsRef}>
             {headers}
           </ul>
@@ -106,14 +131,14 @@ export const TabView = ({ activeIndex, children, className, id, onTabChange, onT
         <span>
           <AiFillStepForward
             className={`${styles.navigationTabIcons} ${isNavigationHidden ? styles.iconHidden : null}`}
-            onClick={() => scrollTo(divTabsRef.current.scrollLeft + divTabsRef.current.clientWidth * 0.75, 0)}
+            onClick={() => scrollTo(divTabsRef.current.scrollLeft + divTabsRef.current.clientWidth * 0.25, 0)}
           />
         </span>
         <span
           className={`${styles.navigationTabIcons} ${isNavigationHidden ? styles.iconHidden : null}`}
           onClick={() => scrollTo(ulTabsRef.current.clientWidth + 100, 0)}>
           <AiFillForward />
-        </span>
+        </span> */}
       </div>
     );
   };
