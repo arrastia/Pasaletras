@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useReducer, useState } from 'react';
 
 import styles from './Game.module.scss';
 
+import { webConfig } from 'config/www';
 import { pasaletrasConfig } from './.config';
 
 import { AccordionView } from './.components/AccordionView';
@@ -15,7 +16,8 @@ import { gameReducer } from './.tools/Reducers/gameReducer';
 
 import { useBreakpoint } from 'interfaces/.tools/Hooks/useBreakpoint';
 
-import { GameHelpContent } from './.tools/Helper/GameHelpContent';
+import { GameUtils } from './.tools/Utils/GameUtils';
+import { ReactUtils } from 'interfaces/.tools/Utils/ReactUtils';
 
 export const Game = () => {
   const messages = useContext(MessagesContext);
@@ -33,6 +35,8 @@ export const Game = () => {
   useEffect(() => {
     onLoadAnimation();
   }, [breakpoints]);
+
+  const handleRedirect = pageId => window.open(ReactUtils.getUrl(webConfig.baseURL, { pageId }));
 
   const onLoadAnimation = () => gameDispatch({ type: 'IS_ANIMATED', payload: breakpoints.tablet });
 
@@ -55,13 +59,18 @@ export const Game = () => {
     </SectionLayout>
   );
 
-  const renderPasaletras = (id, bgColor) => (
+  const renderPasaletras = (id, bgColor, redirectId) => (
     <div className={styles.pasaletras}>
-      <Pasaletras refresh={gameState.isVisible[id]} color={bgColor} isAnimate={gameState.isAnimate} />
+      <Pasaletras
+        color={bgColor}
+        handleRedirect={() => handleRedirect(redirectId)}
+        isAnimate={gameState.isAnimate}
+        refresh={gameState.isVisible[id]}
+      />
     </div>
   );
 
-  const pasaletras = GameHelpContent.loadData(pasaletrasConfig, messages.es, renderPasaletras);
+  const pasaletras = GameUtils.loadData(pasaletrasConfig, messages.es, renderPasaletras);
 
   const pagina = [
     { title: `${messages.es['page']} 1`, text: renderPasaletras(777), id: 777, bgColor: 'var(--a1)' },
@@ -74,9 +83,9 @@ export const Game = () => {
 
   return renderLayout(
     breakpoints.tablet ? (
-      <MagazineView gameState={gameState} pagina={pasaletras} onToggle={onToggle} />
+      <MagazineView gameState={gameState} pagina={pasaletras} onToggle={onToggle} handleRedirect={handleRedirect} />
     ) : (
-      <AccordionView gameState={gameState} pagina={pasaletras} onToggle={onToggle} />
+      <AccordionView gameState={gameState} pagina={pasaletras} onToggle={onToggle} handleRedirect={handleRedirect} />
     )
   );
 };

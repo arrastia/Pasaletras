@@ -1,14 +1,278 @@
 {
-  "animals": [{ "pages": [58, 59], "bgColor": ["var(--animals)"] }],
-  "food": [{ "pages": [62, 63], "bgColor": ["var(--food)"] }],
-  "clothes": [{ "pages": [66, 67], "bgColor": ["var(--clothes)"] }],
-  "countries": [{ "pages": [70, 71], "bgColor": ["var(--countries)"] }],
-  "verbs": [{ "pages": [74, 75], "bgColor": ["var(--verbs)"] }],
-  "adjectives": [{ "pages": [78, 79], "bgColor": ["var(--adjectives)"] }],
-  "a1": [{ "pages": [10, 11, 12, 13, 14, 15], "bgColor": ["var(--a1)"] }],
-  "a2": [{ "pages": [18, 19, 20, 21, 22, 23], "bgColor": ["var(--a2)"] }],
-  "b1": [{ "pages": [26, 27, 28, 29, 30, 31], "bgColor": ["var(--b1)"] }],
-  "b2": [{ "pages": [34, 35, 36, 37, 38, 39], "bgColor": ["var(--b2)"] }],
-  "c1": [{ "pages": [42, 43, 44, 45, 46, 47], "bgColor": ["var(--c1)"] }],
-  "c2": [{ "pages": [50, 51, 52, 53, 54, 55], "bgColor": ["var(--c2)"] }]
+  "animals": [
+    {
+      "bgColor": ["var(--animals)"],
+      "pages": [
+        {
+          "page": 58,
+          "web": 5448672
+        },
+        {
+          "page": 59,
+          "web": 5448669
+        }
+      ]
+    }
+  ],
+  "food": [
+    {
+      "bgColor": ["var(--food)"],
+      "pages": [
+        {
+          "page": 62,
+          "web": 5448667
+        },
+        {
+          "page": 63,
+          "web": 5448666
+        }
+      ]
+    }
+  ],
+  "clothes": [
+    {
+      "bgColor": ["var(--clothes)"],
+      "pages": [
+        {
+          "page": 66,
+          "web": 5448665
+        },
+        {
+          "page": 67,
+          "web": 5448663
+        }
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "bgColor": ["var(--countries)"],
+      "pages": [
+        {
+          "page": 70,
+          "web": 5448662
+        },
+        {
+          "page": 71,
+          "web": 5448661
+        }
+      ]
+    }
+  ],
+  "verbs": [
+    {
+      "bgColor": ["var(--verbs)"],
+      "pages": [
+        {
+          "page": 74,
+          "web": 5448660
+        },
+        {
+          "page": 75,
+          "web": 5448658
+        }
+      ]
+    }
+  ],
+  "adjectives": [
+    {
+      "bgColor": ["var(--adjectives)"],
+      "pages": [
+        {
+          "page": 78,
+          "web": 5448656
+        },
+        {
+          "page": 79,
+          "web": 5448654
+        }
+      ]
+    }
+  ],
+  "a1": [
+    {
+      "bgColor": ["var(--a1)"],
+      "pages": [
+        {
+          "page": 10,
+          "web": 5448534
+        },
+        {
+          "page": 11,
+          "web": 5448530
+        },
+        {
+          "page": 12,
+          "web": 5448528
+        },
+        {
+          "page": 13,
+          "web": 5448525
+        },
+        {
+          "page": 14,
+          "web": 5448524
+        },
+        {
+          "page": 15,
+          "web": 5448522
+        }
+      ]
+    }
+  ],
+  "a2": [
+    {
+      "bgColor": ["var(--a2)"],
+      "pages": [
+        {
+          "page": 18,
+          "web": 5448521
+        },
+        {
+          "page": 19,
+          "web": 5448520
+        },
+        {
+          "page": 20,
+          "web": 5448519
+        },
+        {
+          "page": 21,
+          "web": 5448518
+        },
+        {
+          "page": 22,
+          "web": 5448516
+        },
+        {
+          "page": 23,
+          "web": 5448515
+        }
+      ]
+    }
+  ],
+  "b1": [
+    {
+      "bgColor": ["var(--b1)"],
+      "pages": [
+        {
+          "page": 26,
+          "web": 5448514
+        },
+        {
+          "page": 27,
+          "web": 5448513
+        },
+        {
+          "page": 28,
+          "web": 5448511
+        },
+        {
+          "page": 29,
+          "web": 5448508
+        },
+        {
+          "page": 30,
+          "web": 5448506
+        },
+        {
+          "page": 31,
+          "web": 5448505
+        }
+      ]
+    }
+  ],
+  "b2": [
+    {
+      "bgColor": ["var(--b2)"],
+      "pages": [
+        {
+          "page": 34,
+          "web": 5448504
+        },
+        {
+          "page": 35,
+          "web": 5448503
+        },
+        {
+          "page": 36,
+          "web": 5448500
+        },
+        {
+          "page": 37,
+          "web": 5448499
+        },
+        {
+          "page": 38,
+          "web": 5448496
+        },
+        {
+          "page": 39,
+          "web": 5448495
+        }
+      ]
+    }
+  ],
+  "c1": [
+    {
+      "bgColor": ["var(--c1)"],
+      "pages": [
+        {
+          "page": 42,
+          "web": 5448494
+        },
+        {
+          "page": 43,
+          "web": 5448493
+        },
+        {
+          "page": 44,
+          "web": 5448492
+        },
+        {
+          "page": 45,
+          "web": 5448490
+        },
+        {
+          "page": 46,
+          "web": 5448489
+        },
+        {
+          "page": 47,
+          "web": 5448488
+        }
+      ]
+    }
+  ],
+  "c2": [
+    {
+      "bgColor": ["var(--c2)"],
+      "pages": [
+        {
+          "page": 50,
+          "web": 5448494
+        },
+        {
+          "page": 51,
+          "web": 5448493
+        },
+        {
+          "page": 52,
+          "web": 5448492
+        },
+        {
+          "page": 53,
+          "web": 5448490
+        },
+        {
+          "page": 54,
+          "web": 5448489
+        },
+        {
+          "page": 55,
+          "web": 5448488
+        }
+      ]
+    }
+  ]
 }

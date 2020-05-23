@@ -1,2 +1,4 @@
 import pasaletrasConfig from './pasaletras.config.json';
-export { pasaletrasConfig };
+import alphabet from './alphabet.config.json';
+
+export { pasaletrasConfig, alphabet };

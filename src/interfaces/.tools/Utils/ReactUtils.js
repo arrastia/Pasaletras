@@ -1,3 +1,8 @@
+const getUrl = (url, urlParams = {}) => {
+  Object.keys(urlParams).forEach(key => (url = url.replace(`{:${key}}`, urlParams[key])));
+  return url;
+};
+
 const uuid = () => {
   const hashTable = ['a', 'b', 'c', 'd', 'e', 'f', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   let uuid = [];
@@ -8,4 +13,4 @@ const uuid = () => {
   return uuid.join('');
 };
 
-export const ReactUtils = { uuid };
+export const ReactUtils = { getUrl, uuid };

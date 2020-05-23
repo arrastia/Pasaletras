@@ -2,10 +2,6 @@
   display: grid;
   grid-column-gap: 2.5rem;
   grid-row-gap: 2.5rem;
-  grid-template-areas:
-    'one two three'
-    'four five six';
-  height: 1000px;
   padding: 1rem;
   position: relative;
 
@@ -34,6 +30,12 @@
       color: var(--white);
       // top: 100%;
       // z-index: 9;
+
+      .link {
+        cursor: pointer;
+        left: 90%;
+        position: absolute;
+      }
     }
   }
 }

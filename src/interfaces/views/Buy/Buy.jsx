@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 
 import styles from './Buy.module.scss';
 
-import book from 'assets/img/svg/book.svg';
-import kindle from 'assets/img/svg/kindle.svg';
-import pdf from 'assets/img/svg/pdf.svg';
+import book from 'assets/img/svg/icons/book.svg';
+import kindle from 'assets/img/svg/icons/kindle.svg';
+import pdf from 'assets/img/svg/icons/pdf.svg';
 
 import { Card } from './.components/Card';
 import { Download } from './.components/Download';
