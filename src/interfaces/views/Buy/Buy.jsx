@@ -5,7 +5,7 @@ import styles from './Buy.module.scss';
 import book from 'assets/img/svg/icons/book.svg';
 import kindle from 'assets/img/svg/icons/kindle.svg';
 import pdf from 'assets/img/svg/icons/pdf.svg';
-import profesora from 'assets/img/svg/profesora.svg';
+import estudiante from 'assets/img/svg/estudiante.svg';
 
 import { Card } from './.components/Card';
 import { Download } from './.components/Download';
@@ -50,7 +50,7 @@ export const Buy = () => {
           />
         ))}
       </div>
-      <img src={profesora} alt="ilustración" />
+      <img src={estudiante} alt="ilustración" />
     </div>
   );
 };
