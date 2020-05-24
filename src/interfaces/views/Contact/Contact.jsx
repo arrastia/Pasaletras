@@ -1,4 +1,4 @@
-import React, { useContext, useReducer } from 'react';
+import React, { useContext, useReducer, useRef } from 'react';
 
 import { GrPowerReset, GrFacebookOption } from 'react-icons/gr';
 import { RiMailLine } from 'react-icons/ri';
@@ -20,15 +20,29 @@ import { formReducer } from './.tools/Reducers/formReducer';
 export const Contact = () => {
   const messages = useContext(MessagesContext);
 
+  const emailRef = useRef(null);
+
   const [formState, formDispatch] = useReducer(formReducer, { name: '', email: '', subject: '', message: '' });
 
   const onFillForm = (id, value) => formDispatch({ type: 'ON_FILL_FORM', payload: { id, value } });
 
   const onResetForm = () => formDispatch({ type: 'ON_RESET_FORM', payload: '' });
 
+  const onSendEmail = () => {
+    if (emailRef.current.checkValidity()) {
+      console.log('send');
+    }
+  };
+
   const data = [
     { label: messages.es['name'], id: 'name', type: 'search' },
-    { label: messages.es['e-mail'], id: 'email', type: 'search' },
+    {
+      id: 'email',
+      label: messages.es['e-mail'],
+      pattern: '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{1,63}$',
+      ref: emailRef,
+      type: 'search'
+    },
     { label: messages.es['subject'], id: 'subject', type: 'search' }
   ];
 
@@ -63,8 +77,12 @@ export const Contact = () => {
               <span key={item.id}>
                 <span className={`p-float-label`}>
                   <InputText
+                    autocomplete="off"
                     id={item.id}
                     onChange={event => onFillForm(item.id, event.target.value)}
+                    pattern={item.pattern}
+                    ref={item.ref}
+                    required={true}
                     type={item.type}
                     value={formState[item.id]}
                   />
@@ -87,7 +105,7 @@ export const Contact = () => {
           </div>
           <div className={styles.buttons}>
             <span className={styles.submit}>
-              <Button label={messages.es['send']}>
+              <Button label={messages.es['send']} onClick={() => onSendEmail()}>
                 <RiMailSendLine />
               </Button>
             </span>
