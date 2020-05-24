@@ -21,7 +21,7 @@ export const InputTextarea = ({ keyfilter, onInputEvent, onKeyPress, validateOnl
   const onInput = e => {
     if (rest.autoResize) resize();
     if (onInputEvent) onInputEvent(e);
-    if (!rest.onChange) {
+    if (rest.onChange) {
       if (e.target.value.length > 0) DOMUtils.addClass(e.target, 'p-filled');
       else DOMUtils.removeClass(e.target, 'p-filled');
     }

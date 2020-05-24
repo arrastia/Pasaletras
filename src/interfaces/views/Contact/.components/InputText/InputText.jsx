@@ -19,7 +19,7 @@ export const InputText = forwardRef(({ keyfilter, onInput, onKeyPress, validateO
     if (keyfilter && validateOnly) validatePattern = InputTextUtils.onValidate(event, keyfilter);
     if (onInput) onInput(event, validatePattern);
 
-    if (!rest.onChange) {
+    if (rest.onChange) {
       if (event.target.value.length > 0) DOMUtils.addClass(event.target, 'p-filled');
       else DOMUtils.removeClass(event.target, 'p-filled');
     }

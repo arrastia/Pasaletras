@@ -18,9 +18,11 @@
     "countries": "Paises",
     "downloadNow": "Descárgala ahora",
     "e-mail": "Email",
+    "followUsFacebook": "Siguenos en Facebook",
     "food": "Alimentos",
     "freeSample": "Prueba gratutita",
     "game": "Juego",
+    "infoEmail": "info@pasaletras.com",
     "more": "Saber más",
     "name": "Nombre",
     "optionKindle": "Versión KINDLE",
@@ -33,6 +35,7 @@
     "startPlaying": "Comienza a jugar",
     "subject": "Asunto",
     "verbs": "Verbos",
+    "writeUs": "¡Escríbemos!",
     "writeYourMessage": "Escribe tu mensaje"
   }
 }

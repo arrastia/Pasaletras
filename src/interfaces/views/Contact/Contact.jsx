@@ -1,33 +1,35 @@
-import React, { useContext } from 'react';
+import React, { useContext, useReducer } from 'react';
 
+import { GrPowerReset, GrFacebookOption } from 'react-icons/gr';
+import { RiMailLine } from 'react-icons/ri';
 import { RiMailSendLine } from 'react-icons/ri';
-import { GrPowerReset } from 'react-icons/gr';
-import { MdSubject } from 'react-icons/md';
-import { RiLayoutTop2Line, RiMailLine, RiPencilLine, RiUserLine } from 'react-icons/ri';
-import { FaUser } from 'react-icons/fa';
-import { FiUser } from 'react-icons/fi';
 
-import illustration from 'assets/img/svg/estudiante.svg';
 import tablet from 'assets/img/svg/tablet.svg';
 
 import styles from './Contact.module.scss';
 
+import { Button } from 'interfaces/.components/Button';
 import { InputText } from './.components/InputText';
 import { InputTextarea } from './.components/InputTextarea';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
-import { Button } from 'interfaces/.components/Button';
 
 import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
 
-import { ReactUtils } from 'interfaces/.tools/Utils/ReactUtils';
+import { formReducer } from './.tools/Reducers/formReducer';
 
 export const Contact = () => {
   const messages = useContext(MessagesContext);
 
+  const [formState, formDispatch] = useReducer(formReducer, { name: '', email: '', subject: '', message: '' });
+
+  const onFillForm = (id, value) => formDispatch({ type: 'ON_FILL_FORM', payload: { id, value } });
+
+  const onResetForm = () => formDispatch({ type: 'ON_RESET_FORM', payload: '' });
+
   const data = [
-    { label: messages.es['name'], id: ReactUtils.uuid(), type: 'search', icon: <FiUser /> },
-    { label: messages.es['e-mail'], id: ReactUtils.uuid(), type: 'search', icon: <RiMailLine /> },
-    { label: messages.es['subject'], id: ReactUtils.uuid(), type: 'search', icon: <RiPencilLine /> }
+    { label: messages.es['name'], id: 'name', type: 'search' },
+    { label: messages.es['e-mail'], id: 'email', type: 'search' },
+    { label: messages.es['subject'], id: 'subject', type: 'search' }
   ];
 
   const renderLayout = children => (
@@ -40,34 +42,61 @@ export const Contact = () => {
     <div className={styles.contactWrap}>
       <img src={tablet} alt="" />
       <div className={styles.contact}>
-        <div className={styles.input}>
-          {data.map(item => (
-            <span key={item.id}>
-              <span className={styles.icon}>{item.icon}</span>
-              <span className={`p-float-label`}>
-                <InputText id={item.id} type={item.type} />
-                <label htmlFor={item.id}>{item.label}</label>
-              </span>
+        <h2 className={styles.title}>{messages.es['writeUs']}</h2>
+        <div className={styles.letsTalk}>
+          <a className={styles.link} href="mailto:info@pasaletras.com">
+            <span className={styles.btn}>
+              <RiMailLine className={styles.mail} />
             </span>
-          ))}
+            <span className={styles.text}>{messages.es['infoEmail']}</span>
+          </a>
+          <a className={styles.link} href="https://facebook.com/pasaletras" target="_blank" rel="noopener noreferrer">
+            <span className={styles.btn}>
+              <GrFacebookOption className={styles.facebook} />
+            </span>
+            <span className={styles.text}>{messages.es['followUsFacebook']}</span>
+          </a>
         </div>
-        <div className={styles.textarea}>
-          <span className={`p-float-label`}>
-            <InputTextarea rows={3} cols={30} autoResize={true}></InputTextarea>
-            <label htmlFor={777}>{messages.es['writeYourMessage']}</label>
-          </span>
-        </div>
-        <div className={styles.buttons}>
-          <span className={styles.submit}>
-            <Button label={messages.es['send']}>
-              <RiMailSendLine />
-            </Button>
-          </span>
-          <span className={styles.reset}>
-            <Button label={messages.es['reset']} style={{ background: 'transparent' }}>
-              <GrPowerReset />
-            </Button>
-          </span>
+        <div className={styles.form}>
+          <div className={styles.input}>
+            {data.map(item => (
+              <span key={item.id}>
+                <span className={`p-float-label`}>
+                  <InputText
+                    id={item.id}
+                    onChange={event => onFillForm(item.id, event.target.value)}
+                    type={item.type}
+                    value={formState[item.id]}
+                  />
+                  <label htmlFor={item.id}>{item.label}</label>
+                </span>
+              </span>
+            ))}
+          </div>
+          <div className={styles.textarea}>
+            <span className={`p-float-label`}>
+              <InputTextarea
+                autoResize={true}
+                cols={30}
+                onChange={event => onFillForm('message', event.target.value)}
+                rows={1}
+                value={formState.message}
+              />
+              <label htmlFor={777}>{messages.es['writeYourMessage']}</label>
+            </span>
+          </div>
+          <div className={styles.buttons}>
+            <span className={styles.submit}>
+              <Button label={messages.es['send']}>
+                <RiMailSendLine />
+              </Button>
+            </span>
+            <span className={styles.reset}>
+              <Button label={messages.es['reset']} style={{ background: 'var(--bg2)' }} onClick={() => onResetForm()}>
+                <GrPowerReset />
+              </Button>
+            </span>
+          </div>
         </div>
       </div>
     </div>

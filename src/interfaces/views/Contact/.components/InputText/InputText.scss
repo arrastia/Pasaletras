@@ -22,7 +22,8 @@
 
   &:enabled {
     &:hover {
-      border-color: blue;
+      // border-color: blue;
+      // opacity: 1;
     }
 
     &:focus {
@@ -47,7 +48,9 @@
   display: block;
   position: relative;
 
-  > input {
+  > input,
+  > textarea {
+    border-bottom: 0.05rem solid;
     border-left: 0;
     border-radius: 0;
     border-right: 0;
@@ -72,7 +75,9 @@
   }
 
   > textarea {
-    width: 100%;
+    position: relative;
+    width: 95%;
+    resize: none;
 
     &:focus,
     &:enabled:focus {
@@ -92,16 +97,16 @@
   }
 
   > label {
+    color: #898989;
     font-weight: normal;
-    position: absolute;
-    pointer-events: none;
     left: 0.25em;
-    top: 50%;
+    line-height: 1;
     margin-top: -0.5em;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
     transition: 0.3s ease all;
     -moz-transition: 0.3s ease all;
     -webkit-transition: 0.3s ease all;
-    color: #898989;
-    line-height: 1;
   }
 }

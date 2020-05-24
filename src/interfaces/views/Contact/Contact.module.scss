@@ -1,51 +1,148 @@
 .contactWrap {
+  width: 100%;
+
   .contact {
-    align-items: center;
     background: var(--bg);
     border-bottom: 2px solid var(--book3);
     border-radius: 20px;
     box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
+    margin-bottom: 2rem;
     padding: 1.5rem;
     position: relative;
-    margin-bottom: 2rem;
     -webkit-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
     -ms-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
     -o-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
 
-    .input {
-      align-items: flex-end;
-      display: flex;
-      justify-content: space-evenly;
-      margin-bottom: 2rem;
-      flex-direction: column;
-      width: 100%;
+    .title {
+      margin: 1rem 0;
+    }
 
-      > span {
+    .letsTalk {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+
+      .link {
+        align-items: center;
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        zoom: 0.65;
+
+        .btn {
+          background-color: transparent;
+          border-radius: 30%;
+          display: inline-block;
+          margin: 0 1vmin;
+          opacity: 0.9;
+          overflow: hidden;
+          position: relative;
+          text-align: center;
+
+          .facebook,
+          .mail {
+            font-size: 50px;
+            padding: 1rem;
+            transform: scale(0.8);
+            transition: color 1s ease !important;
+            vertical-align: middle;
+          }
+
+          .facebook {
+            color: #0e76a8;
+          }
+
+          .mail {
+            color: var(--book2);
+          }
+
+          &::before {
+            background-color: #3b5998;
+            content: '';
+            height: 120%;
+            left: -110%;
+            position: absolute;
+            top: 90%;
+            transform: rotate(45deg);
+            width: 120%;
+          }
+
+          &:focus::before,
+          &:hover::before {
+            left: -10%;
+            top: -10%;
+          }
+
+          &:focus .facebook,
+          &:hover .facebook,
+          &:focus .mail,
+          &:hover .mail {
+            color: var(--bg);
+            transform: scale(1);
+            transition: color 1s ease !important;
+          }
+        }
+
+        .btn,
+        .btn::before,
+        .btn .facebook,
+        .btn .mail {
+          transition: all 0.35s, color 2s ease, background-color 2s ease;
+          transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+        }
+      }
+    }
+
+    .form {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      .input {
         align-items: flex-end;
         display: flex;
         justify-content: space-evenly;
-        margin-bottom: 2rem;
+        flex-direction: column;
         width: 100%;
+
+        > span {
+          align-items: flex-end;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 2.5rem;
+          width: 100%;
+
+          > span {
+            width: 95%;
+          }
+        }
       }
 
-      .icon {
-        // font-size: 3rem;
-        // border: 0.05rem solid black;
-        color: var(--text);
-        padding: 0.5rem;
-        background-color: var(--book3);
+      .textarea {
+        margin-bottom: 2rem;
+        width: 95%;
       }
-    }
 
-    .textarea {
-      margin-bottom: 2rem;
-    }
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
 
-    .buttons {
-      display: flex;
+        > span {
+          width: 100%;
+          margin-bottom: 1rem;
+
+          > button {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      }
     }
   }
 }
@@ -54,38 +151,73 @@
   .contactWrap {
     display: grid;
     grid-template-columns: 35% 65%;
+    width: 100%;
 
     .contact {
       display: grid;
-      grid-column-gap: 2.5rem;
       grid-template-areas:
-        'input textarea'
-        'button button';
-      justify-items: center;
-    }
+        'title title'
+        'letsTalk form';
+      grid-template-rows: 25% 75%;
 
-    .input {
-      grid-area: input;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: space-evenly;
-    }
-
-    .textarea {
-      grid-area: textarea;
-    }
-
-    .buttons {
-      display: flex;
-      grid-area: button;
-      width: 50%;
-      justify-content: space-evenly;
-
-      .submit {
+      .title {
+        grid-area: title;
+        margin: 0;
       }
 
-      .reset {
+      .letsTalk {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        grid-area: letsTalk;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 1rem 0;
+
+        .link {
+          flex-direction: row;
+          width: 100%;
+          margin-bottom: 2rem;
+        }
+      }
+
+      .form {
+        display: grid;
+        grid-area: form;
+        grid-template-rows: auto auto auto;
+        margin: 0 5rem;
+
+        .input {
+          column-gap: 2rem;
+          display: grid;
+          grid-template-columns: auto auto auto;
+
+          > span {
+            margin-bottom: 0;
+          }
+        }
+
+        .input,
+        .textarea {
+          margin-bottom: 0;
+          font-size: 1rem;
+          width: 100%;
+
+          textarea {
+            width: 97%;
+          }
+        }
+
+        .buttons {
+          flex-direction: row;
+          justify-content: flex-end;
+          zoom: 0.85;
+
+          > span {
+            width: auto;
+            margin-left: 1rem;
+          }
+        }
       }
     }
   }
