@@ -92,8 +92,8 @@ export const Contact = () => {
               </Button>
             </span>
             <span className={styles.reset}>
-              <Button label={messages.es['reset']} style={{ background: 'var(--bg2)' }} onClick={() => onResetForm()}>
-                <GrPowerReset />
+              <Button label={messages.es['reset']} style={{ background: 'transparent' }} onClick={() => onResetForm()}>
+                <GrPowerReset className={styles.resetIcon} />
               </Button>
             </span>
           </div>

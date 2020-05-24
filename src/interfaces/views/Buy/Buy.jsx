@@ -31,7 +31,7 @@ export const Buy = () => {
   ];
 
   const renderLayout = children => (
-    <SectionLayout id="buy" title={messages.es['buyIt']} subtitle={messages.es['buyIt']}>
+    <SectionLayout className="buy" id="buy" title={messages.es['buyIt']} subtitle={messages.es['buyIt']}>
       {children}
     </SectionLayout>
   );
