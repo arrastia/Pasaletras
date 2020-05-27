@@ -28,7 +28,7 @@ export const MagazineView = ({ gameState, handleRedirect, onToggle, pagina }) =>
     for (const key in pagina) {
       const index = Object.keys(pagina).indexOf(key);
       data.push(
-        <TabPanel header={messages.es[key]} headerStyle={tabStyles(index, key)} id={key}>
+        <TabPanel key={key} header={messages.es[key]} headerStyle={tabStyles(index, key)} id={key}>
           <div className={styles.wrap} style={wrapStyles(pagina[key])}>
             {pagina[key].map(item => (
               <div key={item.id} className={styles.pasaletras} onClick={() => onToggle(777)}>

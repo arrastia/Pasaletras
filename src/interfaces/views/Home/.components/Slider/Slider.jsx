@@ -133,7 +133,7 @@ export class Slider extends React.Component {
     }
   }
 
-  UNSAFE_componentWillReceiveProps(newProps) {
+  componentWillReceiveProps(newProps) {
     this.checkChildren(newProps);
     this.setupClassNames(mergeStyles(newProps.cssModule));
     if (newProps.name !== this.props.name) {

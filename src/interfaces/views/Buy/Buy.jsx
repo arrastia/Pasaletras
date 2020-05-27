@@ -25,9 +25,9 @@ export const Buy = () => {
       subtitle: messages.es['downloadNow'],
       title: messages.es['freeSample']
     },
-    { title: messages.es['optionPaper'], subtitle: messages.es['more'], photo: <img src={book} />, id: 1 },
-    { title: messages.es['optionPdf'], subtitle: messages.es['more'], photo: <img src={pdf} />, id: 2 },
-    { title: messages.es['optionKindle'], subtitle: messages.es['more'], photo: <img src={kindle} />, id: 3 }
+    { title: messages.es['optionPaper'], subtitle: messages.es['more'], photo: <img alt="ilustración" src={book} />, id: 1 },
+    { title: messages.es['optionPdf'], subtitle: messages.es['more'], photo: <img alt="ilustración" src={pdf} />, id: 2 },
+    { title: messages.es['optionKindle'], subtitle: messages.es['more'], photo: <img alt="ilustración" src={kindle} />, id: 3 }
   ];
 
   const renderLayout = children => (

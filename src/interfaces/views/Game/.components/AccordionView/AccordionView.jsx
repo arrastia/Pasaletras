@@ -20,7 +20,7 @@ export const AccordionView = ({ gameState, onToggle, pagina }) => {
     for (const key in pagina) {
       const index = Object.keys(pagina).indexOf(key);
       data.push(
-        <TabPanel header={messages.es[key]} headerStyle={index === activeView && tabStyles(key)} id={key}>
+        <TabPanel header={messages.es[key]} headerStyle={index === activeView ? tabStyles(key) : {}} id={key} key={key}>
           {pagina[key].map(item => (
             <Accordion
               bgColor={item.bgColor}

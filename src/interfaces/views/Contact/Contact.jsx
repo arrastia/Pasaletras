@@ -77,7 +77,7 @@ export const Contact = () => {
               <span key={item.id}>
                 <span className={`p-float-label`}>
                   <InputText
-                    autocomplete="off"
+                    autoComplete="off"
                     id={item.id}
                     onChange={event => onFillForm(item.id, event.target.value)}
                     pattern={item.pattern}
