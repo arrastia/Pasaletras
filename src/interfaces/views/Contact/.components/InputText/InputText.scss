@@ -4,7 +4,6 @@
   border-radius: 3px;
   border: 0.1rem solid var(--text);
   color: var(--text);
-  // font-family: Roboto, 'Font Awesome\ 5 Pro', sans-serif;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
@@ -21,11 +20,6 @@
   -webkit-transition: border-color 0.2s, box-shadow 0.2s;
 
   &:enabled {
-    &:hover {
-      // border-color: blue;
-      // opacity: 1;
-    }
-
     &:focus {
       border-color: var(--book3);
       box-shadow: 0 0 0 0.1em var(--book3);
@@ -64,20 +58,20 @@
 
     &:focus ~ label,
     &.p-filled ~ label {
-      top: -0.75em;
       font-size: 12px;
+      top: -0.75em;
     }
 
     &:-webkit-autofill ~ label {
-      top: -0.75em;
       font-size: 12px;
+      top: -0.75em;
     }
   }
 
   > textarea {
     position: relative;
-    width: 95%;
     resize: none;
+    width: 95%;
 
     &:focus,
     &:enabled:focus {
@@ -86,13 +80,13 @@
 
     &:focus ~ label,
     &.p-filled ~ label {
-      top: -0.75em;
       font-size: 12px;
+      top: -0.75em;
     }
 
     &:-webkit-autofill ~ label {
-      top: -0.75em;
       font-size: 12px;
+      top: -0.75em;
     }
   }
 

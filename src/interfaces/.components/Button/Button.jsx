@@ -8,7 +8,7 @@ export const Button = forwardRef(({ children, className, disabled, label, onClic
 
   return (
     <button
-      className={`${styles.button} ${className} ${disabled ? styles.disabled : undefined}`}
+      className={`${styles.button} ${styles[className]} ${disabled ? styles.disabled : undefined}`}
       onClick={onClick}
       onDoubleClick={onDoubleClick}
       ref={ref}

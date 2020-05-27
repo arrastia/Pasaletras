@@ -31,8 +31,8 @@
 
     circle {
       &.default {
-        stroke: var(--default);
         opacity: 0.2;
+        stroke: var(--default);
       }
 
       &.active {

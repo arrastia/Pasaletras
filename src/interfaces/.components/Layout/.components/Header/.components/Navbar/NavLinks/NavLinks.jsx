@@ -1,19 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
-import { useSpring, animated, config } from 'react-spring';
+import { animated, config, useSpring } from 'react-spring';
 import styled from 'styled-components';
 
 import { FaChalkboardTeacher } from 'react-icons/fa';
-import { GiBookshelf, GiHouse, GiShoppingCart, GiTeacher } from 'react-icons/gi';
+import { GiHouse, GiShoppingCart, GiTeacher } from 'react-icons/gi';
 import { RiMailSendLine } from 'react-icons/ri';
 
 import styles from './NavLinks.module.scss';
+
+import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
 
 import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
 
 const links = ['homeLink', 'buyLink', 'gameLink', 'authorLink', 'contactLink'];
 
 export const NavLinks = ({ selected }) => {
+  const messages = useContext(MessagesContext);
+
   useEffect(() => {
     onAnimate(selected);
   }, [selected]);
@@ -28,7 +32,7 @@ export const NavLinks = ({ selected }) => {
   const onAnimate = section => {
     DOMUtils.addClass(document.getElementById(`${section}Link`), styles.active);
     const rest = links.filter(item => item !== `${section}Link`);
-    rest.forEach((item, i) => DOMUtils.removeClass(document.getElementById(item), styles.active));
+    rest.forEach(item => DOMUtils.removeClass(document.getElementById(item), styles.active));
   };
 
   const onNavSection = section => {
@@ -41,26 +45,25 @@ export const NavLinks = ({ selected }) => {
   return (
     <NavLinksView style={linkAnimation}>
       <span id="homeLink" className={`${styles.menu} ${styles.active}`} onClick={() => onNavSection('home')}>
-        <GiHouse /> <span>Pasaletras</span>
+        <GiHouse /> <span>{messages.es['pasaletras']}</span>
       </span>
       <span id="buyLink" className={styles.menu} onClick={() => onNavSection('buy')}>
-        <GiShoppingCart /> <span>Cómpralo</span>
+        <GiShoppingCart /> <span>{messages.es['buyIt']}</span>
       </span>
       <span id="gameLink" className={styles.menu} onClick={() => onNavSection('game')}>
-        <FaChalkboardTeacher /> <span>Juego</span>
+        <FaChalkboardTeacher /> <span>{messages.es['game']}</span>
       </span>
       <span id="authorLink" className={styles.menu} onClick={() => onNavSection('author')}>
-        <GiTeacher /> <span>Sobre el autor</span>
+        <GiTeacher /> <span>{messages.es['aboutAuthor']}</span>
       </span>
       <span id="contactLink" className={styles.menu} onClick={() => onNavSection('contact')}>
-        <RiMailSendLine /> <span>Contacta</span>
+        <RiMailSendLine /> <span>{messages.es['contactUs']}</span>
       </span>
     </NavLinksView>
   );
 };
 
 const NavLinksView = styled(animated.ul)`
-  // margin: auto 0;
   display: flex;
   font-size: 1rem;
   justify-content: flex-end;
@@ -77,15 +80,10 @@ const NavLinksView = styled(animated.ul)`
     color: var(--text);
     cursor: pointer;
     font-weight: 600;
-    text-decoration: none;
     margin: 0 1.5rem;
+    text-decoration: none;
     text-transform: uppercase;
     transition: all 300ms linear 0s;
-
-    // &:hover {
-    //   color: #fdcb6e;
-    //   border-bottom: 1px solid #fdcb6e;
-    // }
 
     @media (max-width: 768px) {
       margin: 0.5rem;

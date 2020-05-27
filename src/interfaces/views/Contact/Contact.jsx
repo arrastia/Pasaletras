@@ -1,6 +1,6 @@
 import React, { useContext, useReducer, useRef } from 'react';
 
-import { GrPowerReset, GrFacebookOption } from 'react-icons/gr';
+import { GrFacebookOption, GrPowerReset } from 'react-icons/gr';
 import { RiMailLine } from 'react-icons/ri';
 import { RiMailSendLine } from 'react-icons/ri';
 
@@ -35,7 +35,11 @@ export const Contact = () => {
   };
 
   const data = [
-    { label: messages.es['name'], id: 'name', type: 'search' },
+    {
+      id: 'name',
+      label: messages.es['name'],
+      type: 'search'
+    },
     {
       id: 'email',
       label: messages.es['e-mail'],
@@ -43,7 +47,11 @@ export const Contact = () => {
       ref: emailRef,
       type: 'search'
     },
-    { label: messages.es['subject'], id: 'subject', type: 'search' }
+    {
+      id: 'subject',
+      label: messages.es['subject'],
+      type: 'search'
+    }
   ];
 
   const renderLayout = children => (
@@ -54,7 +62,7 @@ export const Contact = () => {
 
   return renderLayout(
     <div className={styles.contactWrap}>
-      <img src={tablet} alt="" />
+      <img src={tablet} alt="Illustration" />
       <div className={styles.contact}>
         <h2 className={styles.title}>{messages.es['writeUs']}</h2>
         <div className={styles.letsTalk}>
@@ -64,7 +72,11 @@ export const Contact = () => {
             </span>
             <span className={styles.text}>{messages.es['infoEmail']}</span>
           </a>
-          <a className={styles.link} href="https://facebook.com/pasaletras" target="_blank" rel="noopener noreferrer">
+          <a
+            className={styles.link}
+            href="https://www.facebook.com/Libro-Pasaletras-109572287173965/"
+            rel="noopener noreferrer"
+            target="_blank">
             <span className={styles.btn}>
               <GrFacebookOption className={styles.facebook} />
             </span>
@@ -96,12 +108,13 @@ export const Contact = () => {
               <InputTextarea
                 autoResize={true}
                 cols={30}
+                id="inputTextarea_id"
                 onChange={event => onFillForm('message', event.target.value)}
                 required={true}
                 rows={1}
                 value={formState.message}
               />
-              <label htmlFor={777}>{messages.es['writeYourMessage']}</label>
+              <label htmlFor={'inputTextarea_id'}>{messages.es['writeYourMessage']}</label>
             </span>
           </div>
           <div className={styles.buttons}>
@@ -111,7 +124,7 @@ export const Contact = () => {
               </Button>
             </span>
             <span className={styles.reset}>
-              <Button label={messages.es['reset']} style={{ background: 'transparent' }} onClick={() => onResetForm()}>
+              <Button className="reset" label={messages.es['reset']} onClick={() => onResetForm()}>
                 <GrPowerReset className={styles.resetIcon} />
               </Button>
             </span>

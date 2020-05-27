@@ -1,20 +1,20 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 
-import { useSpring, animated } from 'react-spring';
+import { animated, useSpring } from 'react-spring';
 import styled, { ThemeProvider } from 'styled-components';
 
-import { MdWbSunny, MdBrightness3 } from 'react-icons/md';
+import { MdBrightness3, MdWbSunny } from 'react-icons/md';
 import { FiArrowUpCircle } from 'react-icons/fi';
 
 import styles from './Header.module.scss';
 
+import { Brand } from './.components/Brand/Brand';
 import { Button } from 'interfaces/.components/Button';
 import { CollapseMenu } from './.components/CollapseMenu';
 import { Navbar } from './.components/Navbar';
 
 import { useDarkMode } from 'interfaces/.tools/Hooks/useDarkMode';
 import { useOnClickOutside } from 'interfaces/.tools/Hooks/useOnClickOutside';
-import { Brand } from './.components/Brand/Brand';
 
 const links = ['home', 'buy', 'game', 'author', 'contact'];
 
@@ -80,6 +80,11 @@ export const Header = () => {
 
   const onToggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const onTop = () => {
+    const offsetTop = document.getElementById('root').offsetTop;
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+  };
+
   const theme = { main: opacity };
 
   const renderBrand = className => (
@@ -87,11 +92,6 @@ export const Header = () => {
       <Brand className={className} />
     </span>
   );
-
-  const onTop = () => {
-    const offsetTop = document.getElementById('root').offsetTop;
-    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-  };
 
   return (
     <span ref={menuRef}>
@@ -130,20 +130,17 @@ const HeaderView = styled(animated.nav)`
 
   &::before {
     background: var(--bg);
+    box-shadow: var(--card-item-box-shadow);
     content: '';
     height: 100%;
     left: 0;
     opacity: ${props => props.theme.main};
     position: absolute;
     top: 0;
+    transition: opacity 0.5s ease-in-out;
     width: 100%;
     z-index: -1;
-    transition: opacity 0.5s ease-in-out;
-    box-shadow: var(--card-item-box-shadow);
-  }
-
-  @media (max-width: 768px) {
   }
 `;
 
-HeaderView.defaultProps = { theme: { opactity: 1 } };
+HeaderView.defaultProps = { theme: { opacity: 1 } };

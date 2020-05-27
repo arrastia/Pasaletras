@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
-import { InputTextUtils } from '../InputText/.tools/Utils/InputTextUtils';
+import { InputUtils } from 'interfaces/views/Contact/.tools/Utils/InputUtils';
 
 export const InputTextarea = ({ keyfilter, onInputEvent, onKeyPress, validateOnly, ...rest }) => {
   const textareaRef = useRef(null);
@@ -67,17 +67,17 @@ export const InputTextarea = ({ keyfilter, onInputEvent, onKeyPress, validateOnl
     'p-inputtextarea-resizable': rest.autoResize
   });
 
-  let textareaProps = InputTextUtils.findDiffKeys(rest, InputTextarea.defaultProps);
+  let textareaProps = InputUtils.findDiffKeys(rest, InputTextarea.defaultProps);
 
   return (
     <textarea
       {...textareaProps}
       className={className}
-      ref={textareaRef}
-      onFocus={onFocus}
       onBlur={onBlur}
+      onFocus={onFocus}
+      onInput={onInput}
       onKeyUp={onKeyUp}
-      onInput={onInput}></textarea>
+      ref={textareaRef}></textarea>
   );
 };
 

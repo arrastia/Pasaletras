@@ -1,12 +1,12 @@
 .section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   height: 100%;
+  margin-bottom: 3rem;
   padding: 3rem 0 3rem 0;
   position: relative;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  margin-bottom: 1rem;
 
   .title {
     color: var(--text);
@@ -15,8 +15,8 @@
     font-weight: 500;
     letter-spacing: 5px;
     margin-bottom: 15px;
-    text-transform: uppercase;
     opacity: 0.5;
+    text-transform: uppercase;
   }
 
   .subtitle {
@@ -34,8 +34,8 @@
 .author {
   background: linear-gradient(30deg, var(--book2), var(--book2) 30%, transparent 30%, transparent);
   border-radius: 20px;
-  padding: 1rem;
   margin-bottom: 5rem;
+  padding: 1rem;
   width: calc(100% - 2rem);
 
   @media screen and (min-width: 768px) {

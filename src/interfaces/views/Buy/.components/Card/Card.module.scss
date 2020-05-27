@@ -15,16 +15,16 @@
   row-gap: 1rem;
   transition: all 0.25s ease-in-out;
   width: 350px;
-  -webkit-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
 
   &:hover {
     box-shadow: var(--card-item-box-shadow-hover);
+    opacity: 1;
     transform: scale(1.02, 1.02);
     transition: transform 0.1s ease;
-    opacity: 1;
   }
 
   &::before {
@@ -40,18 +40,18 @@
   }
 
   .text {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
 
     .title {
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
       display: -webkit-box;
       margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
     }
     .subtitle {
       margin: 0.5rem 0;
@@ -59,16 +59,17 @@
   }
 
   .link {
+    align-items: flex-start;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     z-index: 1;
+
     .linkIcon {
-      cursor: pointer;
       background-color: var(--book3);
-      padding: 1rem;
       border-radius: 50%;
+      cursor: pointer;
       margin-bottom: 1rem;
+      padding: 1rem;
 
       img {
         width: 3rem;
@@ -77,9 +78,9 @@
   }
 
   .toolbar {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
     z-index: 1;
   }
 }
@@ -91,16 +92,16 @@
 
 @media screen and (min-width: 768px) {
   .card {
-    zoom: 0.9;
     width: 40%;
+    zoom: 0.9;
   }
 
   .subtitle {
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
+    zoom: 0.75;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
-    zoom: 0.75;
   }
 }

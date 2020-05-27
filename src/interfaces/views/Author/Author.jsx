@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import styles from './Author.module.scss';
-
 import author from 'assets/img/author/author.jpg';
 import illustration from 'assets/img/svg/profesora.svg';
+
+import styles from './Author.module.scss';
 
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
 
@@ -21,13 +21,13 @@ export const Author = () => {
   return renderLayout(
     <div className={styles.authorWrap}>
       <div className={styles.author}>
-        <img className={styles.img} src={author} alt="" />
+        <img className={styles.img} src={author} alt="Author" />
         <div className={styles.description}>
           <h3 className={styles.title}>{messages.es['authorName']}</h3>
           <div className={styles.text}>{messages.es['authorParagraph']}</div>
         </div>
       </div>
-      <img src={illustration} alt="" />
+      <img src={illustration} alt="illustration" />
     </div>
   );
 };

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
-import styles from './Buy.module.scss';
-
 import book from 'assets/img/svg/icons/book.svg';
+import estudiante from 'assets/img/svg/estudiante.svg';
 import kindle from 'assets/img/svg/icons/kindle.svg';
 import pdf from 'assets/img/svg/icons/pdf.svg';
-import estudiante from 'assets/img/svg/estudiante.svg';
+
+import styles from './Buy.module.scss';
 
 import { Card } from './.components/Card';
 import { Download } from './.components/Download';
@@ -25,9 +25,24 @@ export const Buy = () => {
       subtitle: messages.es['downloadNow'],
       title: messages.es['freeSample']
     },
-    { title: messages.es['optionPaper'], subtitle: messages.es['more'], photo: <img alt="ilustración" src={book} />, id: 1 },
-    { title: messages.es['optionPdf'], subtitle: messages.es['more'], photo: <img alt="ilustración" src={pdf} />, id: 2 },
-    { title: messages.es['optionKindle'], subtitle: messages.es['more'], photo: <img alt="ilustración" src={kindle} />, id: 3 }
+    {
+      id: 1,
+      photo: <img alt="ilustración" src={book} />,
+      subtitle: messages.es['more'],
+      title: messages.es['optionPaper']
+    },
+    {
+      id: 2,
+      photo: <img alt="ilustración" src={pdf} />,
+      subtitle: messages.es['more'],
+      title: messages.es['optionPdf']
+    },
+    {
+      id: 3,
+      photo: <img alt="ilustración" src={kindle} />,
+      subtitle: messages.es['more'],
+      title: messages.es['optionKindle']
+    }
   ];
 
   const renderLayout = children => (
@@ -50,7 +65,7 @@ export const Buy = () => {
           />
         ))}
       </div>
-      <img src={estudiante} alt="ilustración" />
+      <img src={estudiante} alt="Illustration" />
     </div>
   );
 };

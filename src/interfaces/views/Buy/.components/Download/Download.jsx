@@ -114,7 +114,6 @@ export const Download = () => {
             </svg>
           </div>
         </div>
-        {/* <span>0%</span> */}
       </button>
     </Fragment>
   );

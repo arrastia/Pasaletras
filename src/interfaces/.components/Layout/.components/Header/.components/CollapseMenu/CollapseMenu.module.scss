@@ -3,7 +3,6 @@
   position: absolute;
 
   .wrap {
-    // background-color: var(--book3);
     background: var(--bg);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     height: 100vh;
@@ -35,8 +34,8 @@
 
         > span {
           align-items: center;
-          display: flex;
           color: var(--text);
+          display: flex;
           font-size: 0.8rem;
           justify-content: flex-start;
         }
@@ -49,16 +48,16 @@
 
       &::after {
         margin-top: 1rem;
-        visibility: visible;
         transform: scaleX(1);
+        visibility: visible;
       }
 
       > svg {
         align-items: center;
+        color: var(--book3);
         display: flex;
         font-size: 1.5rem;
         justify-content: flex-start;
-        color: var(--book3);
       }
     }
   }

@@ -6,17 +6,17 @@ import classNames from 'classnames';
 import './InputText.scss';
 
 import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
-import { InputTextUtils } from './.tools/Utils/InputTextUtils';
+import { InputUtils } from 'interfaces/views/Contact/.tools/Utils/InputUtils';
 
 export const InputText = forwardRef(({ keyfilter, onInput, onKeyPress, validateOnly, ...rest }, ref) => {
   const onPressKey = event => {
     if (onKeyPress) onKeyPress(event);
-    if (keyfilter) InputTextUtils.onKeyPress(event, keyfilter, validateOnly);
+    if (keyfilter) InputUtils.onKeyPress(event, keyfilter, validateOnly);
   };
 
   const onInputClick = event => {
     let validatePattern = true;
-    if (keyfilter && validateOnly) validatePattern = InputTextUtils.onValidate(event, keyfilter);
+    if (keyfilter && validateOnly) validatePattern = InputUtils.onValidate(event, keyfilter);
     if (onInput) onInput(event, validatePattern);
 
     if (rest.onChange) {
@@ -30,7 +30,7 @@ export const InputText = forwardRef(({ keyfilter, onInput, onKeyPress, validateO
     'p-filled': (rest.value && rest.value.toString().length > 0) || (rest.defaultValue && rest.defaultValue.toString().length > 0)
   });
 
-  let inputProps = InputTextUtils.findDiffKeys(rest, InputText.defaultProps);
+  let inputProps = InputUtils.findDiffKeys(rest, InputText.defaultProps);
 
   return <input ref={ref} {...inputProps} className={classNameList} onInput={onInputClick} onKeyPress={onPressKey} />;
 });

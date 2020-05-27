@@ -1,7 +1,5 @@
 import React from 'react';
 
-import styled, { ThemeProvider } from 'styled-components';
-
 import styles from './Card.module.scss';
 
 export const Card = ({ className, iconClassName, style, subtitle, title, toolbar }) => {

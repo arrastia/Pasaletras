@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { config, Keyframes } from 'react-spring/renderprops';
 
 import { FaChalkboardTeacher } from 'react-icons/fa';
-import { GiBookshelf, GiHouse, GiShoppingCart, GiTeacher } from 'react-icons/gi';
+import { GiHouse, GiShoppingCart, GiTeacher } from 'react-icons/gi';
 import { RiMailSendLine } from 'react-icons/ri';
 
 import styles from './CollapseMenu.module.scss';

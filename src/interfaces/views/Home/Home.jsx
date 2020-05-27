@@ -23,7 +23,7 @@ export const Home = () => {
   }, [headerViewRef]);
 
   return (
-    <section id="home" className={styles.homeSection} data-section="home">
+    <section id="home" className={styles.homeSection}>
       <div className={styles.slider} style={{ top: height }}>
         <AutoplaySlider play={true} cancelOnInteraction={false} interval={5000}>
           <div data-src={girl} />
