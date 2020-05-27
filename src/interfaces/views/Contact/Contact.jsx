@@ -71,7 +71,7 @@ export const Contact = () => {
             <span className={styles.text}>{messages.es['followUsFacebook']}</span>
           </a>
         </div>
-        <div className={styles.form}>
+        <form className={styles.form}>
           <div className={styles.input}>
             {data.map(item => (
               <span key={item.id}>
@@ -97,6 +97,7 @@ export const Contact = () => {
                 autoResize={true}
                 cols={30}
                 onChange={event => onFillForm('message', event.target.value)}
+                required={true}
                 rows={1}
                 value={formState.message}
               />
@@ -115,7 +116,7 @@ export const Contact = () => {
               </Button>
             </span>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
