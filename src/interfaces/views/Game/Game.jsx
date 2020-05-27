@@ -3,8 +3,8 @@ import React, { useContext, useEffect, useReducer, useState } from 'react';
 
 import styles from './Game.module.scss';
 
-import { webConfig } from 'config/www';
 import { pasaletrasConfig } from './.config';
+import { webConfig } from 'config/www';
 
 import { AccordionView } from './.components/AccordionView';
 import { MagazineView } from './.components/MagazineView';
@@ -84,9 +84,9 @@ export const Game = () => {
 
   return renderLayout(
     breakpoints.tablet ? (
-      <MagazineView gameState={gameState} pagina={pasaletras} onToggle={onToggle} handleRedirect={handleRedirect} />
+      <MagazineView handleRedirect={handleRedirect} onToggle={onToggle} pagina={pasaletras} />
     ) : (
-      <AccordionView gameState={gameState} pagina={pasaletras} onToggle={onToggle} handleRedirect={handleRedirect} />
+      <AccordionView gameState={gameState} handleRedirect={handleRedirect} onToggle={onToggle} pagina={pasaletras} />
     )
   );
 };

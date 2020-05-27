@@ -1,235 +1,106 @@
-body .p-tabview.p-tabview-top,
-body .p-tabview.p-tabview-bottom,
-body .p-tabview.p-tabview-left,
-body .p-tabview.p-tabview-right {
+.p-tabview.p-tabview-top {
   border: 0 none;
   position: relative;
   width: 100%;
-}
-body .p-tabview.p-tabview-top .p-tabview-nav,
-body .p-tabview.p-tabview-bottom .p-tabview-nav,
-body .p-tabview.p-tabview-left .p-tabview-nav,
-body .p-tabview.p-tabview-right .p-tabview-nav {
-  padding: 0;
-  background: transparent;
-  border: 0 none;
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li a,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li a,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li a,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li a {
-  background-color: var(--tabview-bg);
-  border: var(--tabview-border);
-  color: var(--tabview-color);
-  display: inline-block;
-  float: none;
-  font-weight: 700;
-  opacity: 0.5;
-  padding: 0.571rem 1.3rem;
-  transition: background-color 0.2s, box-shadow 0.2s;
-  -moz-transition: background-color 0.2s, box-shadow 0.2s;
-  -o-transition: background-color 0.2s, box-shadow 0.2s;
-  -webkit-transition: background-color 0.2s, box-shadow 0.2s;
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li a .p-tabview-left-icon,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li a .p-tabview-left-icon,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li a .p-tabview-left-icon,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li a .p-tabview-left-icon {
-  margin-right: 0.5em;
-  color: var(--tabview-highlight-icon-color);
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li a .p-tabview-right-icon,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li a .p-tabview-right-icon,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li a .p-tabview-right-icon,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li a .p-tabview-right-icon {
-  margin-left: 0.5em;
-  color: var(--tabview-highlight-icon-color);
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li a:not(.p-disabled):focus,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li a:not(.p-disabled):focus,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li a:not(.p-disabled):focus,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li a:not(.p-disabled):focus {
-  outline: 0 none;
-  outline-offset: 0;
-  /*-webkit-box-shadow: 0 0 0 0.2em #004494;
-  -moz-box-shadow: 0 0 0 0.2em #004494;
-  box-shadow: 0 0 0 0.2em #004494;*/
-  /*-webkit-box-shadow: 0 0 0 0.2em #ffd617;
-  -moz-box-shadow: 0 0 0 0.2em #ffd617;
-  box-shadow: 0 0 0 0.2em #ffd617;*/
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li .p-tabview-close,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li .p-tabview-close,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li .p-tabview-close,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li .p-tabview-close {
-  color: #848484;
-  margin: 0 0.5em 0 0;
-  vertical-align: middle;
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li:not(.p-highlight):not(.p-disabled):hover a,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li:not(.p-highlight):not(.p-disabled):hover a,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li:not(.p-highlight):not(.p-disabled):hover a,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li:not(.p-highlight):not(.p-disabled):hover a {
-  background-color: var(--tabview-highlight-bg-hover);
-  border: var(--tabview-highlight-border-hover);
-  color: var(--tabview-highlight-color-hover);
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li:not(.p-highlight):not(.p-disabled):hover .p-tabview-close,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li:not(.p-highlight):not(.p-disabled):hover .p-tabview-close,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li:not(.p-highlight):not(.p-disabled):hover .p-tabview-close,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li:not(.p-highlight):not(.p-disabled):hover .p-tabview-close {
-  color: #404040;
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li.p-highlight a,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li.p-highlight a,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li.p-highlight a,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li.p-highlight a {
-  background-color: var(--tabview-highlight-bg);
-  border-top: var(--tabview-highlight-border);
-  border-right: var(--tabview-highlight-border);
-  border-left: var(--tabview-highlight-border);
-  border-bottom: var(--tabview-highlight-border-bottom);
-  color: var(--tabview-highlight-color);
-  opacity: 1;
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li.p-highlight .p-tabview-close,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li.p-highlight .p-tabview-close,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li.p-highlight .p-tabview-close,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li.p-highlight .p-tabview-close {
-  color: #ffffff;
-}
 
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover {
-  cursor: default;
-}
+  .p-tabview-nav {
+    background: transparent;
+    border: 0 none;
+    cursor: pointer;
+    padding: 0;
 
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a {
-  cursor: default;
-  // background-color: var(--bg);
-  // border-top: var(--tabview-highlight-border);
-  // border-right: var(--tabview-highlight-border);
-  // border-left: var(--tabview-highlight-border);
-  // border-bottom: var(--tabview-highlight-border-bottom);
-  // color: var(--tabview-highlight-color-hover);
-  // background-color: var(--yellow-120);
-  // border: 1px solid var(--blue-120);
-  // color: #404040;
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a .p-tabview-left-icon,
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a .p-tabview-right-icon,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a .p-tabview-left-icon,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a .p-tabview-right-icon,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a .p-tabview-left-icon,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a .p-tabview-right-icon,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a .p-tabview-left-icon,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li.p-highlight:hover a .p-tabview-right-icon {
-  color: var(--tabview-highlight-icon-color);
-}
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li.p-tabview-selected a,
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li.p-tabview-selected a,
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li.p-tabview-selected a,
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li.p-tabview-selected a {
-  // cursor: pointer;
-}
-body .p-tabview .p-tabview-nav li.p-state-processing a {
-  // cursor: text;
-}
+    li.p-tabview-nav-li {
+      a {
+        background-color: var(--tabview-bg);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border: var(--tabview-border);
+        color: var(--tabview-color);
+        display: inline-block;
+        float: none;
+        font-weight: 700;
+        opacity: 0.5;
+        padding: 0.571rem 1.3rem;
+        transition: background-color 0.2s, box-shadow 0.2s;
+        -moz-border-radius-topleft: 3px;
+        -moz-border-radius-topright: 3px;
+        -moz-transition: background-color 0.2s, box-shadow 0.2s;
+        -o-transition: background-color 0.2s, box-shadow 0.2s;
+        -webkit-border-top-left-radius: 3px;
+        -webkit-border-top-right-radius: 3px;
+        -webkit-transition: background-color 0.2s, box-shadow 0.2s;
 
-body .p-tabview.p-tabview-top .p-tabview-nav {
-  cursor: pointer;
+        &:not(.p-disabled):focus {
+          outline: 0 none;
+          outline-offset: 0;
+        }
+      }
 
-  @media screen and (min-width: 768px) {
-    padding: 0 1rem;
+      &:not(.p-highlight):not(.p-disabled):hover {
+        a {
+          background-color: var(--tabview-highlight-bg-hover);
+          border: var(--tabview-highlight-border-hover);
+          color: var(--tabview-highlight-color-hover);
+        }
+      }
+
+      &:not(:last-child) {
+        a {
+          margin-right: 2px;
+        }
+      }
+    }
+
+    li.p-tabview-nav-li.p-highlight {
+      a {
+        background-color: var(--tabview-highlight-bg);
+        border-bottom: var(--tabview-highlight-border-bottom);
+        border-left: var(--tabview-highlight-border);
+        border-right: var(--tabview-highlight-border);
+        border-top: var(--tabview-highlight-border);
+        color: var(--tabview-highlight-color);
+        opacity: 1;
+      }
+
+      &:hover {
+        cursor: default;
+
+        a {
+          cursor: default;
+        }
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 0 1rem;
+    }
   }
 }
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li a {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-topright: 3px;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-}
 
-body .p-tabview.p-tabview-top .p-tabview-nav li.p-tabview-nav-li:not(:last-child) a {
-  margin-right: 2px;
-}
+.p-tabview {
+  .p-tabview-nav li {
+    float: left;
+    height: 2.6rem;
+    list-style: none;
+    margin: 0 0 1px 0;
+    padding: 0;
+    position: relative;
+    white-space: nowrap;
+  }
 
-body .p-tabview .p-tabview-nav li {
-  float: left;
-  height: 2.6rem;
-  list-style: none;
-  margin: 0 0 1px 0;
-  padding: 0;
-  position: relative;
-  white-space: nowrap;
-}
-
-body .p-tabview.p-tabview-bottom .p-tabview-nav {
-  margin-top: -1px;
-}
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li a {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-}
-body .p-tabview.p-tabview-bottom .p-tabview-nav li.p-tabview-nav-li a {
-  margin-right: 2px;
-}
-
-body .p-tabview.p-tabview-left .p-tabview-nav {
-  margin-right: -1px;
-}
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li a {
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  -moz-border-radius-topleft: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -webkit-border-top-left-radius: 3px;
-}
-body .p-tabview.p-tabview-left .p-tabview-nav li.p-tabview-nav-li:not(:last-child) a {
-  margin-bottom: 2px;
-}
-
-body .p-tabview.p-tabview-right .p-tabview-nav {
-  margin-right: -1px;
-}
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li a {
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -moz-border-radius-topright: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-}
-body .p-tabview.p-tabview-right .p-tabview-nav li.p-tabview-nav-li:not(:last-child) a {
-  margin-bottom: 2px;
-}
-
-body .p-tabview .p-tabview-panels {
-  // background-color: var(--bg);
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  // border: 1px solid gray;
-  color: var(--main-font-color);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  -moz-border-radius-bottomleft: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
+  .p-tabview-panels {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: var(--main-font-color);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    -moz-border-radius-bottomleft: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+  }
 }

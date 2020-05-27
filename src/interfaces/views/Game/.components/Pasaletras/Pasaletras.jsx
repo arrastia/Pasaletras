@@ -39,8 +39,6 @@ export const Pasaletras = ({ color, handleRedirect, isAnimate, refresh }) => {
 
   const isAnimateView = () => setActive(isAnimate);
 
-  const togglePickers = () => setActive(!active);
-
   const len = alphabet.length;
   const degIncrement = 360 / len;
   const pickers = [];
@@ -74,7 +72,7 @@ export const Pasaletras = ({ color, handleRedirect, isAnimate, refresh }) => {
   const buttonStyles = { background: color, borderRadius: '50%', color: 'var(--bg)', height: '4rem', opacity: 1, width: '4rem', zIndex: 2 };
 
   return (
-    <div /* style={{ backgroundColor: '#61dafb', height: '3000' }}  */ className="wrap" ref={containerRef}>
+    <div className="wrap" ref={containerRef}>
       <div className="play">
         <Button style={buttonStyles} onClick={handleRedirect}>
           <FaChalkboardTeacher />

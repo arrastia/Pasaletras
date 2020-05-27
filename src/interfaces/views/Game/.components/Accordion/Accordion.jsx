@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import { AiFillCaretDown } from 'react-icons/ai';
 
-export const Accordion = ({ bgColor, content, id, isOpen, onOpen }) => {
+export const Accordion = ({ content, id, isOpen, onOpen }) => {
   const [contentMaxHeight, setContentMaxHeight] = useState(0);
 
   const ref = useRef();
@@ -27,13 +27,13 @@ export const Accordion = ({ bgColor, content, id, isOpen, onOpen }) => {
 
   return (
     <Fragment>
-      <AccordionHeading onClick={() => onOpen(id)} /* zIndex={1} */ /*  style={{ backgroundColor: bgColor }} */>
+      <AccordionHeading onClick={() => onOpen(id)}>
         {content.title}
         <AnimatedBox style={{ transform: scY.interpolate(scY => `scaleY(${scY})`) }} pl={2}>
           <AiFillCaretDown />
         </AnimatedBox>
       </AccordionHeading>
-      <AnimatedBox ref={ref} style={{ overflow: 'hidden', ...props, height: '400px' }} /* zIndex={0} */>
+      <AnimatedBox ref={ref} style={{ overflow: 'hidden', ...props, height: '400px' }}>
         {content.text}
       </AnimatedBox>
     </Fragment>

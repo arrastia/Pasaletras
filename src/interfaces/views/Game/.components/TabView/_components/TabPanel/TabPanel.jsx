@@ -1,13 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const TabPanel = props => {
-  return (
-    <div {...props} style={{ background: 'green' }}>
-      {props.children}
-    </div>
-  );
-};
+export const TabPanel = props => <div {...props}>{props.children}</div>;
 
 TabPanel.propTypes = {
   contentClassName: PropTypes.string,

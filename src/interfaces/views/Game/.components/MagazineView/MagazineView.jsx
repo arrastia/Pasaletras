@@ -1,4 +1,4 @@
-import React, { useContext, useState, Fragment } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 
 import { FiExternalLink } from 'react-icons/fi';
 
@@ -9,7 +9,7 @@ import { TabView } from '../TabView';
 
 import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
 
-export const MagazineView = ({ gameState, handleRedirect, onToggle, pagina }) => {
+export const MagazineView = ({ handleRedirect, onToggle, pagina }) => {
   const messages = useContext(MessagesContext);
 
   const [activeView, setActiveView] = useState(0);
@@ -46,8 +46,8 @@ export const MagazineView = ({ gameState, handleRedirect, onToggle, pagina }) =>
   const tabStyles = (index, key) => {
     const isSelected = index === activeView;
     return {
-      color: isSelected ? `var(--${key})` : '',
       borderBottom: isSelected ? `0.2rem solid var(--${key})` : '',
+      color: isSelected ? `var(--${key})` : '',
       margin: '0 1.5rem'
     };
   };

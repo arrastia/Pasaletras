@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useRef, useState } from 'react';
 
 import isNil from 'lodash/isNil';
 
-import styles from './Tab.module.css';
+import styles from './Tab.module.scss';
 
 export const Tab = ({
   className,
@@ -52,10 +52,9 @@ export const Tab = ({
         }}></div>
       <li
         className={`${className} p-tabview-nav-li`}
+        ref={tabRef}
         role="presentation"
         style={{ ...headerStyle, pointerEvents: 'fill' }}
-        ref={tabRef}
-        // style={{ background: 'pink' }}
         tabIndex={index}>
         <a
           aria-selected={selected}
@@ -68,13 +67,9 @@ export const Tab = ({
             }
           }}
           role="tab"
-          style={{
-            pointerEvents: 'fill',
-            display: 'inline-block',
-            height: isNavigationHidden ? '2.6rem' : '2.7rem' /* background: 'yellow' */
-          }}
+          style={{ display: 'inline-block', height: isNavigationHidden ? '2.6rem' : '2.7rem', pointerEvents: 'fill' }}
           tabIndex={index}>
-          <span className="p-tabview-title" /* style={{ background: 'blue' }} */>{!isNil(titleHeader) ? titleHeader : header}</span>
+          <span className="p-tabview-title">{!isNil(titleHeader) ? titleHeader : header}</span>
         </a>
       </li>
     </Fragment>
