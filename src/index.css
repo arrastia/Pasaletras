@@ -77,6 +77,11 @@
 }
 
 @font-face {
+  font-family: 'GothamBookItalic';
+  src: local('GothamBookItalic'), url(./assets/fonts/GothamBookItalic.ttf) format('truetype');
+}
+
+@font-face {
   font-family: 'GothamThinItalic';
   src: local('GothamThinItalic'), url(./assets/fonts/Gotham-ThinItalic.otf) format('truetype');
 }
@@ -85,6 +90,7 @@ body {
   margin: 0;
   font-family: -apple-system, GothamLight, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
+  /* font-family: GothamLight; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: var(--bg); */

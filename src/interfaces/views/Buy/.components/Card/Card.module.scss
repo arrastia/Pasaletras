@@ -1,4 +1,5 @@
 .card {
+  align-items: center;
   background: var(--bg);
   border-bottom: 2px solid var(--book3);
   border-radius: 15px;
@@ -6,7 +7,8 @@
   column-gap: 1.5rem;
   cursor: pointer;
   display: grid;
-  grid-template-columns: 70% calc(30% - 1.5rem);
+  grid-template-columns: 65% calc(35% - 1.5rem);
+  justify-content: center;
   margin: 1rem;
   min-height: 100px;
   opacity: 0.9;
@@ -54,12 +56,13 @@
       text-overflow: ellipsis;
     }
     .subtitle {
-      margin: 0.5rem 0;
+      margin: 1rem 0;
+      font-family: 'GothamBookItalic';
     }
   }
 
   .link {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     justify-content: center;
     z-index: 1;
@@ -77,17 +80,24 @@
     }
   }
 
-  .toolbar {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-  }
+  // .toolbar {
+  //   align-items: center;
+  //   display: flex;
+  //   justify-content: center;
+  //   z-index: 1;
+  // }
 }
 
 .download {
   background-color: var(--book3);
   border-bottom: 2px solid var(--text);
+
+  .link {
+    .linkIcon {
+      margin: 0;
+      margin: 0;
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {

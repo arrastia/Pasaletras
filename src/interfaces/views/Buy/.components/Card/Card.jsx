@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Card.module.scss';
 
-export const Card = ({ className, iconClassName, onClick, style, subtitle, title, toolbar }) => {
+export const Card = ({ className, onClick, style, subtitle, title, toolbar }) => {
   return (
     <div className={`${styles.card} ${styles[className]}`} onClick={onClick} style={style}>
       <div className={styles.text}>
@@ -10,7 +10,7 @@ export const Card = ({ className, iconClassName, onClick, style, subtitle, title
         <p className={styles.subtitle}>{subtitle}</p>
       </div>
 
-      <div className={`${iconClassName ? styles[iconClassName] : styles.link}`}>
+      <div className={styles.link}>
         <span className={styles.linkIcon}>{toolbar}</span>
       </div>
     </div>

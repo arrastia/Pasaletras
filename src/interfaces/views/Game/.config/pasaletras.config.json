@@ -1,94 +1,4 @@
 {
-  "animals": [
-    {
-      "bgColor": ["var(--animals)"],
-      "pages": [
-        {
-          "page": 58,
-          "web": 5448672
-        },
-        {
-          "page": 59,
-          "web": 5448669
-        }
-      ]
-    }
-  ],
-  "food": [
-    {
-      "bgColor": ["var(--food)"],
-      "pages": [
-        {
-          "page": 62,
-          "web": 5448667
-        },
-        {
-          "page": 63,
-          "web": 5448666
-        }
-      ]
-    }
-  ],
-  "clothes": [
-    {
-      "bgColor": ["var(--clothes)"],
-      "pages": [
-        {
-          "page": 66,
-          "web": 5448665
-        },
-        {
-          "page": 67,
-          "web": 5448663
-        }
-      ]
-    }
-  ],
-  "countries": [
-    {
-      "bgColor": ["var(--countries)"],
-      "pages": [
-        {
-          "page": 70,
-          "web": 5448662
-        },
-        {
-          "page": 71,
-          "web": 5448661
-        }
-      ]
-    }
-  ],
-  "verbs": [
-    {
-      "bgColor": ["var(--verbs)"],
-      "pages": [
-        {
-          "page": 74,
-          "web": 5448660
-        },
-        {
-          "page": 75,
-          "web": 5448658
-        }
-      ]
-    }
-  ],
-  "adjectives": [
-    {
-      "bgColor": ["var(--adjectives)"],
-      "pages": [
-        {
-          "page": 78,
-          "web": 5448656
-        },
-        {
-          "page": 79,
-          "web": 5448654
-        }
-      ]
-    }
-  ],
   "a1": [
     {
       "bgColor": ["var(--a1)"],
@@ -271,6 +181,96 @@
         {
           "page": 55,
           "web": 5448488
+        }
+      ]
+    }
+  ],
+  "animals": [
+    {
+      "bgColor": ["var(--animals)"],
+      "pages": [
+        {
+          "page": 58,
+          "web": 5448672
+        },
+        {
+          "page": 59,
+          "web": 5448669
+        }
+      ]
+    }
+  ],
+  "food": [
+    {
+      "bgColor": ["var(--food)"],
+      "pages": [
+        {
+          "page": 62,
+          "web": 5448667
+        },
+        {
+          "page": 63,
+          "web": 5448666
+        }
+      ]
+    }
+  ],
+  "clothes": [
+    {
+      "bgColor": ["var(--clothes)"],
+      "pages": [
+        {
+          "page": 66,
+          "web": 5448665
+        },
+        {
+          "page": 67,
+          "web": 5448663
+        }
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "bgColor": ["var(--countries)"],
+      "pages": [
+        {
+          "page": 70,
+          "web": 5448662
+        },
+        {
+          "page": 71,
+          "web": 5448661
+        }
+      ]
+    }
+  ],
+  "verbs": [
+    {
+      "bgColor": ["var(--verbs)"],
+      "pages": [
+        {
+          "page": 74,
+          "web": 5448660
+        },
+        {
+          "page": 75,
+          "web": 5448658
+        }
+      ]
+    }
+  ],
+  "adjectives": [
+    {
+      "bgColor": ["var(--adjectives)"],
+      "pages": [
+        {
+          "page": 78,
+          "web": 5448656
+        },
+        {
+          "page": 79,
+          "web": 5448654
         }
       ]
     }

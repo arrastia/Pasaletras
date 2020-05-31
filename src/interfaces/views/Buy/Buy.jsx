@@ -19,7 +19,6 @@ export const Buy = () => {
   const showItems = [
     {
       className: 'download',
-      iconClassName: 'downloadLink',
       id: 0,
       photo: <Download />,
       subtitle: messages.es['downloadNow'],
@@ -58,7 +57,6 @@ export const Buy = () => {
         {showItems.map(card => (
           <Card
             className={card.className}
-            iconClassName={card.iconClassName}
             key={card.id}
             onClick={() => (card.url ? window.open(card.url) : {})}
             subtitle={card.subtitle}

@@ -1,10 +1,14 @@
-import React, { Fragment, useEffect, useRef } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 
 import './Download.scss';
 
 import freePDF from 'assets/docs/MuestraGratuita.pdf';
 
+import { DownloadUtils } from './.tools/Utils/DownloadUtils';
+
 export const Download = () => {
+  const [isDownloading, setIsDownloading] = useState(false);
+
   const arrowRef = useRef(null);
   const buttonRef = useRef(null);
   const iconRef = useRef(null);
@@ -16,7 +20,7 @@ export const Download = () => {
         set(target, key, value) {
           target[key] = value;
           if (target.y !== null && target.s != null && target.f != null && target.l != null) {
-            arrowRef.current.innerHTML = getPath(target.y, target.f, target.l, target.s, null);
+            arrowRef.current.innerHTML = DownloadUtils.getPath(target.y, target.f, target.l, target.s, null);
           }
           return true;
         },
@@ -49,6 +53,7 @@ export const Download = () => {
           setTimeout(() => {
             buttonRef.current.classList.remove('loading', 'reset');
             iconRef.current.removeAttribute('style');
+            setIsDownloading(false);
           }, 400);
         }
       }
@@ -56,36 +61,8 @@ export const Download = () => {
     });
   }, []);
 
-  const getPoint = (point, i, a, smoothing) => {
-    let cp = (current, previous, next, reverse) => {
-        let p = previous || current,
-          n = next || current,
-          o = {
-            length: Math.sqrt(Math.pow(n[0] - p[0], 2) + Math.pow(n[1] - p[1], 2)),
-            angle: Math.atan2(n[1] - p[1], n[0] - p[0])
-          },
-          angle = o.angle + (reverse ? Math.PI : 0),
-          length = o.length * smoothing;
-        return [current[0] + Math.cos(angle) * length, current[1] + Math.sin(angle) * length];
-      },
-      cps = cp(a[i - 1], a[i - 2], point, false),
-      cpe = cp(point, a[i - 1], a[i + 1], true);
-    return `C ${cps[0]},${cps[1]} ${cpe[0]},${cpe[1]} ${point[0]},${point[1]}`;
-  };
-
-  const getPath = (update, first, last, smoothing, pointsNew) => {
-    let points = pointsNew
-        ? pointsNew
-        : [
-            [first, 16],
-            [20, update],
-            [last, 16]
-          ],
-      d = points.reduce((acc, point, i, a) => (i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${getPoint(point, i, a, smoothing)}`), '');
-    return `<path d="${d}" />`;
-  };
-
   const onDownload = () => {
+    setIsDownloading(true);
     setTimeout(() => {
       const link = document.createElement('a');
       link.href = freePDF;
@@ -98,7 +75,7 @@ export const Download = () => {
 
   return (
     <Fragment>
-      <button className="button" ref={buttonRef} onClick={() => onDownload()}>
+      <button className="button" ref={buttonRef} onClick={() => (!isDownloading ? onDownload() : {})}>
         <svg className="circle" viewBox="0 0 76 76">
           <circle className="default" cx="38" cy="38" r="36"></circle>
           <circle className="active" cx="38" cy="38" r="36"></circle>

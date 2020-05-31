@@ -14,6 +14,8 @@ import { BreakpointProvider } from 'interfaces/.tools/Providers/BreakpointProvid
 import { MessagesProvider } from 'interfaces/.tools/Providers/MessagesProvider';
 
 export const App = () => {
+  console.log('Made with love by https://arrastia.me/');
+
   const layout = children => (
     <BreakpointProvider queries={queries}>
       <MessagesProvider>

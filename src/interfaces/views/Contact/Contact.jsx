@@ -62,7 +62,7 @@ export const Contact = () => {
         <h2 className={styles.title}>{messages.es['writeUs']}</h2>
         <div className={styles.letsTalk}>
           <a className={styles.link} href="mailto:info@pasaletras.com">
-            <span className={styles.btn}>
+            <span className={`${styles.btn} ${styles.mailBtn}`}>
               <RiMailLine className={styles.mail} />
             </span>
             <span className={styles.text}>{messages.es['infoEmail']}</span>
@@ -80,20 +80,20 @@ export const Contact = () => {
         </div>
         <form className={styles.form}>
           <div className={styles.input}>
-            {data.map(item => (
-              <span key={item.id}>
+            {data.map(input => (
+              <span key={input.id}>
                 <span className={`p-float-label`}>
                   <InputText
                     autoComplete="off"
-                    id={item.id}
-                    onChange={event => onFillForm(item.id, event.target.value)}
-                    pattern={item.pattern}
-                    ref={item.ref}
+                    id={input.id}
+                    onChange={event => onFillForm(input.id, event.target.value)}
+                    pattern={input.pattern}
+                    ref={input.ref}
                     required={true}
-                    type={item.type}
-                    value={formState[item.id]}
+                    type={input.type}
+                    value={formState[input.id]}
                   />
-                  <label htmlFor={item.id}>{item.label}</label>
+                  <label htmlFor={input.id}>{input.label}</label>
                 </span>
               </span>
             ))}
