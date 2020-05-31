@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const HTTPRequester = (() => {
-  const baseURL = process.env.REACT_APP_API_URL;
+  const baseURL = window.env.REACT_APP_API_URL;
   console.log('baseURL', baseURL);
   //Maps object queryString to 'key=value' format. Checks if queryString is undefined or empty object
   const mapQueryString = queryString =>
