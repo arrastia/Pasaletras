@@ -35,6 +35,10 @@
   --book4: rgba(236, 204, 92, 0.4);
 
   --pasapalabra: #4073de;
+
+  --scrollBar-track: #f1f1f1;
+  --scrollBar-thumb: #888;
+  --scrollBar-thumb-hover: #555;
 }
 
 .dark-mode {

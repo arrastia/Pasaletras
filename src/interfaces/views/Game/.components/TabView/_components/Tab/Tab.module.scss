@@ -1,3 +1,41 @@
-a.p_tabview_noDesign {
-  padding: 0.571rem 0.5rem 0.571rem 0.5rem !important;
+.tabItem {
+  pointer-events: fill;
+
+  .tab {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    display: inline-block;
+    float: none;
+    font-weight: 700;
+    opacity: 0.5;
+    padding: 0.571rem 1.3rem;
+    pointer-events: fill;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-transition: background-color 0.2s, box-shadow 0.2s;
+    -o-transition: background-color 0.2s, box-shadow 0.2s;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-transition: background-color 0.2s, box-shadow 0.2s;
+
+    &:not(.disabled):focus {
+      outline: 0 none;
+      outline-offset: 0;
+    }
+  }
+}
+
+.highlight {
+  .tab {
+    opacity: 1;
+  }
+
+  &:hover {
+    cursor: default;
+
+    .tab {
+      cursor: default;
+    }
+  }
 }

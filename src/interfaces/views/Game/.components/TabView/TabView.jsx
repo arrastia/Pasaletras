@@ -8,7 +8,6 @@ import isUndefined from 'lodash/isUndefined';
 
 import { BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 
-import './TabView.scss';
 import styles from './TabView.module.scss';
 
 import { Button } from 'interfaces/.components/Button';
@@ -18,15 +17,12 @@ import { useBreakpoint } from 'interfaces/.tools/Hooks/useBreakpoint';
 
 export const TabView = ({ activeIndex, children, className, id, onTabChange, onTabClick, renderActiveOnly, style, totalTabs }) => {
   const [activeIdx, setActiveIdx] = useState(activeIndex);
-  const [idx] = useState(id);
   const [isNavigationHidden, setIsNavigationHidden] = useState(true);
 
   const divTabsRef = useRef();
   const ulTabsRef = useRef();
 
   const breakpoints = useBreakpoint();
-
-  const classNamed = classNames('p-tabview p-component p-tabview-top', className);
 
   useEffect(() => {
     setTimeout(() => {
@@ -61,23 +57,18 @@ export const TabView = ({ activeIndex, children, className, id, onTabChange, onT
 
   const renderTabHeader = (tab, index) => {
     const selected = isSelected(index);
-    const className = classNames(tab.props.headerClassName, 'p-unselectable-text', {
-      'p-tabview-selected p-highlight': selected,
-      'p-disabled': tab.props.disabled
-    });
-    const id = `${idx}_header_${index}`;
+    const className = classNames(tab.props.headerClassName, { ['highlight']: selected, disabled: tab.props.disabled });
+    const idx = `${id}_header_${index}`;
     return (
       <Tab
         children={tab.props.children}
         className={className}
         disabled={tab.props.disabled}
-        divScrollTabsRef={divTabsRef.current}
         header={tab.props.header}
         headerStyle={tab.props.headerStyle}
-        id={id}
+        id={idx}
         index={index}
-        isNavigationHidden={isNavigationHidden}
-        key={id}
+        key={idx}
         onTabHeaderClick={event => onTabHeaderClick(event, tab, index)}
         scrollTo={scrollTo}
         selected={selected}
@@ -99,7 +90,7 @@ export const TabView = ({ activeIndex, children, className, id, onTabChange, onT
           <BsArrowLeftShort />
         </Button>
         <div className={styles.scrollTab} ref={divTabsRef} style={{ marginBottom: totalTabs === 1 ? '-5px' : '-1px' }}>
-          <ul className="p-tabview-nav p-reset" role="tablist" style={{ display: 'inline-flex' }} ref={ulTabsRef}>
+          <ul className={styles.tabNav} role="tablist" style={{ display: 'inline-flex' }} ref={ulTabsRef}>
             {headers}
           </ul>
         </div>
@@ -115,11 +106,9 @@ export const TabView = ({ activeIndex, children, className, id, onTabChange, onT
 
   const renderContent = () => {
     const contents = React.Children.map(children, (tab, index) => {
-      if (!renderActiveOnly || isSelected(index)) {
-        return createContent(tab, index);
-      }
+      if (!renderActiveOnly || isSelected(index)) return createContent(tab, index);
     });
-    return <div className="p-tabview-panels">{contents}</div>;
+    return <div className={styles.tabPanels}>{contents}</div>;
   };
 
   const scrollTo = (xCoordinate, yCoordinate) => {
@@ -136,7 +125,7 @@ export const TabView = ({ activeIndex, children, className, id, onTabChange, onT
   };
 
   return (
-    <div id={id} className={classNamed} style={style}>
+    <div className={`${styles.tabView} ${className}`} id={id} style={style}>
       {renderNavigator()}
       {renderContent()}
     </div>

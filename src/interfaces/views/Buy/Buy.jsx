@@ -35,7 +35,8 @@ export const Buy = () => {
       id: 2,
       photo: <img alt="ilustración" src={pdf} />,
       subtitle: messages.es['more'],
-      title: messages.es['optionPdf']
+      title: messages.es['optionPdf'],
+      url: 'https://payhip.com/b/7ErW'
     },
     {
       id: 3,
@@ -46,7 +47,7 @@ export const Buy = () => {
   ];
 
   const renderLayout = children => (
-    <SectionLayout className="buy" id="buy" title={messages.es['buyIt']} subtitle={messages.es['buyIt']}>
+    <SectionLayout className="buy" id="buy" title={messages.es['buyIt']} subtitle={messages.es['buyOrDownload']}>
       {children}
     </SectionLayout>
   );
@@ -59,6 +60,7 @@ export const Buy = () => {
             className={card.className}
             iconClassName={card.iconClassName}
             key={card.id}
+            onClick={() => (card.url ? window.open(card.url) : {})}
             subtitle={card.subtitle}
             title={card.title}
             toolbar={card.photo}

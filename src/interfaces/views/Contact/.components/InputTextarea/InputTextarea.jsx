@@ -61,7 +61,7 @@ export const InputTextarea = ({ keyfilter, onInputEvent, onKeyPress, validateOnl
   };
 
   const className = classNames('p-inputtext p-inputtextarea p-component', rest.className, {
-    'p-disabled': rest.disabled,
+    disabled: rest.disabled,
     'p-filled':
       (rest.value != null && rest.value.toString().length > 0) || (rest.defaultValue != null && rest.defaultValue.toString().length > 0),
     'p-inputtextarea-resizable': rest.autoResize

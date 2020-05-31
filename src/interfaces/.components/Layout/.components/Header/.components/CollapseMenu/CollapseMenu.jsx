@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { config, Keyframes } from 'react-spring/renderprops';
 
@@ -8,60 +8,14 @@ import { RiMailSendLine } from 'react-icons/ri';
 
 import styles from './CollapseMenu.module.scss';
 
+import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
+
 import { useLockBodyScroll } from 'interfaces/.tools/Hooks/useLockBodyScroll';
 
 import { DelayUtils } from 'interfaces/.tools/Utils/DelayUtils';
 import { DOMUtils } from 'interfaces/.tools/Utils/DOMUtils';
 
 const links = ['homeMenu', 'buyMenu', 'freeMenu', 'gameMenu', 'authorMenu', 'contactMenu'];
-
-const items = [
-  {
-    key: 1,
-    id: 'home',
-    content: (
-      <span id="homeMenu" className={styles.menu}>
-        <GiHouse /> <span>Pasaletras</span>
-      </span>
-    )
-  },
-  {
-    key: 2,
-    id: 'buy',
-    content: (
-      <span id="buyMenu" className={styles.menu}>
-        <GiShoppingCart /> <span>Cómpralo</span>
-      </span>
-    )
-  },
-  {
-    key: 4,
-    id: 'game',
-    content: (
-      <span id="gameMenu" className={styles.menu}>
-        <FaChalkboardTeacher /> <span>Juego</span>
-      </span>
-    )
-  },
-  {
-    key: 5,
-    id: 'author',
-    content: (
-      <span id="authorMenu" className={styles.menu}>
-        <GiTeacher /> <span>Sobre el autor</span>
-      </span>
-    )
-  },
-  {
-    key: 6,
-    id: 'contact',
-    content: (
-      <span id="contactMenu" className={styles.menu}>
-        <RiMailSendLine /> <span>Contacta</span>
-      </span>
-    )
-  }
-];
 
 const Menu = Keyframes.Spring({
   in: async next => {
@@ -84,6 +38,8 @@ const MenuItems = Keyframes.Trail({
 });
 
 export const CollapseMenu = ({ brand, handleNavbar, navbarState, selected, top }) => {
+  const messages = useContext(MessagesContext);
+
   useEffect(() => {
     if (selected && navbarState) onAnimate(selected);
   }, [navbarState, selected]);
@@ -101,6 +57,54 @@ export const CollapseMenu = ({ brand, handleNavbar, navbarState, selected, top }
     const offsetTop = document.getElementById(section).offsetTop;
     window.scrollTo({ top: offsetTop, behavior: 'smooth' });
   };
+
+  const items = [
+    {
+      key: 1,
+      id: 'home',
+      content: (
+        <span id="homeMenu" className={styles.menu}>
+          <GiHouse /> <span>{messages.es['pasaletras']}</span>
+        </span>
+      )
+    },
+    {
+      key: 2,
+      id: 'buy',
+      content: (
+        <span id="buyMenu" className={styles.menu}>
+          <GiShoppingCart /> <span>{messages.es['buyIt']}</span>
+        </span>
+      )
+    },
+    {
+      key: 4,
+      id: 'game',
+      content: (
+        <span id="gameMenu" className={styles.menu}>
+          <FaChalkboardTeacher /> <span>{messages.es['game']}</span>
+        </span>
+      )
+    },
+    {
+      key: 5,
+      id: 'author',
+      content: (
+        <span id="authorMenu" className={styles.menu}>
+          <GiTeacher /> <span>{messages.es['aboutAuthor']}</span>
+        </span>
+      )
+    },
+    {
+      key: 6,
+      id: 'contact',
+      content: (
+        <span id="contactMenu" className={styles.menu}>
+          <RiMailSendLine /> <span>{messages.es['contactUs']}</span>
+        </span>
+      )
+    }
+  ];
 
   return (
     <div className={styles.menuWrap}>

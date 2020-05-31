@@ -22,7 +22,7 @@ export const Contact = () => {
 
   const emailRef = useRef(null);
 
-  const [formState, formDispatch] = useReducer(formReducer, { name: '', email: '', subject: '', message: '' });
+  const [formState, formDispatch] = useReducer(formReducer, { name: '', email: '', message: '' });
 
   const onFillForm = (id, value) => formDispatch({ type: 'ON_FILL_FORM', payload: { id, value } });
 
@@ -45,11 +45,6 @@ export const Contact = () => {
       label: messages.es['e-mail'],
       pattern: '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{1,63}$',
       ref: emailRef,
-      type: 'search'
-    },
-    {
-      id: 'subject',
-      label: messages.es['subject'],
       type: 'search'
     }
   ];

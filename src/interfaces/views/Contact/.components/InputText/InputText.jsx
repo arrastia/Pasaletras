@@ -26,7 +26,7 @@ export const InputText = forwardRef(({ keyfilter, onInput, onKeyPress, validateO
   };
 
   const classNameList = classNames('p-inputtext p-component', rest.className, {
-    'p-disabled': rest.disabled,
+    disabled: rest.disabled,
     'p-filled': (rest.value && rest.value.toString().length > 0) || (rest.defaultValue && rest.defaultValue.toString().length > 0)
   });
 

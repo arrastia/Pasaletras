@@ -13,7 +13,7 @@ export const Author = () => {
   const messages = useContext(MessagesContext);
 
   const renderLayout = children => (
-    <SectionLayout className="author" id="author" title={messages.es['aboutAuthor']} subtitle={messages.es['aboutAuthor']}>
+    <SectionLayout className="author" id="author" title={messages.es['aboutAuthor']} subtitle={messages.es['bioData']}>
       {children}
     </SectionLayout>
   );
