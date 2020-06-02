@@ -6,12 +6,6 @@ export const formReducer = (state, { type, payload }) => {
     case 'ON_RESET_FORM':
       return { ...state, name: payload, email: payload, subject: payload, message: payload };
 
-    case 'IS_SEND':
-      return { ...state, mailSent: payload.mailSent };
-
-    case 'GET_ERROR':
-      return { ...state, error: payload.error };
-
     default:
       return state;
   }

@@ -13,8 +13,6 @@ import { InputText } from './.components/InputText';
 import { InputTextarea } from './.components/InputTextarea';
 import { SectionLayout } from 'interfaces/.components/SectionLayout';
 
-import { EmailService } from 'core/services/Email';
-
 import { MessagesContext } from 'interfaces/.tools/Contexts/MessagesContext';
 
 import { formReducer } from './.tools/Reducers/formReducer';
@@ -24,19 +22,14 @@ export const Contact = () => {
 
   const emailRef = useRef(null);
 
-  const [formState, formDispatch] = useReducer(formReducer, { name: '', email: '', message: '', mailSent: false, error: '' });
+  const [formState, formDispatch] = useReducer(formReducer, { name: '', email: '', message: '' });
 
   const onFillForm = (id, value) => formDispatch({ type: 'ON_FILL_FORM', payload: { id, value } });
 
   const onResetForm = () => formDispatch({ type: 'ON_RESET_FORM', payload: '' });
 
-  const onSendEmail = async (event, api = false) => {
+  const onSendEmail = async event => {
     event.preventDefault();
-    try {
-      (await !api) ? EmailService.send(formState) : EmailService.sendApi(formState);
-    } catch (error) {
-      console.log('error', error);
-    }
   };
 
   const data = [
@@ -120,11 +113,6 @@ export const Contact = () => {
           <div className={styles.buttons}>
             <span className={styles.submit}>
               <Button label={messages.es['send']} onClick={event => onSendEmail(event)}>
-                <RiMailSendLine />
-              </Button>
-            </span>
-            <span className={styles.submit} style={{ display: 'none' }}>
-              <Button label={'API'} onClick={event => onSendEmail(event, true)}>
                 <RiMailSendLine />
               </Button>
             </span>
