@@ -40,7 +40,7 @@ export const Buy = () => {
     {
       id: 3,
       photo: <img alt="ilustración" src={kindle} />,
-      subtitle: messages.es['more'],
+      subtitle: messages.es['comingSoon'],
       title: messages.es['optionKindle']
     }
   ];

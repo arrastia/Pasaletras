@@ -87,23 +87,24 @@
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, GothamLight, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
-  /* font-family: GothamLight; */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   /* background-color: var(--bg); */
-  background: linear-gradient(135deg, var(--bg2) -10%, var(--bg) 100%);
   /* background-color: var(--blue-light); */
   /* background: linear-gradient(135deg, var(--blue-light) -10%, var(--blue-dark) 100%); */
+  /* font-family: GothamLight; */
+  /* transition: background-color 2s ease-in-out !important; */
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background: linear-gradient(135deg, var(--bg2) -10%, var(--bg) 100%);
+  font-family: -apple-system, GothamLight, GothamBookItalic, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
   max-width: 100%;
   overflow-x: hidden;
-  /* transition: background-color 2s ease-in-out !important; */
+  user-select: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 code {

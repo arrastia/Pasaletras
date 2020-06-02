@@ -28,6 +28,11 @@
     margin-bottom: 1em;
     position: relative;
     text-transform: uppercase;
+
+    span {
+      color: var(--book3);
+      // border-bottom: 0.1rem solid var(--book3);
+    }
   }
 }
 
