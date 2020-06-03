@@ -39,6 +39,9 @@
   --scrollBar-track: #f1f1f1;
   --scrollBar-thumb: #888;
   --scrollBar-thumb-hover: #555;
+  --success: #49d160;
+  --info: #06a9b1;
+  --error: #bb1e1e;
 }
 
 .dark-mode {

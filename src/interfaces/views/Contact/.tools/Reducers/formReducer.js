@@ -1,5 +1,8 @@
 export const formReducer = (state, { type, payload }) => {
   switch (type) {
+    case 'IS_SENDING':
+      return { ...state, isSending: payload };
+
     case 'ON_FILL_FORM':
       return { ...state, [payload.id]: payload.value };
 

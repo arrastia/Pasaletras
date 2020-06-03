@@ -73,6 +73,12 @@
   pointer-events: none;
 }
 
+.loading {
+  .icon {
+    animation: spin infinite 3s linear;
+  }
+}
+
 .reset {
   background: var(--book4);
 
