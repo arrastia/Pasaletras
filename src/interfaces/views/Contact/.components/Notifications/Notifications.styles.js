@@ -91,7 +91,7 @@ export const Button = styled('button')`
 `;
 
 export const Life = styled(animated.div)`
-  background: var(--book3);
+  background: var(--twin-color);
   bottom: ${props => (props.top ? '10px' : '0')};
   height: 5px;
   left: 0px;

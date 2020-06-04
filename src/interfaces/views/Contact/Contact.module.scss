@@ -3,7 +3,7 @@
 
   .contact {
     background: var(--bg);
-    border-bottom: 2px solid var(--book3);
+    border-bottom: 2px solid var(--twin-color);
     border-radius: 20px;
     box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -57,7 +57,7 @@
           }
 
           .mail {
-            color: var(--book3);
+            color: var(--twin-color);
           }
 
           &::before {
@@ -97,7 +97,7 @@
 
         .mailBtn {
           &::before {
-            background-color: var(--book3);
+            background-color: var(--twin-color);
           }
         }
       }

@@ -43,12 +43,15 @@ export const Game = () => {
 
   const onLoadData = () => {
     const data = [];
-    pagina.forEach(item => data.push({ [item.id]: item }));
-    setIsVisible(
-      pagina.forEach(item => {
-        isVisible[item.id] = false;
-      })
-    );
+    const pasaletrasKeys = Object.keys(pasaletras);
+    for (let index = 0; index < pasaletrasKeys.length; index++) {
+      const letras = pasaletrasKeys[index];
+      pasaletras[letras].map(item => {
+        data.push({ [item.id]: item });
+        setIsVisible((isVisible[item.id] = false));
+      });
+    }
+
     gameDispatch({ type: 'INITIAL_LOAD', payload: { data, realData: pasaletras } });
   };
 
@@ -72,15 +75,6 @@ export const Game = () => {
   );
 
   const pasaletras = GameUtils.loadData(pasaletrasConfig, messages.es, renderPasaletras);
-
-  const pagina = [
-    { title: `${messages.es['page']} 1`, text: renderPasaletras(777), id: 777, bgColor: 'var(--a1)' },
-    { title: `${messages.es['page']} 2`, text: renderPasaletras(888), id: 888, bgColor: 'var(--a1)' },
-    { title: `${messages.es['page']} 3`, text: renderPasaletras(999), id: 999, bgColor: 'var(--a1)' },
-    { title: `${messages.es['page']} 1`, text: renderPasaletras(111), id: 111, bgColor: 'var(--a1)' },
-    { title: `${messages.es['page']} 2`, text: renderPasaletras(222), id: 222, bgColor: 'var(--a1)' },
-    { title: `${messages.es['page']} 3`, text: renderPasaletras(333), id: 333, bgColor: 'var(--a1)' }
-  ];
 
   return renderLayout(
     breakpoints.tablet ? (

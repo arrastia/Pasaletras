@@ -8,7 +8,7 @@
   text-transform: uppercase;
 
   &::after {
-    background-color: var(--book3);
+    background-color: var(--twin-color);
     content: ' ';
     height: 2px;
     left: 0;
@@ -59,12 +59,12 @@
 }
 
 .active {
-  color: var(--book3);
+  color: var(--twin-color);
   opacity: 1;
 
   > svg {
     align-items: center;
-    color: var(--book3);
+    color: var(--twin-color);
     display: flex;
     font-size: 1.5rem;
     justify-content: flex-start;

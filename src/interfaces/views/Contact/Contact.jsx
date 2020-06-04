@@ -1,11 +1,11 @@
 import React, { Fragment, useContext, useEffect, useReducer, useRef, useState } from 'react';
 
+import emailjs from 'emailjs-com';
+
 import { FiLoader } from 'react-icons/fi';
 import { GrFacebookOption, GrPowerReset } from 'react-icons/gr';
 import { RiMailLine } from 'react-icons/ri';
 import { RiMailSendLine } from 'react-icons/ri';
-
-import emailjs from 'emailjs-com';
 
 import tablet from 'assets/img/svg/tablet.svg';
 
@@ -48,7 +48,7 @@ export const Contact = () => {
       event.preventDefault();
 
       isSending(true);
-      onShowNotification({ type: 'INFO', timeout: 1000, msg: 'Enviando...' });
+      onShowNotification({ type: 'INFO', timeout: 1000, msg: messages.es['sending'] });
 
       const { REACT_APP_MAIL_SERVICE, REACT_APP_TEMPLATE_OLD, REACT_APP_USER_TOKEN } = process.env;
 
@@ -64,11 +64,11 @@ export const Contact = () => {
         .then(
           response => {
             if (response.status >= 200 && response.status <= 299) {
-              onShowNotification({ type: 'SUCCESS', timeout: 3000, msg: 'Correo recibido' });
+              onShowNotification({ type: 'SUCCESS', timeout: 3000, msg: messages.es['emailReceived'] });
               onResetForm();
             }
           },
-          error => onShowNotification({ type: 'ERROR', timeout: 3000, msg: 'Ups, try again' })
+          error => onShowNotification({ type: 'ERROR', timeout: 3000, msg: messages.es['somethingWentWrong'] })
         )
         .finally(() => isSending(false));
     }

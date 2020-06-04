@@ -30,21 +30,20 @@
     text-transform: uppercase;
 
     span {
-      color: var(--book3);
-      // border-bottom: 0.1rem solid var(--book3);
+      color: var(--twin-color);
     }
   }
 }
 
 .author {
-  background: linear-gradient(30deg, var(--book2), var(--book2) 30%, transparent 30%, transparent);
+  background: linear-gradient(30deg, var(--twin-color-light), var(--twin-color-light) 30%, transparent 30%, transparent);
   border-radius: 20px;
   margin-bottom: 5rem;
   padding: 1rem;
   width: calc(100% - 2rem);
 
   @media screen and (min-width: 768px) {
-    background: linear-gradient(50deg, transparent, transparent 55%, var(--book2) 55%, var(--book2));
+    background: linear-gradient(50deg, transparent, transparent 55%, var(--twin-color-light) 55%, var(--twin-color-light));
   }
 }
 
@@ -54,7 +53,7 @@
 }
 
 .contact {
-  background: linear-gradient(120deg, var(--book3), var(--book3) 40%, var(--bg) 40%, var(--bg));
+  background: linear-gradient(120deg, var(--twin-color), var(--twin-color) 40%, var(--bg) 40%, var(--bg));
   border-radius: 20px;
   padding: 1rem;
   width: calc(100% - 2rem);

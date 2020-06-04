@@ -43,7 +43,7 @@
     }
 
     .active {
-      color: var(--book3);
+      color: var(--twin-color);
       opacity: 1;
 
       &::after {
@@ -54,7 +54,7 @@
 
       > svg {
         align-items: center;
-        color: var(--book3);
+        color: var(--twin-color);
         display: flex;
         font-size: 1.5rem;
         justify-content: flex-start;

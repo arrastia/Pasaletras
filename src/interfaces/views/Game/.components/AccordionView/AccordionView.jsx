@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 
-import { Accordion } from '../Accordion';
+import { Accordion } from './.components/Accordion';
 import { TabPanel } from '../TabView/_components/TabPanel';
 import { TabView } from '../TabView';
 

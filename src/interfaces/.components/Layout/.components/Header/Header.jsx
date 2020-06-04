@@ -130,7 +130,7 @@ const HeaderView = styled(animated.nav)`
 
   &::before {
     background: var(--bg);
-    box-shadow: var(--card-item-box-shadow);
+    box-shadow: var(--box-shadow);
     content: '';
     height: 100%;
     left: 0;
