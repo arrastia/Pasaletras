@@ -2,16 +2,15 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { FaChalkboardTeacher } from 'react-icons/fa';
 
-import { alphabet } from '../../.config';
+import { alphabet } from 'interfaces/views/Game/.config';
 
-// import styles from './Pasaletras.module.scss';
 import './Pasaletras.scss';
 
 import { Button } from 'interfaces/.components/Button';
 import { Letra } from './.components/Letra';
 
 export const Pasaletras = ({ color, handleRedirect, isAnimate, refresh }) => {
-  const [active, setActive] = useState(false); // refresh ?
+  const [active, setActive] = useState(false);
 
   const containerRef = useRef(null);
   const selectorsRef = useRef(null);
@@ -58,13 +57,13 @@ export const Pasaletras = ({ color, handleRedirect, isAnimate, refresh }) => {
 
     pickers.push(
       <Letra
+        color={color}
+        delay={delay}
         key={i}
-        transformCoordinates={coordinateObject}
-        pickerIsActive={active}
         pickerClicked={handleRedirect}
         pickerColor={alphabet[i]}
-        delay={delay}
-        color={color}
+        pickerIsActive={active}
+        transformCoordinates={coordinateObject}
       />
     );
   }

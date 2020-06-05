@@ -48,11 +48,6 @@
   src: local('GothamLight'), url(./assets/fonts/Gotham-Light.otf) format('truetype');
 }
 
-@font-face {
-  font-family: 'GothamBookItalic';
-  src: local('GothamBookItalic'), url(./assets/fonts/GothamBookItalic.ttf) format('truetype');
-}
-
 body {
   background-attachment: fixed;
   background-position: center center;

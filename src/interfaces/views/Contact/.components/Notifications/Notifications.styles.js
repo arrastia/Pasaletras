@@ -41,7 +41,7 @@ export const Message = styled(animated.div)`
   width: 20ch;
 
   @media (max-width: 680px) {
-    width: 100%;
+    width: 80%;
   }
 `;
 
