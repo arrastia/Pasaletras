@@ -24,7 +24,7 @@ export const App = () => {
     </BreakpointProvider>
   );
 
-  const queries = { mobile: '(min-width: 414px)', tablet: '(min-width: 720px)', pc: '(min-width: 1024px)' };
+  const queries = { mobile: '(min-width: 415px)', tablet: '(min-width: 769px)', pc: '(min-width: 1025px)' };
 
   return layout(
     <Fragment>

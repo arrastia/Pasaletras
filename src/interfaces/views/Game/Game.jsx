@@ -39,7 +39,7 @@ export const Game = () => {
 
   const handleRedirect = pageId => window.open(ReactUtils.getUrl(webConfig.baseURL, { pageId }));
 
-  const onLoadAnimation = () => gameDispatch({ type: 'IS_ANIMATED', payload: breakpoints.tablet });
+  const onLoadAnimation = () => gameDispatch({ type: 'IS_ANIMATED', payload: breakpoints.pc });
 
   const onLoadData = () => {
     const data = [];
@@ -77,7 +77,7 @@ export const Game = () => {
   const pasaletras = GameUtils.loadData(pasaletrasConfig, messages.es, renderPasaletras);
 
   return renderLayout(
-    breakpoints.tablet ? (
+    breakpoints.pc ? (
       <MagazineView handleRedirect={handleRedirect} onToggle={onToggle} pagina={pasaletras} />
     ) : (
       <AccordionView gameState={gameState} handleRedirect={handleRedirect} onToggle={onToggle} pagina={pasaletras} />

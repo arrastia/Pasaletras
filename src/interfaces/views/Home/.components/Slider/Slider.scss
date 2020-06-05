@@ -35,7 +35,7 @@
   --slider-transition-duration: 575ms;
   --transition-bezier: cubic-bezier(0.5, 0.075, 0.25, 0.95);
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     --slider-height-percentage: 30%;
   }
 }
@@ -108,7 +108,7 @@
   top: 0;
   width: 100%;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1025px) {
     height: auto;
     object-fit: fill;
     top: -20%;
