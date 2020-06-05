@@ -50,7 +50,7 @@ export const Contact = () => {
       isSending(true);
       onShowNotification({ type: 'INFO', timeout: 1000, msg: messages.es['sending'] });
 
-      const { REACT_APP_MAIL_SERVICE, REACT_APP_TEMPLATE_OLD, REACT_APP_USER_TOKEN } = process.env;
+      const { REACT_APP_MAIL_SERVICE, REACT_APP_TEMPLATE, REACT_APP_USER_ID } = process.env;
 
       const templateParams = {
         from_email: formState.email,
@@ -60,7 +60,7 @@ export const Contact = () => {
       };
 
       emailjs
-        .send(REACT_APP_MAIL_SERVICE, REACT_APP_TEMPLATE_OLD, templateParams, REACT_APP_USER_TOKEN)
+        .send(REACT_APP_MAIL_SERVICE, REACT_APP_TEMPLATE, templateParams, REACT_APP_USER_ID)
         .then(
           response => {
             if (response.status >= 200 && response.status <= 299) {
