@@ -46,6 +46,7 @@ export const Game = () => {
     const pasaletrasKeys = Object.keys(pasaletras);
     for (let index = 0; index < pasaletrasKeys.length; index++) {
       const letras = pasaletrasKeys[index];
+      // eslint-disable-next-line
       pasaletras[letras].map(item => {
         data.push({ [item.id]: item });
         setIsVisible((isVisible[item.id] = false));
